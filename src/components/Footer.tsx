@@ -25,7 +25,7 @@ export default function Footer() {
               <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg font-[family-name:var(--font-heading)]">
                   NS
-
+                </span>
               </div>
               <span className="text-xl font-bold font-[family-name:var(--font-heading)]">
                 North Shore Bookkeeping
