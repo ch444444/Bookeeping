@@ -176,11 +176,11 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-text-dark font-[family-name:var(--font-heading)]">
-              How We Can Help
+              Our Bookkeeping Services
             </h2>
             <p className="mt-4 text-text-muted max-w-2xl mx-auto">
-              We offer a range of bookkeeping services tailored to meet the
-              unique needs of your small business.
+              Choose the level of help you need. Whether you want to stay
+              hands-on or hand it off completely, we&apos;ve got you covered.
             </p>
           </div>
 
