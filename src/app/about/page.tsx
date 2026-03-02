@@ -155,8 +155,8 @@ export default function AboutPage() {
           </p>
           <Button
             href="/contact"
-            variant="secondary"
-            className="border-white text-white hover:bg-white hover:text-primary"
+            variant="primary"
+            className="bg-white !text-primary border-2 border-white hover:bg-white/90"
           >
             Get in Touch
           </Button>
