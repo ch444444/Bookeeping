@@ -66,18 +66,18 @@ export default function Footer() {
             <ul className="space-y-3 text-sm text-gray-400">
               <li>
                 <a
-                  href="tel:+15551234567"
+                  href="tel:+18473051323"
                   className="hover:text-primary transition-colors"
                 >
-                  (555) 123-4567
+                  (847) 305-1323
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:hello@bookeeping.com"
+                  href="mailto:vasili@northshorebookkeeping.com"
                   className="hover:text-primary transition-colors"
                 >
-                  hello@bookeeping.com
+                  vasili@northshorebookkeeping.com
                 </a>
               </li>
               <li>Your City, State</li>

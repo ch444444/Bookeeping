@@ -112,10 +112,10 @@ export default function ContactPage() {
                   <div>
                     <p className="font-semibold text-text-dark text-sm">Phone</p>
                     <a
-                      href="tel:+15551234567"
+                      href="tel:+18473051323"
                       className="text-text-muted text-sm hover:text-primary transition-colors"
                     >
-                      (555) 123-4567
+                      (847) 305-1323
                     </a>
                   </div>
                 </div>
@@ -138,10 +138,10 @@ export default function ContactPage() {
                   <div>
                     <p className="font-semibold text-text-dark text-sm">Email</p>
                     <a
-                      href="mailto:hello@bookeeping.com"
+                      href="mailto:vasili@northshorebookkeeping.com"
                       className="text-text-muted text-sm hover:text-primary transition-colors"
                     >
-                      hello@bookeeping.com
+                      vasili@northshorebookkeeping.com
                     </a>
                   </div>
                 </div>
