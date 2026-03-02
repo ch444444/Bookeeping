@@ -151,28 +151,15 @@ export default function Home() {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="flex flex-col items-center"
             >
-              {/* Photo placeholder with rounded rectangle + teal accent */}
+              {/* Photo with rounded rectangle + teal accent */}
               <div className="relative">
                 <div className="absolute top-4 right-[-16px] w-full h-full bg-primary/40 rounded-2xl" />
-                <div className="relative w-64 h-80 lg:w-80 lg:h-[420px] bg-[#5a9e9c] rounded-2xl flex items-center justify-center overflow-hidden">
-                  <div className="text-center">
-                    <svg
-                      className="w-20 h-20 text-white/40 mx-auto mb-3"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                      />
-                    </svg>
-                    <p className="text-white/50 text-sm font-medium">
-                      Your Photo Here
-                    </p>
-                  </div>
+                <div className="relative w-64 h-80 lg:w-80 lg:h-[420px] rounded-2xl overflow-hidden">
+                  <img
+                    src="/vasili.jpg"
+                    alt="Vasili"
+                    className="w-full h-full object-cover object-top"
+                  />
                 </div>
               </div>
               {/* Signature */}
