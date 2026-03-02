@@ -24,11 +24,11 @@ export default function Footer() {
             <div className="flex items-center gap-2 mb-4">
               <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg font-[family-name:var(--font-heading)]">
-                  B
-                </span>
+                  NS
+
               </div>
               <span className="text-xl font-bold font-[family-name:var(--font-heading)]">
-                Bookeeping
+                North Shore Bookkeeping
               </span>
             </div>
             <p className="text-sm text-gray-400 leading-relaxed">
@@ -129,7 +129,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-white/10 mt-12 pt-8 text-center text-sm text-gray-500">
-          <p>&copy; {new Date().getFullYear()} Bookeeping. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} North Shore Bookkeeping. All rights reserved.</p>
         </div>
       </div>
     </footer>

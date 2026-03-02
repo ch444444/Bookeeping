@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Bookeeping | Professional Bookkeeping Services",
+  title: "North Shore Bookkeeping | Professional Bookkeeping Services",
   description:
     "Expert bookkeeping services for small businesses. Monthly bookkeeping, cleanup, catch-up, and consulting. Book a free call today.",
 };

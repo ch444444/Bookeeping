@@ -35,11 +35,11 @@ export default function Header() {
         <Link href="/" className="flex items-center gap-2">
           <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
             <span className="text-white font-bold text-lg font-[family-name:var(--font-heading)]">
-              B
-            </span>
+              NS
+
           </div>
           <span className="text-xl font-bold text-text-dark font-[family-name:var(--font-heading)]">
-            Bookeeping
+            North Shore Bookkeeping
           </span>
         </Link>
 

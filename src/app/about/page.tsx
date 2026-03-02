@@ -40,7 +40,7 @@ export default function AboutPage() {
             className="max-w-3xl"
           >
             <h1 className="text-4xl sm:text-5xl font-bold text-text-dark font-[family-name:var(--font-heading)]">
-              About <span className="text-primary">Bookeeping</span>
+              About <span className="text-primary">North Shore Bookkeeping</span>
             </h1>
             <p className="mt-6 text-lg text-text-muted leading-relaxed">
               We&apos;re on a mission to make professional bookkeeping
@@ -82,13 +82,13 @@ export default function AboutPage() {
                 Meet [Your Name]
               </h2>
               <p className="text-text-muted leading-relaxed mb-4">
-                Hi! I&apos;m [Your Name], the founder of Bookeeping. With over
+                Hi! I&apos;m [Your Name], the founder of North Shore Bookkeeping. With over
                 [X] years of experience in bookkeeping and accounting, I&apos;ve
                 dedicated my career to helping small business owners like you
                 take control of their finances.
               </p>
               <p className="text-text-muted leading-relaxed mb-4">
-                I started Bookeeping because I saw too many talented
+                I started North Shore Bookkeeping because I saw too many talented
                 entrepreneurs struggling with messy books, missed deadlines, and
                 financial uncertainty. I knew there had to be a better way —
                 bookkeeping that&apos;s not just accurate, but genuinely helpful
