@@ -166,7 +166,7 @@ export default function Home() {
               <img
                 src="/signature.png"
                 alt="Vasili Kanakaris"
-                className="mt-8 h-20 lg:h-28 w-64 lg:w-80 object-contain mix-blend-lighten"
+                className="mt-8 h-20 lg:h-28 w-64 lg:w-80 object-contain invert mix-blend-screen"
               />
             </motion.div>
           </div>
