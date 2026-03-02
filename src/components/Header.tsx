@@ -56,21 +56,28 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* Phone + CTA */}
-        <div className="hidden md:flex items-center gap-4">
-          <a
-            href="tel:+18473051323"
-            className="text-sm font-medium text-text-muted hover:text-primary transition-colors"
+        {/* Phone */}
+        <Link
+          href="/contact"
+          className="hidden md:flex items-center gap-2 text-text-dark hover:text-primary transition-colors"
+        >
+          <svg
+            className="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
           >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+            />
+          </svg>
+          <span className="text-base font-bold font-[family-name:var(--font-heading)]">
             (847) 305-1323
-          </a>
-          <Link
-            href="/contact"
-            className="bg-primary text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-primary-dark transition-all hover:shadow-lg hover:-translate-y-0.5"
-          >
-            Book a Call
-          </Link>
-        </div>
+          </span>
+        </Link>
 
         {/* Mobile Hamburger */}
         <button
@@ -116,18 +123,25 @@ export default function Header() {
                   {link.label}
                 </Link>
               ))}
-              <a
-                href="tel:+18473051323"
-                className="text-base font-medium text-text-muted"
-              >
-                (847) 305-1323
-              </a>
               <Link
                 href="/contact"
                 onClick={() => setMobileOpen(false)}
-                className="bg-primary text-white px-6 py-3 rounded-full text-center text-sm font-semibold"
+                className="flex items-center gap-2 text-text-dark font-bold"
               >
-                Book a Call
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  />
+                </svg>
+                (847) 305-1323
               </Link>
             </nav>
           </motion.div>
