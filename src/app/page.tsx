@@ -163,9 +163,11 @@ export default function Home() {
                 </div>
               </div>
               {/* Signature */}
-              <p className="mt-6 text-3xl text-white italic font-light font-[family-name:var(--font-heading)]">
-                Vasili
-              </p>
+              <img
+                src="/signature.png"
+                alt="Vasili Kanakaris"
+                className="mt-6 h-16 lg:h-20 w-auto"
+              />
             </motion.div>
           </div>
         </div>
