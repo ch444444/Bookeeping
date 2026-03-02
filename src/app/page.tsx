@@ -219,14 +219,30 @@ export default function Home() {
       {/* Pricing Section */}
       <SectionWrapper className="py-20 lg:py-28 bg-bg-light" id="pricing">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-text-dark font-[family-name:var(--font-heading)]">
-              Simple, Transparent Pricing
+              Pricing
             </h2>
-            <p className="mt-4 text-text-muted max-w-2xl mx-auto">
-              Choose a plan that fits your business. All plans include a free
-              consultation to ensure we&apos;re the right fit.
+            <p className="mt-3 text-text-muted">
+              Transparent pricing. No contracts. First month satisfaction
+              guarantee or you do not pay.
             </p>
+
+            {/* Callout box */}
+            <div className="mt-8 border-2 border-primary/40 bg-primary/5 rounded-xl p-5">
+              <p className="text-text-dark text-sm leading-relaxed">
+                Most small businesses lose thousands each year due to messy
+                books and avoidable tax issues. Clean, reliable bookkeeping
+                costs less than one bad decision.
+              </p>
+            </div>
+
+            {/* Satisfaction badge */}
+            <div className="mt-6 inline-block border-2 border-dashed border-primary/40 rounded-full px-6 py-2.5">
+              <p className="text-primary font-bold text-sm">
+                100% satisfaction in month one or pay nothing
+              </p>
+            </div>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
