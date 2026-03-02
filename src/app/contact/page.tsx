@@ -172,7 +172,7 @@ export default function ContactPage() {
                       Location
                     </p>
                     <p className="text-text-muted text-sm">
-                      Your City, State (Remote services available nationwide)
+                      Chicago, Illinois (Remote services available nationwide)
                     </p>
                   </div>
                 </div>

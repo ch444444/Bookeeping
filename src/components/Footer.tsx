@@ -80,7 +80,7 @@ export default function Footer() {
                   vasili@northshorebookkeeping.com
                 </a>
               </li>
-              <li>Your City, State</li>
+              <li>Chicago, Illinois</li>
             </ul>
             {/* Social Icons */}
             <div className="flex gap-4 mt-6">
