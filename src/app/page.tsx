@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import SectionWrapper from "@/components/SectionWrapper";
 import Button from "@/components/Button";
 import ContactForm from "@/components/ContactForm";
@@ -103,7 +104,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-bg-light to-bg-muted pt-32 pb-20 lg:pt-40 lg:pb-28">
+      <section className="relative bg-[#3d8583] pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -111,20 +112,36 @@ export default function Home() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7 }}
             >
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-text-dark leading-tight font-[family-name:var(--font-heading)]">
-                Bookkeeping That{" "}
-                <span className="text-primary">Gives You Peace of Mind</span>
+              <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] leading-tight font-[family-name:var(--font-heading)] uppercase">
+                <span className="font-extrabold text-white italic">Your Books</span>{" "}
+                <span className="font-light text-white/80">Deserve Better</span>
+                <br />
+                <span className="font-light text-white/80">— And So Do You</span>
               </h1>
-              <p className="mt-6 text-lg text-text-muted leading-relaxed max-w-lg">
-                Expert bookkeeping services for small businesses. We handle the
-                numbers so you can focus on what you do best — growing your
-                business.
+              <p className="mt-6 text-base text-white/70 leading-relaxed max-w-lg">
+                Messy books kill clarity. I keep your QuickBooks clean, your
+                financials accurate, and your stress level low — with real
+                communication from someone who actually responds.
               </p>
-              <div className="mt-8 flex flex-wrap gap-4">
-                <Button href="/contact">Book a Call</Button>
-                <Button href="/contact" variant="secondary">
-                  Send a Message
-                </Button>
+              <div className="mt-8 flex flex-col gap-4 max-w-md">
+                <Link
+                  href="/contact"
+                  className="flex items-center gap-3 bg-white text-text-dark px-8 py-4 rounded-full font-bold text-sm uppercase tracking-wider hover:shadow-lg hover:-translate-y-0.5 transition-all"
+                >
+                  <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                  Book a Call with Vasili
+                </Link>
+                <Link
+                  href="/contact"
+                  className="flex items-center gap-3 bg-primary-dark text-white px-8 py-4 rounded-full font-bold text-sm uppercase tracking-wider hover:shadow-lg hover:-translate-y-0.5 transition-all"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  Send Me a Quick Note
+                </Link>
               </div>
             </motion.div>
 
@@ -132,32 +149,36 @@ export default function Home() {
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="flex justify-center"
+              className="flex flex-col items-center"
             >
-              <div className="w-72 h-72 lg:w-96 lg:h-96 bg-primary/10 rounded-full flex items-center justify-center">
-                <div className="w-56 h-56 lg:w-72 lg:h-72 bg-primary/20 rounded-full flex items-center justify-center">
+              {/* Photo placeholder with rounded rectangle + teal accent */}
+              <div className="relative">
+                <div className="absolute top-4 right-[-16px] w-full h-full bg-primary/40 rounded-2xl" />
+                <div className="relative w-64 h-80 lg:w-80 lg:h-[420px] bg-[#5a9e9c] rounded-2xl flex items-center justify-center overflow-hidden">
                   <div className="text-center">
-                    <div className="w-24 h-24 lg:w-32 lg:h-32 bg-primary/30 rounded-full mx-auto mb-4 flex items-center justify-center">
-                      <svg
-                        className="w-12 h-12 lg:w-16 lg:h-16 text-primary"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={1.5}
-                          d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                        />
-                      </svg>
-                    </div>
-                    <p className="text-sm text-primary font-medium">
+                    <svg
+                      className="w-20 h-20 text-white/40 mx-auto mb-3"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={1.5}
+                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                      />
+                    </svg>
+                    <p className="text-white/50 text-sm font-medium">
                       Your Photo Here
                     </p>
                   </div>
                 </div>
               </div>
+              {/* Signature */}
+              <p className="mt-6 text-3xl text-white italic font-light font-[family-name:var(--font-heading)]">
+                Vasili
+              </p>
             </motion.div>
           </div>
         </div>
