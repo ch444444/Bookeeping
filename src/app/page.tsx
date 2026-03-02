@@ -245,7 +245,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-6 items-stretch">
             {pricingTiers.map((tier, i) => (
               <motion.div
                 key={tier.name}
@@ -254,14 +254,14 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.15 }}
                 whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0,0,0,0.1)" }}
-                className={`rounded-2xl p-8 transition-all duration-300 ${
+                className={`rounded-2xl p-8 transition-all duration-300 flex flex-col ${
                   tier.popular
-                    ? "bg-primary text-white ring-4 ring-primary/20 scale-105"
-                    : "bg-white border border-gray-100"
+                    ? "bg-primary text-white"
+                    : "bg-white border border-gray-200 shadow-sm"
                 }`}
               >
                 {tier.popular && (
-                  <span className="inline-block bg-white text-primary text-xs font-bold px-3 py-1 rounded-full mb-4">
+                  <span className="inline-block bg-white text-primary text-xs font-bold px-3 py-1 rounded-full mb-4 self-start">
                     Most Popular
                   </span>
                 )}
@@ -295,7 +295,7 @@ export default function Home() {
                     /month
                   </span>
                 </div>
-                <ul className="space-y-3 mb-8">
+                <ul className="space-y-3 mb-8 flex-grow">
                   {tier.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-3 text-sm">
                       <svg
@@ -320,7 +320,7 @@ export default function Home() {
                 <Button
                   href="/contact"
                   variant={tier.popular ? "secondary" : "primary"}
-                  className="w-full"
+                  className="w-full mt-auto"
                 >
                   Get Started
                 </Button>
