@@ -57,7 +57,7 @@ const pricingTiers = [
   {
     name: "Professional",
     price: "500",
-    description: "Ideal for growing small businesses",
+    description: "Best for growing small businesses",
     features: [
       "Everything in Essential",
       "Accounts payable & receivable",
