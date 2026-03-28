@@ -69,28 +69,28 @@ const pricingTiers = [
 
 const testimonials = [
   {
-    name: "Sarah Johnson",
-    initial: "S",
+    name: "Pawstock",
+    initial: "P",
     color: "bg-teal-500",
     timeAgo: "2 years ago",
     quote:
-      "They completely transformed my bookkeeping. I finally have a clear picture of my business finances and can make confident decisions.",
+      "We currently use North Shore Bookkeeping, and they have been an excellent partner for our business. As a retail operation, we deal with the intricacies of inventory management, retail sales tracking, and staffing solutions, and their team handles all of it with professionalism and clarity. They understand inventory-heavy retail, which makes a big difference in day-to-day operations and long-term planning. Communication is straightforward, questions are answered quickly, and the solutions they provide are practical and effective. Their services are also very affordable for the level of expertise and support we receive. I would highly recommend North Shore Bookkeeping to any small business looking for reliable, knowledgeable bookkeeping support.",
   },
   {
-    name: "Michael Chen",
-    initial: "M",
+    name: "TJ Kesteleyn",
+    initial: "T",
     color: "bg-purple-600",
     timeAgo: "2 years ago",
     quote:
-      "I used to dread tax season. Now everything is organized and up-to-date year-round. The peace of mind is priceless.",
+      "I've worked with them for over a year on various projects. Vas has been great! Very knowledgeable, great communication, and incredible attention to detail. I would highly recommend to my friends, family, and fellow business owners.",
   },
   {
-    name: "Emily Rodriguez",
-    initial: "E",
+    name: "The Perfect Fit",
+    initial: "T",
     color: "bg-yellow-500",
     timeAgo: "2 years ago",
     quote:
-      "The cleanup service saved me. I was months behind on my books and they had everything sorted in just two weeks.",
+      "As a small business owner, finding someone who truly understands my financial needs has been a game changer. Vas keeps everything running smoothly and helps me stay organized throughout the year. Their expertise and responsiveness are top-notch!",
   },
 ];
 
