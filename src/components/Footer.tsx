@@ -31,10 +31,22 @@ export default function Footer() {
                 North Shore Bookkeeping
               </span>
             </div>
-            <p className="text-sm text-gray-400 leading-relaxed">
+            <p className="text-sm text-gray-400 leading-relaxed mb-4">
               Professional bookkeeping services for small businesses. Let us
               handle the numbers so you can focus on growing your business.
             </p>
+            {/* QuickBooks Certified ProAdvisor Badge */}
+            <div className="inline-flex items-center gap-2 bg-white/10 rounded-lg px-4 py-2">
+              <svg className="w-8 h-8" viewBox="0 0 40 40" fill="none">
+                <circle cx="20" cy="20" r="18" fill="#2CA01C"/>
+                <path d="M14 14h-2a4 4 0 000 8h2v4h-2a8 8 0 010-16h2v4zm12 12h2a4 4 0 000-8h-2v-4h2a8 8 0 010 16h-2v-4z" fill="white"/>
+                <rect x="18" y="12" width="4" height="16" rx="2" fill="white"/>
+              </svg>
+              <div>
+                <p className="text-xs font-semibold text-white leading-tight">QuickBooks Certified</p>
+                <p className="text-xs text-gray-400 leading-tight">ProAdvisor</p>
+              </div>
+            </div>
           </div>
 
           {/* Link Columns */}
