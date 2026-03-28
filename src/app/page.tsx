@@ -53,12 +53,8 @@ const pricingTiers = [
   {
     name: "Professional",
     price: "400 to $500",
-    description: "Best for growing small businesses",
-    features: [
-      "Everything in Essential",
-      "Accounts payable & receivable",
-      "Monthly financial statement review meeting",
-    ],
+    description: "For growing businesses that need more involved bookkeeping and accounts management.",
+    features: [],
     popular: true,
   },
   {
