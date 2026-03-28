@@ -512,7 +512,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div>
               <h2 className="text-3xl sm:text-4xl font-bold text-text-dark mb-6 font-[family-name:var(--font-heading)]">
-                Every Month You Wait Is Another Month of Messy Books
+                Lets Get to Work
               </h2>
               <p className="text-text-muted leading-relaxed mb-6">
                 Don&apos;t let disorganized finances hold your business back.
