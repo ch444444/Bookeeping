@@ -525,7 +525,9 @@ export default function Home() {
                   Prefer to schedule directly?
                 </p>
                 <a
-                  href="#"
+                  href="https://calendly.com/vasnsb8/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-primary font-semibold text-sm hover:underline"
                 >
                   <svg
@@ -543,9 +545,6 @@ export default function Home() {
                   </svg>
                   Book on Calendly
                 </a>
-                <p className="text-xs text-text-muted mt-2">
-                  (Replace this with your Calendly embed link)
-                </p>
               </div>
             </div>
             <div className="bg-bg-light rounded-2xl p-8 border border-gray-100">
