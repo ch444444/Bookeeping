@@ -18,7 +18,7 @@ export default function Footer() {
   return (
     <footer className="bg-text-dark text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
           {/* Brand */}
           <div className="md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
@@ -31,33 +31,34 @@ export default function Footer() {
                 North Shore Bookkeeping
               </span>
             </div>
-            <p className="text-sm text-gray-400 leading-relaxed mb-4">
+            <p className="text-sm text-gray-400 leading-relaxed">
               Professional bookkeeping services for small businesses. Let us
               handle the numbers so you can focus on growing your business.
             </p>
-            {/* QuickBooks Certified ProAdvisor Badge */}
-            <div className="inline-block w-36">
-              <div className="bg-white rounded-t-lg px-4 pt-4 pb-3 text-center border border-gray-200">
-                {/* QB Logo */}
-                <div className="flex justify-center mb-2">
-                  <svg className="w-10 h-10" viewBox="0 0 40 40" fill="none">
+          </div>
+
+          {/* QuickBooks Certified ProAdvisor Badge */}
+          <div className="flex items-start justify-center">
+            <div className="inline-block w-32">
+              <div className="bg-white rounded-t-lg px-3 pt-3 pb-2 text-center border border-gray-200">
+                <div className="flex justify-center mb-1.5">
+                  <svg className="w-8 h-8" viewBox="0 0 40 40" fill="none">
                     <circle cx="20" cy="20" r="18" fill="#2CA01C"/>
                     <path d="M14 14h-2a4 4 0 000 8h2v4h-2a8 8 0 010-16h2v4zm12 12h2a4 4 0 000-8h-2v-4h2a8 8 0 010 16h-2v-4z" fill="white"/>
                     <rect x="18" y="12" width="4" height="16" rx="2" fill="white"/>
                   </svg>
                 </div>
-                <p className="text-[8px] text-gray-500 leading-tight">intuit</p>
-                <p className="text-sm font-bold text-gray-800 leading-tight">quickbooks<span className="text-[8px] align-top">.</span></p>
-                <div className="border-t border-gray-200 mt-2 pt-2">
-                  <p className="text-xs font-semibold text-gray-800 leading-tight">Certified</p>
-                  <p className="text-xs font-semibold text-gray-800 leading-tight">ProAdvisor</p>
+                <p className="text-[7px] text-gray-500 leading-tight">intuit</p>
+                <p className="text-xs font-bold text-gray-800 leading-tight">quickbooks<span className="text-[7px] align-top">.</span></p>
+                <div className="border-t border-gray-200 mt-1.5 pt-1.5">
+                  <p className="text-[10px] font-semibold text-gray-800 leading-tight">Certified</p>
+                  <p className="text-[10px] font-semibold text-gray-800 leading-tight">ProAdvisor</p>
                 </div>
               </div>
-              {/* Green banner bottom */}
               <div className="relative">
                 <div className="flex">
-                  <div className="w-1/2 h-8 bg-[#80C342]" style={{clipPath: "polygon(0 0, 100% 0, 100% 100%, 50% 60%)"}}></div>
-                  <div className="w-1/2 h-8 bg-[#2CA01C]" style={{clipPath: "polygon(0 0, 100% 0, 50% 60%, 0 100%)"}}></div>
+                  <div className="w-1/2 h-6 bg-[#80C342]" style={{clipPath: "polygon(0 0, 100% 0, 100% 100%, 50% 60%)"}}></div>
+                  <div className="w-1/2 h-6 bg-[#2CA01C]" style={{clipPath: "polygon(0 0, 100% 0, 50% 60%, 0 100%)"}}></div>
                 </div>
               </div>
             </div>
