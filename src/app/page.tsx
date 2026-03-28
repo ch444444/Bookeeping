@@ -13,7 +13,7 @@ const services = [
       "Stay on top of your finances with a reliable monthly process that keeps your books accurate and tax-ready.",
     features: [
       "Bank & credit cards reconciled monthly",
-      "Smart rules for automated categorization",
+      "Transactions categorized so you always know where your money's going",
       "Financial statements delivered within 15 business days",
       "Email support for quick money questions",
       "Optional Financial Insights video (+15% of plan)",
