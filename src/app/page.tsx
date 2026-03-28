@@ -47,12 +47,8 @@ const pricingTiers = [
   {
     name: "Essential",
     price: "300 to $400",
-    description: "Perfect for freelancers and sole proprietors",
-    features: [
-      "Monthly bank and card reconciliation",
-      "Expense and revenue categorization",
-      "Monthly financial statements",
-    ],
+    description: "For small, simple businesses that want accurate books without the stress.",
+    features: [],
   },
   {
     name: "Professional",
