@@ -286,7 +286,7 @@ export default function Home() {
                   </span>
                 </div>
                 <p
-                  className={`text-sm mb-6 ${
+                  className={`text-base mb-6 leading-relaxed ${
                     tier.popular ? "text-white/80" : "text-text-muted"
                   }`}
                 >
