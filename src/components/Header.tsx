@@ -58,7 +58,9 @@ export default function Header() {
 
         {/* Schedule Consultation */}
         <Link
-          href="/contact"
+          href="https://calendly.com/vasnsb8/30min"
+          target="_blank"
+          rel="noopener noreferrer"
           className="hidden md:flex items-center gap-2 text-text-dark hover:text-primary transition-colors"
         >
           <svg
