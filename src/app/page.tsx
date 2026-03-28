@@ -49,10 +49,9 @@ const pricingTiers = [
     price: "300",
     description: "Perfect for freelancers and sole proprietors",
     features: [
-      "Monthly bookkeeping",
-      "Bank reconciliation",
+      "Monthly bank and card reconciliation",
+      "Expense and revenue categorization",
       "Monthly financial statements",
-      "Email support",
     ],
   },
   {
