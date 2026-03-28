@@ -515,13 +515,9 @@ export default function Home() {
                 Lets Get to Work
               </h2>
               <p className="text-text-muted leading-relaxed mb-6">
-                Don&apos;t let disorganized finances hold your business back.
-                Whether you&apos;re behind on your books or just looking for a
-                better way to manage your finances, we&apos;re here to help.
-              </p>
-              <p className="text-text-muted leading-relaxed mb-8">
-                Book a free consultation today and let&apos;s talk about how we
-                can get your books in order.
+                We&apos;re here to take the stress out of your back-office
+                operations. Reach out today to see how we can handle your
+                bookkeeping, payroll, and taxes.
               </p>
               {/* Calendly Placeholder */}
               <div className="bg-bg-light rounded-2xl p-6 border border-gray-100">
