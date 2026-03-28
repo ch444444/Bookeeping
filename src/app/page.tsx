@@ -269,14 +269,7 @@ export default function Home() {
                 >
                   {tier.name}
                 </h3>
-                <p
-                  className={`text-sm mb-6 ${
-                    tier.popular ? "text-white/80" : "text-text-muted"
-                  }`}
-                >
-                  {tier.description}
-                </p>
-                <div className="mb-6">
+                <div className="mb-4">
                   <span
                     className={`text-4xl font-bold font-[family-name:var(--font-heading)] ${
                       tier.popular ? "text-white" : "text-text-dark"
@@ -292,6 +285,13 @@ export default function Home() {
                     /month
                   </span>
                 </div>
+                <p
+                  className={`text-sm mb-6 ${
+                    tier.popular ? "text-white/80" : "text-text-muted"
+                  }`}
+                >
+                  {tier.description}
+                </p>
                 <ul className="space-y-3 mb-8 flex-grow">
                   {tier.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-3 text-sm">
