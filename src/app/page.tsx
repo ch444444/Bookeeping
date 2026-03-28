@@ -52,14 +52,14 @@ const pricingTiers = [
   },
   {
     name: "Professional",
-    price: "400 to $500",
+    price: "400 to $800",
     description: "For growing businesses that need more involved bookkeeping and accounts management.",
     features: [],
     popular: true,
   },
   {
     name: "Premium",
-    price: "500 to $800",
+    price: "800 to $1200",
     description: "For businesses with complex needs, accrual reporting, and special reporting requests.",
     features: [],
   },
