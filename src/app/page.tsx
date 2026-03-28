@@ -61,9 +61,7 @@ const pricingTiers = [
     features: [
       "Everything in Essential",
       "Accounts payable & receivable",
-      "Payroll processing",
-      "Quarterly review calls",
-      "Priority support",
+      "Monthly financial statement review meeting",
     ],
     popular: true,
   },
