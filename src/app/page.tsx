@@ -46,7 +46,7 @@ const services = [
 const pricingTiers = [
   {
     name: "Essential",
-    price: "300-400",
+    price: "300 to $400",
     description: "Perfect for freelancers and sole proprietors",
     features: [
       "Monthly bank and card reconciliation",
@@ -56,7 +56,7 @@ const pricingTiers = [
   },
   {
     name: "Professional",
-    price: "400-500",
+    price: "400 to $500",
     description: "Best for growing small businesses",
     features: [
       "Everything in Essential",
@@ -67,7 +67,7 @@ const pricingTiers = [
   },
   {
     name: "Premium",
-    price: "500-800",
+    price: "500 to $800",
     description: "For established businesses with complex needs",
     features: [
       "Everything in Professional",
