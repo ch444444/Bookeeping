@@ -8,56 +8,38 @@ const services = [
   {
     title: "Monthly Bookkeeping",
     description:
-      "Our core service keeps your finances accurate and up-to-date every month, so you always know where your business stands.",
+      "Stay on top of your finances with a reliable monthly process that keeps your books accurate and tax-ready.",
     features: [
-      "Transaction categorization & entry",
-      "Bank & credit card reconciliation",
-      "Monthly profit & loss statement",
-      "Monthly balance sheet",
-      "Accounts receivable tracking",
-      "Accounts payable tracking",
+      "Bank & credit cards reconciled monthly",
+      "Transactions categorized so you always know where your money's going",
+      "Financial statements delivered within 15 business days",
+      "Email support for quick money questions",
+      "Sales tax filing",
+      "Annual 1099 preparation and filing",
+      "Full-service A/P & A/R management",
     ],
-    icon: (
-      <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-      </svg>
-    ),
   },
   {
-    title: "Cleanup & Catch-Up",
+    title: "Cleanup or Catch-up",
     description:
-      "Behind on your books? No judgment here. We'll get everything organized and up-to-date so you can start fresh.",
+      "Behind on your books? We fix and organize everything fast so you can file taxes and make decisions with confidence.",
     features: [
-      "Review & organize past transactions",
-      "Reconcile all bank accounts",
-      "Fix miscategorized entries",
-      "Reconstruct missing records",
-      "Prepare prior-period financial statements",
-      "Get you tax-ready",
+      "Rebuild months or years of records",
+      "Use advanced tools to import statements",
+      "Every transaction reviewed and corrected",
+      "Tax-ready handoff for your CPA",
     ],
-    icon: (
-      <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-      </svg>
-    ),
   },
   {
-    title: "Consulting",
+    title: "Consulting & Training",
     description:
-      "Get expert advice on financial strategy, bookkeeping systems, and best practices to optimize your business.",
+      "Keep bookkeeping in-house with expert setup, training, and periodic reviews to keep your team confident and accurate.",
     features: [
-      "Accounting software setup & training",
-      "Chart of accounts optimization",
-      "Process & workflow improvement",
-      "Financial reporting analysis",
-      "Budgeting & forecasting guidance",
-      "Tax planning preparation",
+      "Personalized QuickBooks setup and training",
+      "Chart of accounts and workflow optimization",
+      "Monthly or quarterly accuracy reviews",
+      "Option to upgrade to monthly service anytime",
     ],
-    icon: (
-      <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-      </svg>
-    ),
   },
 ];
 
@@ -122,9 +104,6 @@ export default function ServicesPage() {
                 }`}
               >
                 <div className={i % 2 === 1 ? "lg:order-2" : ""}>
-                  <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6">
-                    {service.icon}
-                  </div>
                   <h2 className="text-3xl font-bold text-text-dark mb-4 font-[family-name:var(--font-heading)]">
                     {service.title}
                   </h2>
@@ -158,7 +137,7 @@ export default function ServicesPage() {
                 </div>
                 <div className={i % 2 === 1 ? "lg:order-1" : ""}>
                   <div className="w-full aspect-square bg-bg-light rounded-2xl flex items-center justify-center border border-gray-100">
-                    <div className="text-primary/30">{service.icon}</div>
+                    <div className="text-primary/30"></div>
                   </div>
                 </div>
               </div>
