@@ -69,28 +69,28 @@ const pricingTiers = [
 
 const testimonials = [
   {
-    name: "Andrew Moore",
-    initial: "A",
+    name: "Sarah Johnson",
+    initial: "S",
     color: "bg-teal-500",
     timeAgo: "2 years ago",
     quote:
-      "I met with Jake to help set up quickbooks for our company. I would definitely recommend. He is very knowledgeable and professional.",
+      "They completely transformed my bookkeeping. I finally have a clear picture of my business finances and can make confident decisions.",
   },
   {
-    name: "Patricia Carter",
-    initial: "P",
+    name: "Michael Chen",
+    initial: "M",
     color: "bg-purple-600",
     timeAgo: "2 years ago",
     quote:
-      "I am extremely pleased with the excellent quality of work and attention to detail Jake has provided. He is skilled and knowledgeable in all areas related to QuickBooks and has been an absolute savior during our transition to QB online. Can't thank Jake enough, I highly recommend his services.",
+      "I used to dread tax season. Now everything is organized and up-to-date year-round. The peace of mind is priceless.",
   },
   {
-    name: "Grant Owen",
-    initial: "G",
+    name: "Emily Rodriguez",
+    initial: "E",
     color: "bg-yellow-500",
     timeAgo: "2 years ago",
     quote:
-      "I hired Wenonah Bookkeeping a few months ago and my only frustration is that I didn't do it SOONER. Jake's been a wonderful addition to my team and has made my life a lot easier. He's been helpful to identify key points of opportunity to cut costs. And he's been very prompt proactive. Thrilled with my experience so far and excited to finish the year out without having to worry about the state of my books!",
+      "The cleanup service saved me. I was months behind on my books and they had everything sorted in just two weeks.",
   },
 ];
 
