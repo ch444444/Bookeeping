@@ -13,37 +13,33 @@ const services = [
       "Stay on top of your finances with a reliable monthly process that keeps your books accurate and tax-ready.",
     features: [
       "Bank & credit cards reconciled monthly",
-      "Transactions categorized so you always know where your money's going",
-      "Sales tax filing",
-      "Customer invoicing",
+      "Smart rules for automated categorization",
       "Financial statements delivered within 15 business days",
       "Email support for quick money questions",
+      "Optional Financial Insights video (+15% of plan)",
     ],
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-      </svg>
-    ),
   },
   {
-    title: "Cleanup & Catch-Up",
+    title: "Cleanup or Catch-up",
     description:
-      "Behind on your books? We'll get your financials organized and up-to-date so you have a clear picture of where your business stands.",
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-      </svg>
-    ),
+      "Behind on your books? We fix and organize everything fast so you can file taxes and make decisions with confidence.",
+    features: [
+      "Rebuild months or years of records",
+      "Use advanced tools to import statements",
+      "Every transaction reviewed and corrected",
+      "Tax-ready handoff for your CPA",
+    ],
   },
   {
-    title: "Consulting",
+    title: "Consulting & Training",
     description:
-      "Get expert guidance on financial strategy, software setup, and bookkeeping best practices to optimize your business operations.",
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-      </svg>
-    ),
+      "Keep bookkeeping in-house with expert setup, training, and periodic reviews to keep your team confident and accurate.",
+    features: [
+      "Personalized QuickBooks setup and training",
+      "Chart of accounts and workflow optimization",
+      "Monthly or quarterly accuracy reviews",
+      "Option to upgrade to monthly service anytime",
+    ],
   },
 ];
 
@@ -205,9 +201,6 @@ export default function Home() {
                 whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0,0,0,0.1)" }}
                 className="bg-bg-light rounded-2xl p-8 transition-all duration-300 border border-gray-100"
               >
-                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6">
-                  {service.icon}
-                </div>
                 <h3 className="text-xl font-bold text-text-dark mb-3 font-[family-name:var(--font-heading)]">
                   {service.title}
                 </h3>
@@ -215,10 +208,12 @@ export default function Home() {
                   {service.description}
                 </p>
                 {service.features && (
-                  <ul className="mt-3 space-y-1.5 text-text-muted text-sm leading-relaxed">
+                  <ul className="mt-4 space-y-2.5 text-text-muted text-sm leading-relaxed">
                     {service.features.map((feature: string) => (
-                      <li key={feature} className="flex items-start gap-2">
-                        <span className="mt-1 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                      <li key={feature} className="flex items-start gap-2.5">
+                        <svg className="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
                         {feature}
                       </li>
                     ))}
