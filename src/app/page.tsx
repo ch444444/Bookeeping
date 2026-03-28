@@ -17,6 +17,7 @@ const services = [
       "Financial statements delivered within 15 business days",
       "Email support for quick money questions",
       "Sales tax filing",
+      "Annual 1099 preparation and filing",
     ],
   },
   {
