@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useState } from "react";
 import Link from "next/link";
 import SectionWrapper from "@/components/SectionWrapper";
 import Button from "@/components/Button";
@@ -93,6 +94,29 @@ const testimonials = [
       "As a small business owner, finding someone who truly understands my financial needs has been a game changer. Vas keeps everything running smoothly and helps me stay organized throughout the year. Their expertise and responsiveness are top-notch!",
   },
 ];
+
+function ReviewText({ quote }: { quote: string }) {
+  const [expanded, setExpanded] = useState(false);
+  const maxChars = 150;
+  const needsTruncation = quote.length > maxChars;
+  const displayText = needsTruncation && !expanded ? quote.slice(0, maxChars) + "..." : quote;
+
+  return (
+    <div className="text-center">
+      <p className="text-text-dark text-sm leading-relaxed">
+        {displayText}
+      </p>
+      {needsTruncation && (
+        <button
+          onClick={() => setExpanded(!expanded)}
+          className="text-xs text-text-muted hover:text-primary mt-2 transition-colors"
+        >
+          {expanded ? "Show less" : "Read more"}
+        </button>
+      )}
+    </div>
+  );
+}
 
 export default function Home() {
   return (
@@ -370,7 +394,6 @@ export default function Home() {
                       <p className="font-semibold text-sm text-text-dark">
                         {testimonial.name}
                       </p>
-                      <p className="text-xs text-text-muted">{testimonial.timeAgo}</p>
                     </div>
                   </div>
                   {/* Google G logo */}
@@ -402,9 +425,7 @@ export default function Home() {
                 </div>
 
                 {/* Review text */}
-                <p className="text-text-dark text-sm leading-relaxed text-center">
-                  {testimonial.quote}
-                </p>
+                <ReviewText quote={testimonial.quote} />
               </motion.div>
             ))}
           </div>
