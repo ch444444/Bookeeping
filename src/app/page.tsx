@@ -60,15 +60,8 @@ const pricingTiers = [
   {
     name: "Premium",
     price: "500 to $800",
-    description: "For established businesses with complex needs",
-    features: [
-      "Everything in Professional",
-      "Custom financial reports",
-      "Cash flow forecasting",
-      "Dedicated bookkeeper",
-      "Monthly strategy calls",
-      "Tax-ready financials",
-    ],
+    description: "For businesses with complex needs, accrual reporting, and special reporting requests.",
+    features: [],
   },
 ];
 
