@@ -93,6 +93,14 @@ const testimonials = [
     quote:
       "As a small business owner, finding someone who truly understands my financial needs has been a game changer. Vas keeps everything running smoothly and helps me stay organized throughout the year. Their expertise and responsiveness are top-notch!",
   },
+  {
+    name: "4c Builds",
+    initial: "4",
+    color: "bg-blue-500",
+    timeAgo: "2 years ago",
+    quote:
+      "Have used them for over 2 years and could not speak higher for the customer service or quality of work.",
+  },
 ];
 
 function ReviewText({ quote }: { quote: string }) {
@@ -372,7 +380,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {testimonials.map((testimonial, i) => (
               <motion.div
                 key={testimonial.name}
