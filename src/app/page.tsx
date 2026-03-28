@@ -10,7 +10,15 @@ const services = [
   {
     title: "Monthly Bookkeeping",
     description:
-      "Stay on top of your finances with accurate, consistent monthly bookkeeping. We handle transaction categorization, bank reconciliation, and financial reporting.",
+      "Stay on top of your finances with a reliable monthly process that keeps your books accurate and tax-ready.",
+    features: [
+      "Bank & credit cards reconciled monthly",
+      "Transactions categorized so you always know where your money's going",
+      "Sales tax filing",
+      "Customer invoicing",
+      "Financial statements delivered within 15 business days",
+      "Email support for quick money questions",
+    ],
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
@@ -206,6 +214,16 @@ export default function Home() {
                 <p className="text-text-muted text-sm leading-relaxed">
                   {service.description}
                 </p>
+                {service.features && (
+                  <ul className="mt-3 space-y-1.5 text-text-muted text-sm leading-relaxed">
+                    {service.features.map((feature: string) => (
+                      <li key={feature} className="flex items-start gap-2">
+                        <span className="mt-1 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </motion.div>
             ))}
           </div>
