@@ -18,6 +18,7 @@ const services = [
       "Email support for quick money questions",
       "Sales tax filing",
       "Annual 1099 preparation and filing",
+      "Full-service A/P & A/R management",
     ],
   },
   {
