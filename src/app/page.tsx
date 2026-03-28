@@ -375,8 +375,9 @@ export default function Home() {
               What Our Clients Say
             </h2>
             <p className="mt-4 text-text-muted max-w-2xl mx-auto">
-              Don&apos;t just take our word for it. Here&apos;s what business owners
-              like you have to say about working with us.
+              See what our clients say about their experiences with us and how
+              our services have added value to their businesses, helping them
+              achieve their financial goals.
             </p>
           </div>
 
