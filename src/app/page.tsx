@@ -259,7 +259,7 @@ export default function Home() {
               >
                 {tier.popular && (
                   <span className="inline-block bg-white text-primary text-xs font-bold px-3 py-1 rounded-full mb-4 self-start">
-                    Most Popular
+                    Most Common
                   </span>
                 )}
                 <h3
