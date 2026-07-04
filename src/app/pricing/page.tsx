@@ -187,6 +187,31 @@ export default function PricingPage() {
             ))}
           </div>
 
+          {/* Quarterly / not-ready callout */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mt-10 max-w-5xl mx-auto rounded-2xl border border-primary/20 bg-bg-light p-8 text-center"
+          >
+            <h3 className="text-2xl font-bold text-text-dark mb-3 font-[family-name:var(--font-heading)]">
+              Not ready for monthly bookkeeping?
+            </h3>
+            <p className="text-base text-text-muted max-w-2xl mx-auto leading-relaxed">
+              Quarterly bookkeeping is available at{" "}
+              <span className="font-semibold text-primary">
+                75% of the monthly rate
+              </span>
+              . Ideal if you don&apos;t need monthly reports but still want
+              clean, tax-ready books.
+            </p>
+            <p className="text-sm text-text-muted mt-4">
+              Pricing reflects current availability and complexity. Cancel
+              anytime.
+            </p>
+          </motion.div>
+
           <p className="text-center text-text-muted text-sm mt-12">
             All plans include a free 30-minute consultation. Custom pricing
             available for businesses with unique needs.
