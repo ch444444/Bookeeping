@@ -518,17 +518,17 @@ export default function Home() {
 
       {/* Contact Section */}
       <SectionWrapper className="py-20 lg:py-28 bg-white">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2
             className="whitespace-nowrap font-bold text-text-dark mb-4 font-[family-name:var(--font-heading)]"
             style={{ fontSize: "clamp(0.9rem, 4.6vw, 2.25rem)" }}
           >
             Every month you wait costs you clarity.
           </h2>
-          <p className="text-lg text-text-muted leading-relaxed mb-10">
+          <p className="text-lg text-text-muted leading-relaxed mb-10 max-w-2xl mx-auto">
             One free call today could save you hours of stress this year.
           </p>
-          <div className="bg-bg-light rounded-2xl p-8 border border-gray-100 text-left">
+          <div className="bg-bg-light rounded-2xl p-8 border border-gray-100 text-left max-w-2xl mx-auto">
             <ContactForm />
           </div>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mt-8">
