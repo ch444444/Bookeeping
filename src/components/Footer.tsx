@@ -22,9 +22,11 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <span className="text-xl font-bold font-[family-name:var(--font-heading)]">
-                North Shore Bookkeeping
-              </span>
+              <img
+                src="/logo.svg"
+                alt="North Shore Bookkeeping"
+                className="h-12 w-auto brightness-0 invert"
+              />
             </div>
             <p className="text-sm text-gray-400 leading-relaxed">
               Professional bookkeeping services for small businesses. Let us
