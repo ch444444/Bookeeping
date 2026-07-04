@@ -48,20 +48,20 @@ const services = [
 const pricingTiers = [
   {
     name: "Essential",
-    price: "300 to $400",
+    price: "300 to $350",
     description: "For small, simple businesses that want accurate books without the stress.",
     features: [],
   },
   {
     name: "Professional",
-    price: "400 to $800",
+    price: "350 to $400",
     description: "For growing businesses that need more involved bookkeeping and accounts management.",
     features: [],
     popular: true,
   },
   {
     name: "Premium",
-    price: "800 to $1200",
+    price: "450 to $750",
     description: "For businesses with complex needs, accrual reporting, and special reporting requests.",
     features: [],
   },
