@@ -22,11 +22,6 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg font-[family-name:var(--font-heading)]">
-                  NS
-                </span>
-              </div>
               <span className="text-xl font-bold font-[family-name:var(--font-heading)]">
                 North Shore Bookkeeping
               </span>

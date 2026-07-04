@@ -33,11 +33,6 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Logo */}
         <a href="/" className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-lg font-[family-name:var(--font-heading)]">
-              NS
-            </span>
-          </div>
           <span className="text-xl font-bold text-text-dark font-[family-name:var(--font-heading)]">
             North Shore Bookkeeping
           </span>
