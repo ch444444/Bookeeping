@@ -485,45 +485,34 @@ export default function Home() {
       <SectionWrapper className="py-20 lg:py-28 bg-bg-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="w-full aspect-square max-w-md bg-primary/10 rounded-2xl flex items-center justify-center mx-auto">
-                <div className="text-center">
-                  <svg
-                    className="w-20 h-20 text-primary/40 mx-auto mb-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                    />
-                  </svg>
-                  <p className="text-primary/60 text-sm font-medium">
-                    Your Photo Here
-                  </p>
+            <div className="flex justify-center">
+              <div className="relative">
+                <div className="absolute top-4 right-[-16px] w-full h-full bg-primary/40 rounded-2xl" />
+                <div className="relative w-72 h-96 lg:w-80 lg:h-[440px] rounded-2xl overflow-hidden">
+                  <img
+                    src="/vasili.jpg"
+                    alt="Vasili Kanakaris"
+                    className="w-full h-full object-cover object-top"
+                  />
                 </div>
               </div>
             </div>
             <div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-text-dark mb-6 font-[family-name:var(--font-heading)]">
-                Hi, I&apos;m [Your Name]
-              </h2>
-              <p className="text-text-muted leading-relaxed mb-4">
-                I started this bookkeeping practice because I believe every
-                small business owner deserves to have clear, organized finances
-                without the stress and confusion.
+              <p className="text-sm font-bold uppercase tracking-wider text-primary mb-3 font-[family-name:var(--font-heading)]">
+                About Me
               </p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-text-dark mb-6 font-[family-name:var(--font-heading)]">
+                Welcome to North Shore Bookkeeping!
+              </h2>
               <p className="text-text-muted leading-relaxed mb-8">
-                With over [X] years of experience in bookkeeping and accounting,
-                I&apos;ve helped hundreds of business owners gain clarity and
-                confidence in their numbers. I&apos;m passionate about making
-                bookkeeping simple, accurate, and stress-free.
+                I started North Shore Bookkeeping after years in public
+                accounting because I saw small business owners drowning in messy
+                books, bad communication, and unclear financials. My goal is
+                simple — give you clean numbers, clear answers, and more time to
+                run your business.
               </p>
               <Button href="/about" variant="secondary">
-                Read More About Me
+                Read More
               </Button>
             </div>
           </div>
