@@ -519,7 +519,10 @@ export default function Home() {
       {/* Contact Section */}
       <SectionWrapper className="py-20 lg:py-28 bg-white">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-text-dark mb-4 font-[family-name:var(--font-heading)]">
+          <h2
+            className="whitespace-nowrap font-bold text-text-dark mb-4 font-[family-name:var(--font-heading)]"
+            style={{ fontSize: "clamp(0.9rem, 4.6vw, 2.25rem)" }}
+          >
             Every month you wait costs you clarity.
           </h2>
           <p className="text-lg text-text-muted leading-relaxed mb-10">
