@@ -498,9 +498,6 @@ export default function Home() {
               </div>
             </div>
             <div>
-              <p className="text-sm font-bold uppercase tracking-wider text-primary mb-3 font-[family-name:var(--font-heading)]">
-                About Me
-              </p>
               <h2 className="text-3xl sm:text-4xl font-bold text-text-dark mb-6 font-[family-name:var(--font-heading)]">
                 Welcome to North Shore Bookkeeping!
               </h2>

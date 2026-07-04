@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
@@ -13,8 +14,20 @@ const navLinks = [
 ];
 
 export default function Header() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  // Clicking the link for the page you're already on reloads it.
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    if (pathname === href) {
+      e.preventDefault();
+      window.location.reload();
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -46,6 +59,7 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
+              onClick={(e) => handleNavClick(e, link.href)}
               className="text-sm font-medium text-text-dark hover:text-primary transition-colors"
             >
               {link.label}
@@ -116,7 +130,10 @@ export default function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  onClick={() => setMobileOpen(false)}
+                  onClick={(e) => {
+                    setMobileOpen(false);
+                    handleNavClick(e, link.href);
+                  }}
                   className="text-base font-medium text-text-dark hover:text-primary transition-colors"
                 >
                   {link.label}
