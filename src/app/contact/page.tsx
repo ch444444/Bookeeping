@@ -119,14 +119,14 @@ export default function ContactPage() {
       {/* Contact Content */}
       <SectionWrapper className="py-16 lg:py-24 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row lg:items-start">
+          <div className="grid lg:grid-cols-2 gap-8 items-start">
             {/* Form card */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className={`relative z-10 w-full lg:w-[56%] ${CARD} rounded-2xl p-8 lg:p-12 shadow-2xl`}
+              className={`w-full ${CARD} rounded-2xl p-8 lg:p-12 shadow-xl`}
             >
               <h2 className="text-2xl font-bold text-white mb-6 font-[family-name:var(--font-heading)]">
                 Contact Us
@@ -140,7 +140,7 @@ export default function ContactPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className={`w-full lg:w-[52%] ${CARD} rounded-2xl p-8 lg:p-12 shadow-2xl -mt-4 lg:mt-24 lg:-ml-[8%] pt-14 lg:pt-28`}
+              className={`w-full ${CARD} rounded-2xl p-8 lg:p-12 shadow-xl`}
             >
               <h3 className="text-2xl font-bold text-white mb-4 font-[family-name:var(--font-heading)]">
                 Phone
