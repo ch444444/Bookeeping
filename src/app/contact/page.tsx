@@ -4,26 +4,64 @@ import { motion } from "framer-motion";
 import SectionWrapper from "@/components/SectionWrapper";
 import ContactForm from "@/components/ContactForm";
 
+function ProAdvisorBadge() {
+  return (
+    <div className="inline-block w-32">
+      <div className="bg-white rounded-t-lg px-3 pt-3 pb-2 text-center border border-gray-200">
+        <div className="flex justify-center mb-1.5">
+          <svg className="w-8 h-8" viewBox="0 0 40 40" fill="none">
+            <circle cx="20" cy="20" r="18" fill="#2CA01C" />
+            <path
+              d="M14 14h-2a4 4 0 000 8h2v4h-2a8 8 0 010-16h2v4zm12 12h2a4 4 0 000-8h-2v-4h2a8 8 0 010 16h-2v-4z"
+              fill="white"
+            />
+            <rect x="18" y="12" width="4" height="16" rx="2" fill="white" />
+          </svg>
+        </div>
+        <p className="text-[7px] text-gray-500 leading-tight">intuit</p>
+        <p className="text-xs font-bold text-gray-800 leading-tight">
+          quickbooks<span className="text-[7px] align-top">.</span>
+        </p>
+        <div className="border-t border-gray-200 mt-1.5 pt-1.5">
+          <p className="text-[10px] font-semibold text-gray-800 leading-tight">
+            Certified
+          </p>
+          <p className="text-[10px] font-semibold text-gray-800 leading-tight">
+            ProAdvisor
+          </p>
+        </div>
+      </div>
+      <div className="relative">
+        <div className="flex">
+          <div
+            className="w-1/2 h-6 bg-[#80C342]"
+            style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 50% 60%)" }}
+          />
+          <div
+            className="w-1/2 h-6 bg-[#2CA01C]"
+            style={{ clipPath: "polygon(0 0, 100% 0, 50% 60%, 0 100%)" }}
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function ContactPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-bg-light to-bg-muted pt-32 pb-20 lg:pt-40 lg:pb-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl"
-          >
-            <h1 className="text-4xl sm:text-5xl font-bold text-text-dark font-[family-name:var(--font-heading)]">
-              Get in <span className="text-primary">Touch</span>
+      {/* Hero banner */}
+      <section className="mt-[72px] lg:mt-[88px]">
+        <div
+          className="relative h-48 sm:h-56 lg:h-64 bg-cover bg-center"
+          style={{ backgroundImage: "url('/services-hero.png')" }}
+        >
+          <div className="absolute inset-0 bg-black/35" />
+          <div className="relative h-full flex items-end justify-center pb-8 sm:pb-10 lg:pb-12">
+            <h1 className="text-4xl sm:text-5xl font-bold text-white font-[family-name:var(--font-heading)]">
+              Contact
             </h1>
-            <p className="mt-6 text-lg text-text-muted leading-relaxed">
-              Ready to take control of your finances? Reach out and let&apos;s
-              talk about how we can help your business thrive.
-            </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -31,70 +69,25 @@ export default function ContactPage() {
       <SectionWrapper className="py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16">
-            {/* Form */}
-            <div>
-              <h2 className="text-2xl font-bold text-text-dark mb-2 font-[family-name:var(--font-heading)]">
-                Send Us a Message
+            {/* Contact info */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <h2 className="text-3xl font-bold text-text-dark mb-3 font-[family-name:var(--font-heading)]">
+                Contact Us
               </h2>
-              <p className="text-text-muted mb-8">
-                Fill out the form below and we&apos;ll get back to you within 24
-                hours.
-              </p>
-              <ContactForm />
-            </div>
-
-            {/* Info + Calendly */}
-            <div>
-              <h2 className="text-2xl font-bold text-text-dark mb-2 font-[family-name:var(--font-heading)]">
-                Book a Free Call
-              </h2>
-              <p className="text-text-muted mb-8">
-                Prefer to chat? Schedule a free 30-minute consultation at a time
-                that works for you.
+              <p className="text-text-muted mb-8 leading-relaxed">
+                Have a question or ready to get started? Reach out and
+                we&apos;ll get back to you within 24 hours.
               </p>
 
-              {/* Calendly Placeholder */}
-              <div className="bg-bg-light rounded-2xl p-8 border border-gray-100 mb-10">
-                <div className="flex items-center gap-3 mb-4">
-                  <svg
-                    className="w-6 h-6 text-primary"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                    />
-                  </svg>
-                  <h3 className="font-bold text-text-dark font-[family-name:var(--font-heading)]">
-                    Schedule Online
-                  </h3>
-                </div>
-                <p className="text-text-muted text-sm mb-4">
-                  Click below to book a free consultation through our scheduling
-                  tool.
-                </p>
-                <a
-                  href="#"
-                  className="inline-block bg-primary text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-primary-dark transition-all hover:shadow-lg hover:-translate-y-0.5"
-                >
-                  Book on Calendly
-                </a>
-                <p className="text-xs text-text-muted mt-3">
-                  (Replace this with your Calendly embed or link)
-                </p>
-              </div>
-
-              {/* Contact Info */}
               <div className="space-y-6">
-                <h3 className="text-lg font-bold text-text-dark font-[family-name:var(--font-heading)]">
-                  Other Ways to Reach Us
-                </h3>
+                {/* Phone */}
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-11 h-11 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                     <svg
                       className="w-5 h-5 text-primary"
                       fill="none"
@@ -119,8 +112,10 @@ export default function ContactPage() {
                     </a>
                   </div>
                 </div>
+
+                {/* Email */}
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-11 h-11 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                     <svg
                       className="w-5 h-5 text-primary"
                       fill="none"
@@ -145,8 +140,10 @@ export default function ContactPage() {
                     </a>
                   </div>
                 </div>
+
+                {/* Location */}
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-11 h-11 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                     <svg
                       className="w-5 h-5 text-primary"
                       fill="none"
@@ -177,7 +174,31 @@ export default function ContactPage() {
                   </div>
                 </div>
               </div>
-            </div>
+
+              {/* Certified ProAdvisor */}
+              <div className="mt-10">
+                <p className="font-semibold text-text-dark text-sm mb-4">
+                  Certified QuickBooks ProAdvisor
+                </p>
+                <ProAdvisorBadge />
+              </div>
+            </motion.div>
+
+            {/* Form */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <h2 className="text-3xl font-bold text-text-dark mb-3 font-[family-name:var(--font-heading)]">
+                Send Us a Message
+              </h2>
+              <p className="text-text-muted mb-8">
+                Fill out the form below and we&apos;ll get back to you shortly.
+              </p>
+              <ContactForm />
+            </motion.div>
           </div>
         </div>
       </SectionWrapper>
