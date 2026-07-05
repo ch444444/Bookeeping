@@ -61,7 +61,11 @@ export default function Header() {
               key={link.href}
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href)}
-              className="text-sm font-medium text-text-dark hover:text-primary transition-colors"
+              className={`text-base transition-colors ${
+                pathname === link.href
+                  ? "font-semibold text-primary"
+                  : "font-medium text-text-dark hover:text-primary"
+              }`}
             >
               {link.label}
             </Link>
@@ -133,7 +137,11 @@ export default function Header() {
                     setMobileOpen(false);
                     handleNavClick(e, link.href);
                   }}
-                  className="text-base font-medium text-text-dark hover:text-primary transition-colors"
+                  className={`text-lg transition-colors ${
+                    pathname === link.href
+                      ? "font-semibold text-primary"
+                      : "font-medium text-text-dark hover:text-primary"
+                  }`}
                 >
                   {link.label}
                 </Link>

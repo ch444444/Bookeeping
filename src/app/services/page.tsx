@@ -54,11 +54,16 @@ export default function ServicesPage() {
       {/* Hero */}
       <section className="mt-[72px] lg:mt-[88px]">
         <div
-          className="h-48 sm:h-56 lg:h-64 bg-cover bg-center"
+          className="relative h-48 sm:h-56 lg:h-64 bg-cover bg-center"
           style={{ backgroundImage: "url('/services-hero.png')" }}
-          role="img"
-          aria-label="Services"
-        />
+        >
+          <div className="absolute inset-0 bg-black/35" />
+          <div className="relative h-full flex items-center justify-center">
+            <h1 className="text-4xl sm:text-5xl font-bold text-white font-[family-name:var(--font-heading)]">
+              Services
+            </h1>
+          </div>
+        </div>
       </section>
 
       {/* Service Cards */}
