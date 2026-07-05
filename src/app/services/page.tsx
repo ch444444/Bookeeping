@@ -209,7 +209,7 @@ export default function ServicesPage() {
       {/* What's Included */}
       <SectionWrapper className="py-16 lg:py-20 bg-bg-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-12">
+          <div className="max-w-3xl mx-auto mb-12 text-center">
             <h2 className="text-3xl sm:text-4xl font-bold text-text-dark font-[family-name:var(--font-heading)]">
               {"What's Included in Our Bookkeeping Services"}
             </h2>
@@ -246,7 +246,7 @@ export default function ServicesPage() {
       {/* Process */}
       <SectionWrapper className="py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-12">
+          <div className="max-w-3xl mx-auto mb-12 text-center">
             <h2 className="text-3xl sm:text-4xl font-bold text-text-dark font-[family-name:var(--font-heading)]">
               Our Bookkeeping Process
             </h2>
@@ -288,7 +288,7 @@ export default function ServicesPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="rounded-2xl bg-white border border-gray-100 shadow-sm p-8"
+            className="rounded-2xl bg-white border border-gray-100 shadow-sm p-8 text-center"
           >
             <h2 className="text-2xl font-bold text-text-dark mb-3 font-[family-name:var(--font-heading)]">
               We Work With the Tools You Use
@@ -309,7 +309,7 @@ export default function ServicesPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="rounded-2xl bg-white border border-gray-100 shadow-sm p-8"
+            className="rounded-2xl bg-white border border-gray-100 shadow-sm p-8 text-center"
           >
             <h2 className="text-2xl font-bold text-text-dark mb-3 font-[family-name:var(--font-heading)]">
               Who Our Bookkeeping Is For
@@ -324,7 +324,7 @@ export default function ServicesPage() {
       {/* Industries */}
       <SectionWrapper className="py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-12">
+          <div className="max-w-3xl mx-auto mb-12 text-center">
             <h2 className="text-3xl sm:text-4xl font-bold text-text-dark font-[family-name:var(--font-heading)]">
               Industries We Serve
             </h2>
@@ -352,7 +352,7 @@ export default function ServicesPage() {
       {/* Plans */}
       <SectionWrapper className="py-16 lg:py-20 bg-bg-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-12">
+          <div className="max-w-3xl mx-auto mb-12 text-center">
             <h2 className="text-3xl sm:text-4xl font-bold text-text-dark font-[family-name:var(--font-heading)]">
               Bookkeeping Plans for Every Budget
             </h2>
@@ -382,7 +382,7 @@ export default function ServicesPage() {
       {/* FAQ */}
       <SectionWrapper className="py-16 lg:py-20 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12">
+          <div className="mb-12 text-center">
             <h2 className="text-3xl sm:text-4xl font-bold text-text-dark font-[family-name:var(--font-heading)]">
               Bookkeeping FAQs
             </h2>
