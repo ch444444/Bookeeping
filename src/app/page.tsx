@@ -67,9 +67,8 @@ const pricingTiers = [
     features: [
       "Everything in Essential",
       "Light AR and AP tracking",
-      "Quarterly performance summary",
-      "Priority support",
       "Sales tax filing",
+      "Monthly financial statement review meeting",
     ],
     footer: "Best for growing businesses with multiple accounts",
   },
@@ -81,7 +80,6 @@ const pricingTiers = [
       "Everything in Professional",
       "Custom reports and KPI dashboards",
       "Accrual, payroll, and loan tracking",
-      "Monthly financial statement review meeting",
     ],
     footer: "Best for established or multi-entity businesses",
   },
