@@ -6,58 +6,67 @@ import Button from "@/components/Button";
 
 const services = [
   {
-    id: "ongoing",
-    title: "Ongoing QuickBooks Bookkeeping",
-    tagline: "Monthly transaction management and financial reporting.",
+    title: "Monthly Bookkeeping",
     description:
-      "We handle your monthly transactions and reporting so your books stay current and accurate all year long. You'll always know exactly where your business stands.",
+      "Stay on top of your finances with a reliable monthly process that keeps your books accurate and tax-ready.",
     features: [
-      "Monthly transaction downloads and categorization",
-      "Financial statements emailed to you each period",
-      "Regular financial status updates and communication",
-      "Liaison between you and your accountant",
+      "Bank & credit cards reconciled monthly",
+      "Transactions categorized so you always know where your money's going",
+      "Financial statements delivered within 15 business days",
+      "Monthly financial statement review meeting",
+      "Sales tax filing",
+      "Annual 1099 preparation and filing",
+      "Full-service A/P & A/R management",
     ],
-    pricing: "Fixed monthly rate based on your volume and complexity.",
   },
   {
-    id: "cleanup",
-    title: "QuickBooks Cleanup",
-    tagline: "Remediation for backlogged or disorganized records.",
+    title: "Cleanup or Catch-up",
     description:
-      "Books in disarray? We clean up backlogged or disorganized records and get everything accurate, reconciled, and tax-ready.",
-    features: [
-      "Multi-month or multi-year cleanup for tax-filing readiness",
-      "Automated PDF bank-statement conversion into QuickBooks",
-      "Complete transaction verification and accounting",
-    ],
-    pricing: "Fixed project rate based on scope.",
-  },
-  {
-    id: "consulting",
-    title: "Consulting & Training in QuickBooks",
-    tagline: "Expert guidance and skill-building support.",
-    description:
-      "Prefer to keep bookkeeping in-house? We provide expert guidance and hands-on training so you and your team stay confident and accurate.",
-    features: [
-      "Problem-solving consultation",
-      "QuickBooks and accounting training for owners",
-      "Books accuracy review",
-    ],
-    pricing: "Hourly rate — contact for details.",
-  },
-  {
-    id: "catchup",
-    title: "Bookkeeping Catch-up",
-    tagline: "Fallen behind? We catch you up fast.",
-    description:
-      "Behind on your books? We catch you up quickly so you can file taxes and make decisions with confidence.",
+      "Behind on your books? We fix and organize everything fast so you can file taxes and make decisions with confidence.",
     features: [
       "Rebuild months or years of records",
-      "Bulk statement import to reduce manual entry",
+      "Use advanced tools to import statements",
       "Every transaction reviewed and corrected",
       "Tax-ready handoff for your CPA",
     ],
-    pricing: "Fixed price based on volume and complexity.",
+  },
+  {
+    title: "Consulting & Training",
+    description:
+      "Keep bookkeeping in-house with expert setup, training, and periodic reviews to keep your team confident and accurate.",
+    features: [
+      "Personalized QuickBooks setup and training",
+      "Chart of accounts and workflow optimization",
+      "Monthly or quarterly accuracy reviews",
+      "Option to upgrade to monthly service anytime",
+    ],
+  },
+];
+
+const process = [
+  {
+    step: "01",
+    title: "Free Consultation",
+    description:
+      "We start with a no-obligation call to understand your business, current bookkeeping situation, and goals.",
+  },
+  {
+    step: "02",
+    title: "Custom Proposal",
+    description:
+      "Based on our conversation, we'll create a tailored plan and transparent quote for your bookkeeping needs.",
+  },
+  {
+    step: "03",
+    title: "Onboarding",
+    description:
+      "We'll get set up with your accounting software, bank feeds, and any existing records to hit the ground running.",
+  },
+  {
+    step: "04",
+    title: "Ongoing Support",
+    description:
+      "Sit back and relax. We handle your books monthly and deliver clear, timely financial reports you can count on.",
   },
 ];
 
@@ -65,7 +74,7 @@ export default function ServicesPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-bg-light to-bg-muted pt-32 pb-16 lg:pt-40 lg:pb-20">
+      <section className="bg-gradient-to-br from-bg-light to-bg-muted pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -74,62 +83,27 @@ export default function ServicesPage() {
             className="max-w-3xl"
           >
             <h1 className="text-4xl sm:text-5xl font-bold text-text-dark font-[family-name:var(--font-heading)]">
-              <span className="text-primary">Services</span>
+              Our <span className="text-primary">Services</span>
             </h1>
             <p className="mt-6 text-lg text-text-muted leading-relaxed">
-              Professional bookkeeping and QuickBooks solutions to keep your
-              finances clean, current, and stress-free.
+              Comprehensive bookkeeping solutions designed to give you clarity,
+              confidence, and control over your business finances.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Service Cards Grid */}
-      <SectionWrapper className="py-16 lg:py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((service, i) => (
-              <motion.div
-                key={service.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="bg-bg-light rounded-2xl p-6 border border-gray-100 flex flex-col"
-              >
-                <h3 className="text-lg font-bold text-text-dark mb-2 font-[family-name:var(--font-heading)]">
-                  {service.title}
-                </h3>
-                <p className="text-sm text-text-muted leading-relaxed flex-grow">
-                  {service.tagline}
-                </p>
-                <a
-                  href={`#${service.id}`}
-                  className="mt-4 inline-flex items-center gap-1 text-primary font-semibold text-sm hover:gap-2 transition-all"
-                >
-                  Learn More
-                  <span aria-hidden="true">&rarr;</span>
-                </a>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </SectionWrapper>
-
-      {/* Detailed Services */}
-      <div className="bg-bg-light">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Services Detail */}
+      <div className="py-16 lg:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
           {services.map((service, i) => (
-            <SectionWrapper
-              key={service.id}
-              id={service.id}
-              className="py-16 lg:py-20 scroll-mt-24 border-t border-gray-200 first:border-t-0"
-            >
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <SectionWrapper key={service.title}>
+              <div
+                className={`grid lg:grid-cols-2 gap-12 items-center ${
+                  i % 2 === 1 ? "lg:direction-rtl" : ""
+                }`}
+              >
                 <div className={i % 2 === 1 ? "lg:order-2" : ""}>
-                  <p className="text-sm font-bold uppercase tracking-wider text-primary mb-2 font-[family-name:var(--font-heading)]">
-                    {service.tagline}
-                  </p>
                   <h2 className="text-3xl font-bold text-text-dark mb-4 font-[family-name:var(--font-heading)]">
                     {service.title}
                   </h2>
@@ -162,13 +136,8 @@ export default function ServicesPage() {
                   <Button href="/contact">Get Started</Button>
                 </div>
                 <div className={i % 2 === 1 ? "lg:order-1" : ""}>
-                  <div className="rounded-2xl bg-white border border-gray-100 shadow-sm p-8">
-                    <p className="text-sm font-semibold uppercase tracking-wider text-primary mb-2">
-                      Pricing
-                    </p>
-                    <p className="text-lg text-text-dark leading-relaxed">
-                      {service.pricing}
-                    </p>
+                  <div className="w-full aspect-square bg-bg-light rounded-2xl flex items-center justify-center border border-gray-100">
+                    <div className="text-primary/30"></div>
                   </div>
                 </div>
               </div>
@@ -177,42 +146,59 @@ export default function ServicesPage() {
         </div>
       </div>
 
-      {/* Certified QuickBooks ProAdvisor */}
-      <SectionWrapper className="py-16 lg:py-20 bg-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
-          <div className="inline-block w-32 mb-8">
-            <div className="bg-white rounded-t-lg px-3 pt-3 pb-2 text-center border border-gray-200">
-              <div className="flex justify-center mb-1.5">
-                <svg className="w-8 h-8" viewBox="0 0 40 40" fill="none">
-                  <circle cx="20" cy="20" r="18" fill="#2CA01C"/>
-                  <path d="M14 14h-2a4 4 0 000 8h2v4h-2a8 8 0 010-16h2v4zm12 12h2a4 4 0 000-8h-2v-4h2a8 8 0 010 16h-2v-4z" fill="white"/>
-                  <rect x="18" y="12" width="4" height="16" rx="2" fill="white"/>
-                </svg>
-              </div>
-              <p className="text-[7px] text-gray-500 leading-tight">intuit</p>
-              <p className="text-xs font-bold text-gray-800 leading-tight">quickbooks<span className="text-[7px] align-top">.</span></p>
-              <div className="border-t border-gray-200 mt-1.5 pt-1.5">
-                <p className="text-[10px] font-semibold text-gray-800 leading-tight">Certified</p>
-                <p className="text-[10px] font-semibold text-gray-800 leading-tight">ProAdvisor</p>
-              </div>
-            </div>
-            <div className="relative">
-              <div className="flex">
-                <div className="w-1/2 h-6 bg-[#80C342]" style={{clipPath: "polygon(0 0, 100% 0, 100% 100%, 50% 60%)"}}></div>
-                <div className="w-1/2 h-6 bg-[#2CA01C]" style={{clipPath: "polygon(0 0, 100% 0, 50% 60%, 0 100%)"}}></div>
-              </div>
-            </div>
+      {/* Process */}
+      <SectionWrapper className="py-16 lg:py-20 bg-bg-light">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-text-dark font-[family-name:var(--font-heading)]">
+              How It Works
+            </h2>
+            <p className="mt-4 text-text-muted max-w-2xl mx-auto">
+              Getting started is simple. Here&apos;s what to expect when you
+              work with us.
+            </p>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-text-dark mb-4 font-[family-name:var(--font-heading)]">
-            Certified QuickBooks ProAdvisor
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {process.map((item, i) => (
+              <motion.div
+                key={item.step}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="text-center"
+              >
+                <div className="text-5xl font-bold text-primary/20 mb-4 font-[family-name:var(--font-heading)]">
+                  {item.step}
+                </div>
+                <h3 className="text-lg font-bold text-text-dark mb-2 font-[family-name:var(--font-heading)]">
+                  {item.title}
+                </h3>
+                <p className="text-text-muted text-sm leading-relaxed">
+                  {item.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </SectionWrapper>
+
+      {/* CTA */}
+      <SectionWrapper className="py-16 lg:py-20 bg-primary">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 font-[family-name:var(--font-heading)]">
+            Ready to Get Your Books in Order?
           </h2>
-          <p className="text-text-muted leading-relaxed mb-8 max-w-xl">
-            As a Certified QuickBooks ProAdvisor, North Shore Bookkeeping brings
-            the training and expertise to keep your books accurate and your
-            software working for you.
+          <p className="text-white/80 mb-8 text-lg">
+            Schedule a free consultation and let&apos;s find the right
+            bookkeeping solution for your business.
           </p>
-          <Button href="/about" variant="secondary">
-            Company Overview
+          <Button
+            href="/contact"
+            variant="primary"
+            className="bg-white !text-primary border-2 border-white hover:bg-white/90"
+          >
+            Book a Free Call
           </Button>
         </div>
       </SectionWrapper>
