@@ -130,7 +130,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-[#3d8583] pt-28 pb-16 lg:pt-32 lg:pb-20 overflow-hidden">
+      <section className="relative bg-[#3d8583] pt-28 pb-8 lg:pt-32 lg:pb-10 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-5 gap-8 items-center">
             <motion.div
