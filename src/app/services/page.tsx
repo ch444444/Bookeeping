@@ -139,33 +139,24 @@ export default function ServicesPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-bg-light to-bg-muted pt-32 pb-16 lg:pt-40 lg:pb-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
+      <section className="bg-gradient-to-br from-text-dark via-text-dark to-primary-dark pt-36 pb-24 lg:pt-44 lg:pb-32">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="max-w-3xl"
+            className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white font-[family-name:var(--font-heading)] leading-[1.05]"
           >
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-text-dark font-[family-name:var(--font-heading)] leading-tight">
-              Bookkeeping Services for{" "}
-              <span className="text-primary">Small Businesses</span>
-            </h1>
-            <p className="mt-6 text-xl text-text-muted leading-relaxed">
-              {"You run your business. We'll do your bookkeeping."}
-            </p>
-            <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              <Button href="/contact" variant="primary">
-                Schedule a Meeting
-              </Button>
-              <a
-                href="tel:+18473051323"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-bold border-2 border-primary text-primary hover:bg-primary/5 transition-colors"
-              >
-                Call (847) 305-1323
-              </a>
-            </div>
-          </motion.div>
+            Bookkeeping Services for Small Businesses
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="mt-8 text-base sm:text-lg text-white/70"
+          >
+            {"You run your business. We'll do your bookkeeping."}
+          </motion.p>
         </div>
       </section>
 
@@ -185,11 +176,6 @@ export default function ServicesPage() {
               <p className="mt-5 text-lg text-text-muted leading-relaxed">
                 {"You run your business. We'll do your bookkeeping. Clean monthly books and financials you can actually use to run the business — reconciled, categorized, and ready when it's time to file."}
               </p>
-              <div className="mt-8">
-                <Button href="/contact" variant="primary">
-                  Schedule a Meeting
-                </Button>
-              </div>
             </motion.div>
 
             <motion.div
