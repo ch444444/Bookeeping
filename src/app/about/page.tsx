@@ -65,7 +65,7 @@ export default function AboutPage() {
       </section>
 
       {/* About My Company */}
-      <SectionWrapper className="py-20 lg:py-28 bg-white">
+      <SectionWrapper className="py-16 lg:py-20 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-text-dark mb-8 font-[family-name:var(--font-heading)]">
             About My Company
@@ -92,7 +92,7 @@ export default function AboutPage() {
       </SectionWrapper>
 
       {/* Core Values */}
-      <SectionWrapper className="py-20 lg:py-28 bg-bg-light">
+      <SectionWrapper className="py-16 lg:py-20 bg-bg-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-text-dark font-[family-name:var(--font-heading)]">

@@ -94,7 +94,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Detail */}
-      <div className="py-20 lg:py-28 bg-white">
+      <div className="py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
           {services.map((service, i) => (
             <SectionWrapper key={service.title}>
@@ -147,7 +147,7 @@ export default function ServicesPage() {
       </div>
 
       {/* Process */}
-      <SectionWrapper className="py-20 lg:py-28 bg-bg-light">
+      <SectionWrapper className="py-16 lg:py-20 bg-bg-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-text-dark font-[family-name:var(--font-heading)]">
@@ -184,7 +184,7 @@ export default function ServicesPage() {
       </SectionWrapper>
 
       {/* CTA */}
-      <SectionWrapper className="py-20 lg:py-28 bg-primary">
+      <SectionWrapper className="py-16 lg:py-20 bg-primary">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 font-[family-name:var(--font-heading)]">
             Ready to Get Your Books in Order?

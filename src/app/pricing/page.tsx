@@ -96,7 +96,7 @@ export default function PricingPage() {
       </section>
 
       {/* Pricing Cards */}
-      <SectionWrapper className="py-20 lg:py-28 bg-white">
+      <SectionWrapper className="py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {pricingTiers.map((tier, i) => (
@@ -222,7 +222,7 @@ export default function PricingPage() {
       </SectionWrapper>
 
       {/* FAQ */}
-      <SectionWrapper className="py-20 lg:py-28 bg-bg-light">
+      <SectionWrapper className="py-16 lg:py-20 bg-bg-light">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-text-dark font-[family-name:var(--font-heading)]">
@@ -252,7 +252,7 @@ export default function PricingPage() {
       </SectionWrapper>
 
       {/* CTA */}
-      <SectionWrapper className="py-20 lg:py-28 bg-primary">
+      <SectionWrapper className="py-16 lg:py-20 bg-primary">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 font-[family-name:var(--font-heading)]">
             Still Have Questions?

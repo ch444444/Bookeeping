@@ -204,13 +204,13 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <SectionWrapper className="py-20 lg:py-28 bg-white" id="services">
+      <SectionWrapper className="py-16 lg:py-20 bg-white" id="services">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-text-dark font-[family-name:var(--font-heading)]">
               Our Bookkeeping Services
             </h2>
-            <p className="mt-4 text-text-muted max-w-2xl mx-auto">
+            <p className="mt-4 text-text-muted">
               Choose the level of help you need. Whether you want to stay
               hands-on or hand it off completely, we&apos;ve got you covered.
             </p>
@@ -248,17 +248,11 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
-
-          <div className="text-center mt-12">
-            <Button href="/services" variant="secondary">
-              View All Services
-            </Button>
-          </div>
         </div>
       </SectionWrapper>
 
       {/* Pricing Section */}
-      <SectionWrapper className="py-20 lg:py-28 bg-bg-light" id="pricing">
+      <SectionWrapper className="py-16 lg:py-20 bg-bg-light" id="pricing">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-text-dark font-[family-name:var(--font-heading)]">
@@ -399,7 +393,7 @@ export default function Home() {
       </SectionWrapper>
 
       {/* Testimonials Section */}
-      <SectionWrapper className="py-20 lg:py-28 bg-white" id="testimonials">
+      <SectionWrapper className="py-16 lg:py-20 bg-white" id="testimonials">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-text-dark font-[family-name:var(--font-heading)]">
@@ -489,7 +483,7 @@ export default function Home() {
       </SectionWrapper>
 
       {/* About Preview */}
-      <SectionWrapper className="py-20 lg:py-28 bg-bg-light">
+      <SectionWrapper className="py-16 lg:py-20 bg-bg-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="flex justify-center">
@@ -524,7 +518,7 @@ export default function Home() {
       </SectionWrapper>
 
       {/* Contact Section */}
-      <SectionWrapper className="py-20 lg:py-28 bg-white">
+      <SectionWrapper className="py-16 lg:py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2
             className="whitespace-nowrap font-bold text-text-dark mb-4 font-[family-name:var(--font-heading)]"
