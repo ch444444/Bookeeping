@@ -153,7 +153,7 @@ export default function Home() {
                 financials accurate, and your stress level low — with real
                 communication from someone who actually responds.
               </p>
-              <div className="mt-7 flex flex-col gap-3 max-w-sm">
+              <div className="mt-7 flex flex-col items-start gap-3">
                 <Link
                   href="/contact"
                   className="flex items-center gap-3 bg-white text-text-dark px-8 py-4 rounded-full font-bold text-sm uppercase tracking-wider hover:shadow-lg hover:-translate-y-0.5 transition-all"
