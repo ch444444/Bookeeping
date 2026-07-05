@@ -6,6 +6,7 @@ import SectionWrapper from "@/components/SectionWrapper";
 const detailedServices = [
   {
     title: "Routine Bookkeeping",
+    fullWidth: false,
     icon: (
       <svg
         className="w-12 h-12"
@@ -36,6 +37,7 @@ const detailedServices = [
   },
   {
     title: "QuickBooks Cleanup",
+    fullWidth: false,
     icon: (
       <svg
         className="w-12 h-12"
@@ -54,6 +56,34 @@ const detailedServices = [
       "If your business has months or years of bookkeeping left undone, or if you simply need things cleaned up, you've come to the right place. Typically this kind of work is requested because of a tax return deadline or because of a bank's demands.",
       "With our PDF reader, we are able to take your old bank statements, convert them to Excel, and then import them into your QuickBooks. By eliminating the manual entry aspect of adding transactions, we are able to reduce your costs dramatically.",
       "For all cleanup and catchup work, we charge a fixed price based on the volume and complexity of the work.",
+    ],
+    bullets: [],
+    footer: null,
+  },
+  {
+    title: "Ongoing Support",
+    fullWidth: true,
+    icon: (
+      <svg
+        className="w-12 h-12"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={1.5}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M12 4.5l3.2 5.6H8.8L12 4.5z" />
+        <path d="M12 7.2v1.6M12 9.7h.01" />
+        <path d="M4.5 13l2.3 2.6c.5.6 1.2.9 2 .9H12" />
+        <path d="M4.5 13l-.8-.6a1 1 0 00-1.2 1.5l1.6 2" />
+        <path d="M19.5 13l-2.3 2.6c-.5.6-1.2.9-2 .9H12" />
+        <path d="M19.5 13l.8-.6a1 1 0 011.2 1.5l-1.6 2" />
+      </svg>
+    ),
+    paragraphs: [
+      "Aside from looking for personal business consultant for you small bussiness or is your business small enough that you are able to do the bookkeeping on your own? If so, that's great! We're helping small business accounting services and I encourage business owners to do the bookkeeping if they are able and willing. If this is you, then perhaps you need support/training along the way. If you have a problem or question, we want to be able to support you in any way that we can.",
+      "For ongoing support, we charge at our hourly rate. Contact us for more information about the pricing.",
     ],
     bullets: [],
     footer: null,
@@ -86,7 +116,7 @@ export default function ServicesPage() {
       {/* Service Cards */}
       <SectionWrapper className="py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-start">
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
             {detailedServices.map((service, i) => (
               <motion.div
                 key={service.title}
@@ -94,7 +124,9 @@ export default function ServicesPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="bg-bg-light rounded-2xl p-8 lg:p-10"
+                className={`bg-bg-light rounded-2xl p-8 lg:p-10${
+                  service.fullWidth ? " lg:col-span-2" : ""
+                }`}
               >
                 <div className="flex justify-center mb-5 text-text-dark">
                   {service.icon}
