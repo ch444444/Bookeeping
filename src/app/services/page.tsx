@@ -58,7 +58,7 @@ export default function ServicesPage() {
           style={{ backgroundImage: "url('/services-hero.png')" }}
         >
           <div className="absolute inset-0 bg-black/35" />
-          <div className="relative h-full flex items-center justify-center">
+          <div className="relative h-full flex items-end justify-center pb-8 sm:pb-10 lg:pb-12">
             <h1 className="text-4xl sm:text-5xl font-bold text-white font-[family-name:var(--font-heading)]">
               Services
             </h1>
