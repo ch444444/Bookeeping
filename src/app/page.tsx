@@ -79,6 +79,8 @@ const pricingTiers = [
       "Everything in Professional",
       "Custom reports and KPI dashboards",
       "Accrual, payroll, and loan tracking",
+      "Full-service A/P & A/R management",
+      "Annual 1099 preparation and filing",
     ],
     footer: "Best for established or multi-entity businesses",
   },
