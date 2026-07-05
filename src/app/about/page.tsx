@@ -126,16 +126,15 @@ export default function AboutPage() {
         </div>
       </SectionWrapper>
 
-      {/* Good to Know */}
-      <SectionWrapper className="py-20 lg:py-28 bg-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-text-dark mb-6 font-[family-name:var(--font-heading)]">
-            Good to Know
-          </h2>
-          <p className="text-text-muted leading-relaxed">
-            We don&apos;t provide tax or audit services, but we maintain referral
-            relationships with trusted accounting firms so you&apos;re always in
-            good hands. Vasili is a Certified QuickBooks ProAdvisor.
+      {/* Note */}
+      <SectionWrapper className="py-12 lg:py-16 bg-primary-dark">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-white/90 italic leading-relaxed">
+            <span className="font-bold">Note:</span> We do not provide tax or
+            audit services. There are a number of quality accounting firms that
+            we can recommend for these types of services, but we are committed
+            to being the QuickBooks and bookkeeping experts in the North Shore
+            and Greater Chicago area.
           </p>
         </div>
       </SectionWrapper>
