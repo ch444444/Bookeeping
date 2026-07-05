@@ -6,19 +6,22 @@ import Button from "@/components/Button";
 
 const coreValues = [
   {
+    icon: "🧩",
     title: "Simplicity",
     description:
-      "Clear communication and straightforward accounting — no jargon, no confusion.",
+      "We make accounting simple. No jargon. No confusion. Just clear communication and straightforward books that make sense to you.",
   },
   {
+    icon: "⚙️",
     title: "Efficiency",
     description:
-      "Automated systems for improved accuracy and speed, so you have more time to focus on your business.",
+      "We're obsessed with smarter systems. We automate what can be automated — so you get faster, more accurate results and more time to focus on your business.",
   },
   {
+    icon: "🤝",
     title: "Integrity",
     description:
-      "Reliability and trustworthiness over aggressive sales tactics — always.",
+      "We don't cut corners or chase shortcuts. We show up, keep our promises, and do the work right. Our relationships last because we earn trust — not because we sell hard.",
   },
 ];
 
@@ -62,23 +65,29 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* About the Company */}
+      {/* About My Company */}
       <SectionWrapper className="py-20 lg:py-28 bg-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-4xl font-bold text-text-dark mb-6 font-[family-name:var(--font-heading)]">
-            About the Company
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold text-text-dark mb-8 font-[family-name:var(--font-heading)]">
+            About My Company
           </h2>
-          <p className="text-text-muted leading-relaxed mb-4">
-            North Shore Bookkeeping is a fully remote firm serving small
-            businesses in the Chicago, Illinois area and beyond. We specialize
-            in QuickBooks Online, providing full-service bookkeeping built on
-            clarity, communication, and consistency.
+          <img
+            src="/logo.svg"
+            alt="North Shore Bookkeeping"
+            className="h-20 md:h-24 w-auto mx-auto mb-8"
+          />
+          <p className="text-text-muted leading-relaxed mb-6">
+            North Shore Bookkeeping is a fully remote bookkeeping firm based in
+            the Chicago, Illinois area. What started as a side business has grown
+            into one of the region&apos;s fastest-growing bookkeeping firms,
+            trusted by business owners, non-profits, and churches across the
+            area.
           </p>
           <p className="text-text-muted leading-relaxed">
-            Our clients include business owners and non-profits who want clean,
-            reliable books — the same level of care, clarity, and
-            professionalism that big firms offer, without the corporate
-            runaround.
+            We specialize in QuickBooks Online and provide full-service
+            bookkeeping with clarity, communication, and consistency. Our goal
+            is simple: give business owners the peace of mind and financial
+            confidence they need to make smart decisions — without the stress.
           </p>
         </div>
       </SectionWrapper>
@@ -91,7 +100,7 @@ export default function AboutPage() {
               Our Core Values
             </h2>
             <p className="mt-4 text-text-muted max-w-2xl mx-auto">
-              The principles behind every client relationship.
+              The principles that guide every client relationship.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -102,8 +111,9 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="bg-white rounded-2xl p-6 border border-gray-100"
+                className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm text-center"
               >
+                <div className="text-4xl mb-4">{value.icon}</div>
                 <h3 className="text-lg font-bold text-text-dark mb-3 font-[family-name:var(--font-heading)]">
                   {value.title}
                 </h3>
