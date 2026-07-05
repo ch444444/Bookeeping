@@ -130,7 +130,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-[#3d8583] pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+      <section className="relative bg-[#3d8583] pt-28 pb-16 lg:pt-32 lg:pb-20 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-5 gap-8 items-center">
             <motion.div
@@ -139,13 +139,16 @@ export default function Home() {
               transition={{ duration: 0.7 }}
               className="lg:col-span-3"
             >
-              <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] leading-[1.1] font-[family-name:var(--font-heading)] uppercase">
-                <span className="font-extrabold text-white">Your Books</span>{" "}
-                <span className="font-light text-white">Deserve Better</span>
-                <br />
-                <span className="font-light text-white">— And So Do You</span>
+              <h1 className="text-4xl sm:text-5xl lg:text-[3rem] leading-[1.05] font-[family-name:var(--font-heading)] uppercase">
+                <span className="block lg:whitespace-nowrap">
+                  <span className="font-extrabold text-white">Your Books</span>{" "}
+                  <span className="font-light text-white/90">Deserve Better</span>
+                </span>
+                <span className="block font-light text-white/90">
+                  — And So Do You
+                </span>
               </h1>
-              <p className="mt-5 text-base text-white/80 leading-snug max-w-md">
+              <p className="mt-5 text-base text-white/80 leading-snug max-w-lg">
                 Messy books kill clarity. I keep your QuickBooks clean, your
                 financials accurate, and your stress level low — with real
                 communication from someone who actually responds.
@@ -181,7 +184,7 @@ export default function Home() {
               {/* Photo with rounded rectangle + teal accent */}
               <div className="relative">
                 <div className="absolute top-4 right-[-16px] w-full h-full bg-primary/40 rounded-2xl" />
-                <div className="relative w-64 h-80 lg:w-80 lg:h-[420px] rounded-2xl overflow-hidden">
+                <div className="relative w-60 h-80 lg:w-72 lg:h-[400px] rounded-2xl overflow-hidden">
                   <img
                     src="/vasili.jpg"
                     alt="Vasili"
@@ -193,7 +196,7 @@ export default function Home() {
               <img
                 src="/signature.png"
                 alt="Vasili Kanakaris"
-                className="mt-4 h-28 lg:h-36 w-80 lg:w-96 object-contain invert mix-blend-screen self-center translate-x-4 lg:translate-x-6"
+                className="mt-3 h-24 lg:h-28 w-72 lg:w-80 object-contain invert mix-blend-screen self-center translate-x-4 lg:translate-x-6"
               />
             </motion.div>
           </div>
