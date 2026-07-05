@@ -17,7 +17,8 @@ const detailedServices = [
       "Recording and categorizing all transactions",
       "Reconciling the transactions to the bank and credit card statements",
       "Tying A/R, A/P, and/or loans",
-      "Sending financial reports to the owner via email",
+      "Filing sales tax returns",
+      "Monthly financial statement review meeting",
     ],
     footer:
       "For all routine bookkeeping we will agree on a fixed price based on the volume and complexity of your business.",
@@ -51,23 +52,13 @@ export default function ServicesPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-bg-light to-bg-muted pt-32 pb-16 lg:pt-40 lg:pb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl"
-          >
-            <h1 className="text-4xl sm:text-5xl font-bold text-text-dark font-[family-name:var(--font-heading)]">
-              Our <span className="text-primary">Services</span>
-            </h1>
-            <p className="mt-6 text-lg text-text-muted leading-relaxed">
-              Comprehensive bookkeeping solutions designed to give you clarity,
-              confidence, and control over your business finances.
-            </p>
-          </motion.div>
-        </div>
+      <section className="mt-[72px] lg:mt-[88px]">
+        <div
+          className="h-48 sm:h-56 lg:h-64 bg-cover bg-center"
+          style={{ backgroundImage: "url('/services-hero.png')" }}
+          role="img"
+          aria-label="Services"
+        />
       </section>
 
       {/* Service Cards */}
