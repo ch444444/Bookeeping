@@ -17,9 +17,12 @@ const detailedServices = [
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <path d="M5 4a1 1 0 011-1h11a1 1 0 011 1v16a1 1 0 01-1 1H6a2 2 0 01-2-2V6" />
-        <path d="M4 6a2 2 0 002 2h11" />
-        <path d="M8 11h6M8 15h4" />
+        <rect x="3.5" y="4" width="9" height="16" rx="1.5" />
+        <rect x="5.5" y="6.5" width="5" height="2" rx="0.5" />
+        <path d="M6 12h.01M8 12h.01M10 12h.01M6 15h.01M8 15h.01M10 15h.01M6 18h.01M8 18h.01M10 18h.01" />
+        <path d="M20.5 5.5l-6.5 6.5" />
+        <path d="M18 3l2.5 2.5" />
+        <path d="M14 12l-1.2 2.7 2.7-1.2" />
       </svg>
     ),
     paragraphs: [
@@ -48,8 +51,8 @@ const detailedServices = [
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <path d="M12 3l1.6 4.8L18.5 9l-4.9 1.6L12 15l-1.6-4.4L5.5 9l4.9-1.2L12 3z" />
-        <path d="M5 4v3M3.5 5.5h3M18 14v3M16.5 15.5h3" />
+        <path d="m9.06 11.9 8.07-8.06a2.85 2.85 0 1 1 4.03 4.03l-8.06 8.08" />
+        <path d="M7.07 14.94c-1.66 0-3 1.35-3 3.02 0 1.33-2.5 1.52-2 2.02 1.08 1.1 2.49 2.02 4 2.02 2.2 0 4-1.8 4-4.04a3.01 3.01 0 0 0-3-3.02z" />
       </svg>
     ),
     paragraphs: [
@@ -73,12 +76,15 @@ const detailedServices = [
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <path d="M12 4.5l3.2 5.6H8.8L12 4.5z" />
-        <path d="M12 7.2v1.6M12 9.7h.01" />
-        <path d="M4.5 13l2.3 2.6c.5.6 1.2.9 2 .9H12" />
-        <path d="M4.5 13l-.8-.6a1 1 0 00-1.2 1.5l1.6 2" />
-        <path d="M19.5 13l-2.3 2.6c-.5.6-1.2.9-2 .9H12" />
-        <path d="M19.5 13l.8-.6a1 1 0 011.2 1.5l-1.6 2" />
+        <path d="M12 4.5l4 7a1 1 0 01-.87 1.5H8.87A1 1 0 018 11.5l4-7z" />
+        <path d="M12 7.8v2.1" />
+        <path d="M12 11.5h.01" />
+        <path d="M4 20v-2.3" />
+        <path d="M4 17.7c0-1.4.3-2 .9-1.4l1.8 1.8" />
+        <path d="M5 14.8c0-1 .8-1.3 1.4-.6l2 2.2c.4.5 1 .8 1.7.8H12" />
+        <path d="M20 20v-2.3" />
+        <path d="M20 17.7c0-1.4-.3-2-.9-1.4l-1.8 1.8" />
+        <path d="M19 14.8c0-1-.8-1.3-1.4-.6l-2 2.2c-.4.5-1 .8-1.7.8H12" />
       </svg>
     ),
     paragraphs: [
