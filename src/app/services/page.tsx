@@ -13,9 +13,10 @@ const services = [
       "Bank & credit cards reconciled monthly",
       "Transactions categorized so you always know where your money's going",
       "Financial statements delivered within 15 business days",
-      "Email support for quick money questions",
+      "Monthly financial statement review meeting",
       "Sales tax filing",
       "Annual 1099 preparation and filing",
+      "Full-service A/P & A/R management",
     ],
   },
   {
