@@ -134,9 +134,6 @@ export default function ServicesPage() {
                   service.fullWidth ? " lg:col-span-2" : ""
                 }`}
               >
-                <div className="flex justify-center mb-5 text-text-dark">
-                  {service.icon}
-                </div>
                 <h2 className="text-2xl font-semibold text-text-dark text-center mb-6 font-[family-name:var(--font-heading)]">
                   {service.title}
                 </h2>
