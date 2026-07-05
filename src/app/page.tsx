@@ -55,7 +55,6 @@ const pricingTiers = [
       "Monthly bank and card reconciliation",
       "Income and expense categorization",
       "Monthly financial statements",
-      "Asset capitalization",
     ],
     footer: "Best for freelancers and solo owners under $100k revenue",
   },

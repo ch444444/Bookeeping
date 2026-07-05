@@ -1,116 +1,456 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import SectionWrapper from "@/components/SectionWrapper";
+import Button from "@/components/Button";
 
-const detailedServices = [
+const solutionHighlights = [
   {
-    title: "Routine Bookkeeping",
-    fullWidth: false,
-    icon: "/bookkeeping-img.png",
-    paragraphs: [
-      "We provide bookkeeping and QuickBooks bookkeeping services throughout the year depending on your preference of frequency. We provide services as frequently as once a week, or as slowly as once a year — this depends on what you're looking for. Typically our clients prefer the monthly schedule.",
-      "We find that every business has unique complexities, and this is okay! We will work with you to examine your needs and provide you with a customized service plan that works best for you and your business. Here is a list of common tasks we perform for our clients:",
-    ],
-    bullets: [
-      "Recording and categorizing all transactions",
-      "Reconciling the transactions to the bank and credit card statements",
-      "Tying A/R, A/P, and/or loans",
-      "Filing sales tax returns",
-      "Monthly financial statement review meeting",
-    ],
-    footer:
-      "For all routine bookkeeping we will agree on a fixed price based on the volume and complexity of your business.",
+    title: "Done for you",
+    description: "Bookkeeping handled so you can focus on growth.",
   },
   {
-    title: "QuickBooks Cleanup",
-    fullWidth: false,
-    icon: "/cleaning-new.png",
-    paragraphs: [
-      "If your business has months or years of bookkeeping left undone, or if you simply need things cleaned up, you've come to the right place. Typically this kind of work is requested because of a tax return deadline or because of a bank's demands.",
-      "With our PDF reader, we are able to take your old bank statements, convert them to Excel, and then import them into your QuickBooks. By eliminating the manual entry aspect of adding transactions, we are able to reduce your costs dramatically.",
-      "For all cleanup and catchup work, we charge a fixed price based on the volume and complexity of the work.",
-    ],
-    bullets: [],
-    footer: null,
+    title: "For all budgets",
+    description: "Monthly, quarterly, or annual options.",
   },
   {
-    title: "Ongoing Support",
-    fullWidth: true,
-    icon: "/support-img.png",
-    paragraphs: [
-      "Aside from looking for personal business consultant for you small bussiness or is your business small enough that you are able to do the bookkeeping on your own? If so, that's great! We're helping small business accounting services and I encourage business owners to do the bookkeeping if they are able and willing. If this is you, then perhaps you need support/training along the way. If you have a problem or question, we want to be able to support you in any way that we can.",
-      "For ongoing support, we charge at our hourly rate. Contact us for more information about the pricing.",
-    ],
-    bullets: [],
-    footer: null,
+    title: "No long-term contracts",
+    description: "Start or stop anytime.",
   },
 ];
+
+const includedServices = [
+  {
+    title: "Monthly Bank & Credit Card Reconciliation",
+    description:
+      "We reconcile every bank account and credit card each month to catch errors, identify missing transactions, and ensure your records match your financial institutions.",
+  },
+  {
+    title: "Transaction Categorization",
+    description:
+      "Every transaction is properly categorized using your chart of accounts so your financial reports accurately reflect how your business earns and spends money.",
+  },
+  {
+    title: "Financial Statements",
+    description:
+      "Receive clear, accurate financial statements including your Profit & Loss statement and Balance Sheet — the reports your CPA, lender, or partner needs to see.",
+  },
+  {
+    title: "Accounts Payable & Receivable",
+    description:
+      "We track what you owe and what's owed to you. Stay on top of vendor payments and customer invoices so nothing slips through the cracks.",
+  },
+  {
+    title: "Sales Tax Tracking",
+    description:
+      "If your business collects sales tax, we track it accurately so you can file on time and avoid penalties.",
+  },
+  {
+    title: "Year-End Tax Readiness",
+    description:
+      "Clean, organized books make tax season painless. When it's time to file your business tax return, your records are already in order.",
+  },
+];
+
+const processSteps = [
+  {
+    title: "Onboarding & Cleanup",
+    description:
+      "We review your current books, connect to your accounting software, clean up any backlog, and set up your chart of accounts. If you're starting from scratch, we'll build everything from the ground up.",
+  },
+  {
+    title: "Monthly Bookkeeping",
+    description:
+      "Each month, we categorize transactions, reconcile accounts, and ensure everything is accurate. You'll always know where your business stands financially without lifting a finger.",
+  },
+  {
+    title: "Reporting & Review",
+    description:
+      "You receive your financial statements and we're available to walk you through the numbers. Need to share reports with a lender or partner? They're always ready to go.",
+  },
+];
+
+const industries = [
+  "Construction & Trades",
+  "Restaurants & Food Service",
+  "Professional Services",
+  "Retail & E-Commerce",
+  "Healthcare & Wellness",
+  "Real Estate",
+];
+
+const plans = [
+  {
+    name: "Monthly",
+    description:
+      "Best for active businesses with regular transactions. Your books are reconciled and reviewed every month, giving you real-time visibility into your finances and cash flow.",
+  },
+  {
+    name: "Quarterly",
+    description:
+      "A good fit for businesses with fewer transactions. We reconcile and report every three months, keeping costs down while maintaining accurate records for tax planning and compliance.",
+  },
+  {
+    name: "Annual",
+    description:
+      "Ideal for simple businesses or sole proprietors with minimal transactions. We organize and reconcile your full year of records before tax season, ensuring your tax return is filed with clean, complete data.",
+  },
+];
+
+const faqs = [
+  {
+    q: "What bookkeeping software do you work with?",
+    a: "Our team is experienced with QuickBooks Online and Xero — the two most popular cloud accounting platforms for small businesses. We can also work with other platforms depending on your needs.",
+  },
+  {
+    q: "How often will my books be updated?",
+    a: "We offer monthly, quarterly, and annual bookkeeping plans. Monthly is best for active businesses with regular transactions, quarterly works well for businesses with fewer transactions, and annual is ideal for simple businesses or sole proprietors.",
+  },
+  {
+    q: "What is included in your bookkeeping services?",
+    a: "Our bookkeeping services include monthly bank and credit card reconciliation, transaction categorization, financial statements (Profit & Loss and Balance Sheet), accounts payable and receivable tracking, sales tax tracking, and year-end tax readiness.",
+  },
+  {
+    q: "Can you clean up my existing books?",
+    a: "Yes. During onboarding, we review your current books, clean up any backlog, and set up your chart of accounts properly. If you are starting from scratch, we will build everything from the ground up.",
+  },
+  {
+    q: "What industries do you serve?",
+    a: "We work with business owners across construction and trades, restaurants and food service, professional services, retail and e-commerce, healthcare and wellness, and real estate.",
+  },
+];
+
+function CheckIcon() {
+  return (
+    <span className="mt-0.5 flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-md bg-primary text-white">
+      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={3}
+          d="M5 13l4 4L19 7"
+        />
+      </svg>
+    </span>
+  );
+}
 
 export default function ServicesPage() {
   return (
     <>
       {/* Hero */}
-      <section className="mt-[72px] lg:mt-[88px]">
-        <div
-          className="relative h-48 sm:h-56 lg:h-64 bg-cover bg-center"
-          style={{ backgroundImage: "url('/services-hero.png')" }}
-        >
-          <div className="absolute inset-0 bg-black/35" />
-          <div className="relative h-full flex items-end justify-center pb-8 sm:pb-10 lg:pb-12">
-            <h1 className="text-4xl sm:text-5xl font-bold text-white font-[family-name:var(--font-heading)]">
-              Services
+      <section className="bg-gradient-to-br from-bg-light to-bg-muted pt-32 pb-16 lg:pt-40 lg:pb-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="max-w-3xl"
+          >
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-text-dark font-[family-name:var(--font-heading)] leading-tight">
+              Bookkeeping Services for{" "}
+              <span className="text-primary">Small Businesses</span>
             </h1>
-          </div>
+            <p className="mt-6 text-xl text-text-muted leading-relaxed">
+              {"You run your business. We'll do your bookkeeping."}
+            </p>
+            <div className="mt-8 flex flex-col sm:flex-row gap-4">
+              <Button href="/contact" variant="primary">
+                Schedule a Meeting
+              </Button>
+              <a
+                href="tel:+18473051323"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-bold border-2 border-primary text-primary hover:bg-primary/5 transition-colors"
+              >
+                Call (847) 305-1323
+              </a>
+            </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Service Cards */}
+      {/* Full-Service Solutions */}
       <SectionWrapper className="py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
-            {detailedServices.map((service, i) => (
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <h2 className="text-3xl sm:text-4xl font-bold text-text-dark font-[family-name:var(--font-heading)]">
+                Full-Service Bookkeeping Solutions
+              </h2>
+              <p className="mt-5 text-lg text-text-muted leading-relaxed">
+                {"You run your business. We'll do your bookkeeping. Clean monthly books and financials you can actually use to run the business — reconciled, categorized, and ready when it's time to file."}
+              </p>
+              <div className="mt-8">
+                <Button href="/contact" variant="primary">
+                  Schedule a Meeting
+                </Button>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.15 }}
+              className="space-y-4"
+            >
+              {solutionHighlights.map((item) => (
+                <div
+                  key={item.title}
+                  className="flex items-start gap-4 rounded-2xl bg-bg-light border border-gray-100 p-5"
+                >
+                  <CheckIcon />
+                  <div>
+                    <h3 className="font-bold text-text-dark font-[family-name:var(--font-heading)]">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm text-text-muted mt-1">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </SectionWrapper>
+
+      {/* What's Included */}
+      <SectionWrapper className="py-16 lg:py-20 bg-bg-light">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-text-dark font-[family-name:var(--font-heading)]">
+              {"What's Included in Our Bookkeeping Services"}
+            </h2>
+            <p className="mt-4 text-lg text-text-muted leading-relaxed">
+              We handle every aspect of your financial record-keeping so your
+              books are always accurate, up to date, and ready for tax season.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {includedServices.map((service, i) => (
               <motion.div
                 key={service.title}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className={`bg-bg-light rounded-2xl p-8 lg:p-10${
-                  service.fullWidth ? " lg:col-span-2" : ""
-                }`}
+                transition={{ duration: 0.4, delay: (i % 3) * 0.1 }}
+                className="rounded-2xl bg-white border border-gray-100 shadow-sm p-7"
               >
-                <div className="flex justify-center mb-5">
-                  <Image
-                    src={service.icon}
-                    alt={service.title}
-                    width={96}
-                    height={96}
-                    className="h-20 w-auto"
-                  />
+                <div className="mb-4">
+                  <CheckIcon />
                 </div>
-                <h2 className="text-2xl font-semibold text-text-dark text-center mb-6 font-[family-name:var(--font-heading)]">
+                <h3 className="text-lg font-bold text-text-dark mb-2 font-[family-name:var(--font-heading)]">
                   {service.title}
-                </h2>
-                <div className="space-y-4 text-text-muted leading-relaxed">
-                  {service.paragraphs.map((p, idx) => (
-                    <p key={idx}>{p}</p>
-                  ))}
-                  {service.bullets.length > 0 && (
-                    <ul className="space-y-3 pt-1">
-                      {service.bullets.map((bullet) => (
-                        <li key={bullet} className="flex items-start gap-3">
-                          <span className="mt-2 w-2 h-2 rounded-full bg-text-dark flex-shrink-0" />
-                          <span>{bullet}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                  {service.footer && <p className="pt-4">{service.footer}</p>}
-                </div>
+                </h3>
+                <p className="text-sm text-text-muted leading-relaxed">
+                  {service.description}
+                </p>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </SectionWrapper>
+
+      {/* Process */}
+      <SectionWrapper className="py-16 lg:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-text-dark font-[family-name:var(--font-heading)]">
+              Our Bookkeeping Process
+            </h2>
+            <p className="mt-4 text-lg text-text-muted leading-relaxed">
+              Getting started is easy. We handle the heavy lifting so you can get
+              back to running your business.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {processSteps.map((step, i) => (
+              <motion.div
+                key={step.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.1 }}
+                className="rounded-2xl bg-bg-light border border-gray-100 p-8"
+              >
+                <span className="flex items-center justify-center w-11 h-11 rounded-full bg-primary text-white font-bold font-[family-name:var(--font-heading)]">
+                  {i + 1}
+                </span>
+                <h3 className="mt-5 text-lg font-bold text-text-dark mb-2 font-[family-name:var(--font-heading)]">
+                  {step.title}
+                </h3>
+                <p className="text-sm text-text-muted leading-relaxed">
+                  {step.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </SectionWrapper>
+
+      {/* Software + Who it's for */}
+      <SectionWrapper className="py-16 lg:py-20 bg-bg-light">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="rounded-2xl bg-white border border-gray-100 shadow-sm p-8"
+          >
+            <h2 className="text-2xl font-bold text-text-dark mb-3 font-[family-name:var(--font-heading)]">
+              We Work With the Tools You Use
+            </h2>
+            <p className="text-text-muted leading-relaxed">
+              Our team is experienced with{" "}
+              <span className="font-semibold text-text-dark">
+                QuickBooks Online
+              </span>{" "}
+              and <span className="font-semibold text-text-dark">Xero</span> —
+              the two most popular cloud accounting platforms for small
+              businesses.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="rounded-2xl bg-white border border-gray-100 shadow-sm p-8"
+          >
+            <h2 className="text-2xl font-bold text-text-dark mb-3 font-[family-name:var(--font-heading)]">
+              Who Our Bookkeeping Is For
+            </h2>
+            <p className="text-text-muted leading-relaxed">
+              {"Our bookkeeping services are built for small business owners who would rather focus on what they do best. Whether you're an independent contractor, a single-member LLC, an S-Corp, or a growing partnership, we tailor our approach to fit your business structure and goals."}
+            </p>
+          </motion.div>
+        </div>
+      </SectionWrapper>
+
+      {/* Industries */}
+      <SectionWrapper className="py-16 lg:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-text-dark font-[family-name:var(--font-heading)]">
+              Industries We Serve
+            </h2>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {industries.map((industry, i) => (
+              <motion.div
+                key={industry}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: (i % 3) * 0.08 }}
+                className="flex items-center gap-3 rounded-xl bg-bg-light border border-gray-100 px-5 py-4"
+              >
+                <span className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
+                <span className="text-sm font-semibold text-text-dark">
+                  {industry}
+                </span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </SectionWrapper>
+
+      {/* Plans */}
+      <SectionWrapper className="py-16 lg:py-20 bg-bg-light">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-text-dark font-[family-name:var(--font-heading)]">
+              Bookkeeping Plans for Every Budget
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6 items-stretch">
+            {plans.map((plan, i) => (
+              <motion.div
+                key={plan.name}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.1 }}
+                className="rounded-2xl bg-white border border-gray-200 shadow-sm p-8 flex flex-col"
+              >
+                <h3 className="text-xl font-bold text-text-dark mb-3 font-[family-name:var(--font-heading)]">
+                  {plan.name}
+                </h3>
+                <p className="text-sm text-text-muted leading-relaxed">
+                  {plan.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </SectionWrapper>
+
+      {/* FAQ */}
+      <SectionWrapper className="py-16 lg:py-20 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-text-dark font-[family-name:var(--font-heading)]">
+              Bookkeeping FAQs
+            </h2>
+            <p className="mt-4 text-lg text-text-muted">
+              Common questions about our bookkeeping services for small
+              businesses.
+            </p>
+          </div>
+          <div className="space-y-6">
+            {faqs.map((faq, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
+                className="bg-bg-light rounded-xl p-6 border border-gray-100"
+              >
+                <h3 className="font-bold text-text-dark mb-2 font-[family-name:var(--font-heading)]">
+                  {faq.q}
+                </h3>
+                <p className="text-text-muted text-sm leading-relaxed">
+                  {faq.a}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </SectionWrapper>
+
+      {/* Closing CTA */}
+      <SectionWrapper className="py-16 lg:py-20 bg-primary">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 font-[family-name:var(--font-heading)]">
+            Ready for Books You Can Actually Trust?
+          </h2>
+          <p className="text-white/80 mb-8 text-lg leading-relaxed">
+            Clean, accurate books aren&apos;t just good for tax time — they give
+            you the clarity to make better business decisions all year long.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              href="/contact"
+              variant="primary"
+              className="bg-white !text-primary border-2 border-white hover:bg-white/90"
+            >
+              Schedule a Meeting
+            </Button>
+            <a
+              href="tel:+18473051323"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-bold border-2 border-white text-white hover:bg-white/10 transition-colors"
+            >
+              Call (847) 305-1323
+            </a>
           </div>
         </div>
       </SectionWrapper>
