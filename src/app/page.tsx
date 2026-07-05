@@ -371,20 +371,22 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="mt-8 rounded-2xl border border-primary/20 bg-bg-light p-8 text-center"
+            className="mt-10"
           >
-            <h3 className="text-2xl font-bold text-text-dark mb-3 font-[family-name:var(--font-heading)]">
-              Not ready for monthly bookkeeping?
-            </h3>
-            <p className="text-base text-text-muted max-w-2xl mx-auto leading-relaxed">
-              Quarterly bookkeeping is available at{" "}
-              <span className="font-semibold text-primary">
-                75% of the monthly rate
-              </span>
-              . Ideal if you don&apos;t need monthly reports but still want
-              clean, tax-ready books.
-            </p>
-            <p className="text-sm text-text-muted mt-4">
+            <div className="rounded-2xl border border-gray-200 bg-white shadow-sm p-8">
+              <h3 className="text-xl font-bold text-text-dark mb-2 font-[family-name:var(--font-heading)]">
+                Not ready for monthly bookkeeping?
+              </h3>
+              <p className="text-sm text-text-muted leading-relaxed">
+                Quarterly bookkeeping is available at{" "}
+                <span className="font-semibold text-text-dark">
+                  75% of the monthly rate
+                </span>
+                . Ideal if you don&apos;t need monthly reports but still want
+                clean, tax-ready books.
+              </p>
+            </div>
+            <p className="text-xs text-text-muted mt-3">
               Pricing reflects current availability and complexity. Cancel
               anytime.
             </p>
