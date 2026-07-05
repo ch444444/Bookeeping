@@ -344,9 +344,6 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-                <p className="text-sm italic text-text-muted mt-auto">
-                  {tier.footer}
-                </p>
               </motion.div>
             ))}
           </div>
