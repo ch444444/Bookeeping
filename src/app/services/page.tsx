@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import SectionWrapper from "@/components/SectionWrapper";
 import Button from "@/components/Button";
 
@@ -132,6 +133,71 @@ function CheckIcon() {
         />
       </svg>
     </span>
+  );
+}
+
+function FaqSection() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  return (
+    <SectionWrapper className="py-16 lg:py-20 bg-white">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mb-10">
+          <p className="text-sm font-bold uppercase tracking-wider text-primary">
+            FAQ
+          </p>
+          <h2 className="mt-2 text-3xl sm:text-4xl font-bold text-text-dark font-[family-name:var(--font-heading)]">
+            Bookkeeping FAQs
+          </h2>
+          <p className="mt-4 text-lg text-text-muted">
+            Common questions about our bookkeeping services for small
+            businesses.
+          </p>
+        </div>
+
+        <div className="border-t border-gray-200">
+          {faqs.map((faq, i) => {
+            const open = openIndex === i;
+            return (
+              <div key={i} className="border-b border-gray-200">
+                <button
+                  onClick={() => setOpenIndex(open ? null : i)}
+                  aria-expanded={open}
+                  className="w-full flex items-center justify-between gap-4 py-5 text-left group"
+                >
+                  <span className="font-bold text-text-dark font-[family-name:var(--font-heading)] group-hover:text-primary transition-colors">
+                    {faq.q}
+                  </span>
+                  <span className="relative flex-shrink-0 w-5 h-5 text-text-dark">
+                    <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-0.5 bg-current" />
+                    <span
+                      className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-4 w-0.5 bg-current transition-transform duration-300 ${
+                        open ? "scale-y-0" : "scale-y-100"
+                      }`}
+                    />
+                  </span>
+                </button>
+                <AnimatePresence initial={false}>
+                  {open && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="overflow-hidden"
+                    >
+                      <p className="text-text-muted text-sm leading-relaxed pb-5 pr-8">
+                        {faq.a}
+                      </p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </SectionWrapper>
   );
 }
 
@@ -380,38 +446,7 @@ export default function ServicesPage() {
       </SectionWrapper>
 
       {/* FAQ */}
-      <SectionWrapper className="py-16 lg:py-20 bg-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12 text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-text-dark font-[family-name:var(--font-heading)]">
-              Bookkeeping FAQs
-            </h2>
-            <p className="mt-4 text-lg text-text-muted">
-              Common questions about our bookkeeping services for small
-              businesses.
-            </p>
-          </div>
-          <div className="space-y-6">
-            {faqs.map((faq, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.08 }}
-                className="bg-bg-light rounded-xl p-6 border border-gray-100"
-              >
-                <h3 className="font-bold text-text-dark mb-2 font-[family-name:var(--font-heading)]">
-                  {faq.q}
-                </h3>
-                <p className="text-text-muted text-sm leading-relaxed">
-                  {faq.a}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </SectionWrapper>
+      <FaqSection />
 
       {/* Closing CTA */}
       <SectionWrapper className="py-16 lg:py-20 bg-primary">
