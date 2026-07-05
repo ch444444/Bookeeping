@@ -1,30 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import SectionWrapper from "@/components/SectionWrapper";
 
 const detailedServices = [
   {
     title: "Routine Bookkeeping",
     fullWidth: false,
-    icon: (
-      <svg
-        className="w-12 h-12"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <rect x="3.5" y="4" width="9" height="16" rx="1.5" />
-        <rect x="5.5" y="6.5" width="5" height="2" rx="0.5" />
-        <path d="M6 12h.01M8 12h.01M10 12h.01M6 15h.01M8 15h.01M10 15h.01M6 18h.01M8 18h.01M10 18h.01" />
-        <path d="M20.5 5.5l-6.5 6.5" />
-        <path d="M18 3l2.5 2.5" />
-        <path d="M14 12l-1.2 2.7 2.7-1.2" />
-      </svg>
-    ),
+    icon: "/bookkeeping-img.png",
     paragraphs: [
       "We provide bookkeeping and QuickBooks bookkeeping services throughout the year depending on your preference of frequency. We provide services as frequently as once a week, or as slowly as once a year — this depends on what you're looking for. Typically our clients prefer the monthly schedule.",
       "We find that every business has unique complexities, and this is okay! We will work with you to examine your needs and provide you with a customized service plan that works best for you and your business. Here is a list of common tasks we perform for our clients:",
@@ -41,20 +25,7 @@ const detailedServices = [
   {
     title: "QuickBooks Cleanup",
     fullWidth: false,
-    icon: (
-      <svg
-        className="w-12 h-12"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="m9.06 11.9 8.07-8.06a2.85 2.85 0 1 1 4.03 4.03l-8.06 8.08" />
-        <path d="M7.07 14.94c-1.66 0-3 1.35-3 3.02 0 1.33-2.5 1.52-2 2.02 1.08 1.1 2.49 2.02 4 2.02 2.2 0 4-1.8 4-4.04a3.01 3.01 0 0 0-3-3.02z" />
-      </svg>
-    ),
+    icon: "/cleaning-new.png",
     paragraphs: [
       "If your business has months or years of bookkeeping left undone, or if you simply need things cleaned up, you've come to the right place. Typically this kind of work is requested because of a tax return deadline or because of a bank's demands.",
       "With our PDF reader, we are able to take your old bank statements, convert them to Excel, and then import them into your QuickBooks. By eliminating the manual entry aspect of adding transactions, we are able to reduce your costs dramatically.",
@@ -66,27 +37,7 @@ const detailedServices = [
   {
     title: "Ongoing Support",
     fullWidth: true,
-    icon: (
-      <svg
-        className="w-12 h-12"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M12 4.5l4 7a1 1 0 01-.87 1.5H8.87A1 1 0 018 11.5l4-7z" />
-        <path d="M12 7.8v2.1" />
-        <path d="M12 11.5h.01" />
-        <path d="M4 20v-2.3" />
-        <path d="M4 17.7c0-1.4.3-2 .9-1.4l1.8 1.8" />
-        <path d="M5 14.8c0-1 .8-1.3 1.4-.6l2 2.2c.4.5 1 .8 1.7.8H12" />
-        <path d="M20 20v-2.3" />
-        <path d="M20 17.7c0-1.4-.3-2-.9-1.4l-1.8 1.8" />
-        <path d="M19 14.8c0-1-.8-1.3-1.4-.6l-2 2.2c-.4.5-1 .8-1.7.8H12" />
-      </svg>
-    ),
+    icon: "/support-img.png",
     paragraphs: [
       "Aside from looking for personal business consultant for you small bussiness or is your business small enough that you are able to do the bookkeeping on your own? If so, that's great! We're helping small business accounting services and I encourage business owners to do the bookkeeping if they are able and willing. If this is you, then perhaps you need support/training along the way. If you have a problem or question, we want to be able to support you in any way that we can.",
       "For ongoing support, we charge at our hourly rate. Contact us for more information about the pricing.",
@@ -134,6 +85,15 @@ export default function ServicesPage() {
                   service.fullWidth ? " lg:col-span-2" : ""
                 }`}
               >
+                <div className="flex justify-center mb-5">
+                  <Image
+                    src={service.icon}
+                    alt={service.title}
+                    width={96}
+                    height={96}
+                    className="h-20 w-auto"
+                  />
+                </div>
                 <h2 className="text-2xl font-semibold text-text-dark text-center mb-6 font-[family-name:var(--font-heading)]">
                   {service.title}
                 </h2>
