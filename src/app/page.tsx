@@ -49,22 +49,40 @@ const services = [
 const pricingTiers = [
   {
     name: "Essential",
-    price: "300 to $350",
-    description: "For small, simple businesses that want accurate books without the stress.",
-    features: [],
+    tagline: "Simple, accurate bookkeeping every month",
+    price: "$300 to $350",
+    features: [
+      "Monthly bank and card reconciliation",
+      "Expense categorization with bank rules",
+      "Monthly financial statements",
+    ],
+    footer: "Best for freelancers and solo owners under $100k revenue",
   },
   {
     name: "Professional",
-    price: "350 to $400",
-    description: "For growing businesses that need more involved bookkeeping and accounts management.",
-    features: [],
+    tagline: "Clear numbers that support growth",
+    price: "$350 to $450",
     popular: true,
+    features: [
+      "Everything in Essential",
+      "Light AR and AP tracking",
+      "Quarterly performance summary",
+      "Priority support",
+    ],
+    footer: "Best for growing businesses with multiple accounts",
   },
   {
     name: "Premium",
-    price: "450 to $750",
-    description: "For businesses with complex needs, accrual reporting, and special reporting requests.",
-    features: [],
+    tagline: "Hands-on support and advanced reporting",
+    price: "$450 to $750",
+    features: [
+      "Everything in Professional",
+      "Custom reports and KPI dashboards",
+      "Accrual, payroll, and loan tracking",
+      "Monthly Loom walkthrough",
+      "CPA-ready books for tax time",
+    ],
+    footer: "Best for established or multi-entity businesses",
   },
 ];
 
@@ -289,76 +307,46 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.15 }}
                 whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0,0,0,0.1)" }}
-                className={`rounded-2xl p-8 transition-all duration-300 flex flex-col ${
-                  tier.popular
-                    ? "bg-primary text-white"
-                    : "bg-white border border-gray-200 shadow-sm"
-                }`}
+                className="rounded-2xl p-8 transition-all duration-300 flex flex-col bg-white border border-gray-200 shadow-sm"
               >
                 {tier.popular && (
-                  <span className="inline-block bg-white text-primary text-xs font-bold px-3 py-1 rounded-full mb-4 self-start">
-                    Most Common
+                  <span className="inline-block bg-primary text-white text-xs font-bold px-3 py-1.5 rounded-md mb-4 self-start">
+                    Most popular
                   </span>
                 )}
-                <h3
-                  className={`text-xl font-bold mb-2 font-[family-name:var(--font-heading)] ${
-                    tier.popular ? "text-white" : "text-text-dark"
-                  }`}
-                >
+                <h3 className="text-2xl font-bold mb-1 text-text-dark font-[family-name:var(--font-heading)]">
                   {tier.name}
                 </h3>
-                <div className="mb-4">
-                  <span
-                    className={`text-4xl font-bold font-[family-name:var(--font-heading)] ${
-                      tier.popular ? "text-white" : "text-text-dark"
-                    }`}
-                  >
-                    ${tier.price}
-                  </span>
-                  <span
-                    className={`text-sm ${
-                      tier.popular ? "text-white/70" : "text-text-muted"
-                    }`}
-                  >
-                    /month
-                  </span>
-                </div>
-                <p
-                  className={`text-base mb-6 leading-relaxed ${
-                    tier.popular ? "text-white/80" : "text-text-muted"
-                  }`}
-                >
-                  {tier.description}
+                <p className="text-sm text-text-muted mb-5">{tier.tagline}</p>
+                <p className="mb-6 text-2xl font-bold text-primary font-[family-name:var(--font-heading)]">
+                  {tier.price}{" "}
+                  <span className="font-semibold">/ month</span>
                 </p>
                 <ul className="space-y-3 mb-8 flex-grow">
                   {tier.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-3 text-sm">
-                      <svg
-                        className={`w-5 h-5 flex-shrink-0 mt-0.5 ${
-                          tier.popular ? "text-white" : "text-primary"
-                        }`}
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
+                    <li key={feature} className="flex items-start gap-3 text-sm text-text-dark">
+                      <span className="mt-0.5 flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-md bg-primary text-white">
+                        <svg
+                          className="w-3.5 h-3.5"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={3}
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                      </span>
                       <span>{feature}</span>
                     </li>
                   ))}
                 </ul>
-                <Button
-                  href="/contact"
-                  variant={tier.popular ? "secondary" : "primary"}
-                  className="w-full mt-auto"
-                >
-                  Get Started
-                </Button>
+                <p className="text-sm italic text-text-muted mt-auto">
+                  {tier.footer}
+                </p>
               </motion.div>
             ))}
           </div>
