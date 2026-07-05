@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import SectionWrapper from "@/components/SectionWrapper";
-import Button from "@/components/Button";
 
 const coreValues = [
   {
@@ -128,7 +127,7 @@ export default function AboutPage() {
 
       {/* Note */}
       <SectionWrapper className="py-12 lg:py-16 bg-primary-dark">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-white/90 italic leading-relaxed">
             <span className="font-bold">Note:</span> We do not provide tax or
             audit services. There are a number of quality accounting firms that
@@ -136,26 +135,6 @@ export default function AboutPage() {
             to being the QuickBooks and bookkeeping experts in the North Shore
             and Greater Chicago area.
           </p>
-        </div>
-      </SectionWrapper>
-
-      {/* CTA */}
-      <SectionWrapper className="py-20 lg:py-28 bg-primary">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 font-[family-name:var(--font-heading)]">
-            Ready to Work Together?
-          </h2>
-          <p className="text-white/80 mb-8 text-lg">
-            Let&apos;s chat about how we can help your business thrive with
-            organized, accurate bookkeeping.
-          </p>
-          <Button
-            href="/contact"
-            variant="primary"
-            className="bg-white !text-primary border-2 border-white hover:bg-white/90"
-          >
-            Get in Touch
-          </Button>
         </div>
       </SectionWrapper>
     </>
