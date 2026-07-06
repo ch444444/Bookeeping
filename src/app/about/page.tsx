@@ -79,8 +79,8 @@ export default function AboutPage() {
             North Shore Bookkeeping is a fully remote bookkeeping firm based in
             the Chicago, Illinois area. What started as a side business has grown
             into one of the region&apos;s fastest-growing bookkeeping firms,
-            trusted by business owners, non-profits, and churches across the
-            area.
+            trusted by small business owners in the Chicagoland area and
+            nationwide.
           </p>
           <p className="text-text-muted leading-relaxed">
             We specialize in QuickBooks Online and provide full-service
@@ -133,7 +133,7 @@ export default function AboutPage() {
             audit services. There are a number of quality accounting firms that
             we can recommend for these types of services, but we are committed
             to being the QuickBooks and bookkeeping experts in the North Shore
-            and Greater Chicago area.
+            and Greater Chicagoland area.
           </p>
         </div>
       </SectionWrapper>
