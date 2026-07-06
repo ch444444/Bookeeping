@@ -50,14 +50,15 @@ export default function AboutPage() {
             </div>
             <div>
               <h1 className="text-3xl sm:text-4xl font-bold text-text-dark mb-6 font-[family-name:var(--font-heading)]">
-                Welcome to North Shore Bookkeeping!
+                Meet Vasili Kanakaris
               </h1>
               <p className="text-text-muted leading-relaxed">
-                I started North Shore Bookkeeping after years in public
-                accounting because I saw small business owners drowning in messy
-                books, bad communication, and unclear financials. My goal is
-                simple — give you clean numbers, clear answers, and more time to
-                run your business.
+                Hi, I’m Vasili — the founder of North Shore Bookkeeping. I
+                started this business to give small business owners the same
+                level of care, clarity, and professionalism that big firms offer
+                — without the corporate runaround. My goal is simple: keep your
+                books clean, your taxes stress-free, and your peace of mind
+                intact.
               </p>
             </div>
           </motion.div>
@@ -77,10 +78,10 @@ export default function AboutPage() {
           />
           <p className="text-text-muted leading-relaxed mb-6">
             North Shore Bookkeeping is a fully remote bookkeeping firm based in
-            the Chicago, Illinois area. What started as a side business has grown
-            into one of the region&apos;s fastest-growing bookkeeping firms,
-            trusted by small business owners in the Chicagoland area and
-            nationwide.
+            Arlington Heights, Illinois — one of Chicago’s largest suburbs. What
+            started as a side business in 2020 has grown into one of
+            Chicagoland’s fastest-growing bookkeeping firms, trusted by small
+            business owners in the Chicagoland area and nationwide.
           </p>
           <p className="text-text-muted leading-relaxed">
             We specialize in QuickBooks Online and provide full-service
