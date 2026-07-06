@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import Link from "next/link";
 import SectionWrapper from "@/components/SectionWrapper";
-import Button from "@/components/Button";
 import ContactForm from "@/components/ContactForm";
 
 const services = [
@@ -453,36 +452,48 @@ export default function Home() {
 
       {/* About Preview */}
       <SectionWrapper className="py-16 lg:py-20 bg-bg-light">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="flex justify-center">
-              <div className="relative">
-                <div className="absolute top-4 right-[-16px] w-full h-full bg-primary/40 rounded-2xl" />
-                <div className="relative w-72 h-96 lg:w-80 lg:h-[440px] rounded-2xl overflow-hidden">
-                  <img
-                    src="/vasili.jpg"
-                    alt="Vasili Kanakaris"
-                    className="w-full h-full object-cover object-top"
-                  />
-                </div>
-              </div>
-            </div>
-            <div>
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="relative"
+          >
+            {/* Offset shadow blob */}
+            <div className="absolute -bottom-6 -right-4 w-full h-full bg-gray-300/50 rounded-[3rem_3rem_5rem_3rem]" />
+            {/* Bubble card */}
+            <div className="relative bg-white rounded-[3rem_3rem_5rem_3rem] shadow-2xl px-8 py-12 sm:px-14 sm:py-16 text-center">
               <h2 className="text-3xl sm:text-4xl font-bold text-text-dark mb-6 font-[family-name:var(--font-heading)]">
                 Welcome to North Shore Bookkeeping!
               </h2>
-              <p className="text-text-muted leading-relaxed mb-8">
+              <p className="text-text-muted leading-relaxed mb-8 max-w-xl mx-auto">
                 I started North Shore Bookkeeping after years in public
                 accounting because I saw small business owners drowning in messy
                 books, bad communication, and unclear financials. My goal is
                 simple — give you clean numbers, clear answers, and more time to
                 run your business.
               </p>
-              <Button href="/about" variant="secondary">
+              <Link
+                href="/about"
+                className="inline-flex items-center gap-2 bg-primary-dark text-white px-7 py-3.5 rounded-lg font-bold text-sm uppercase tracking-wider hover:bg-primary transition-all hover:shadow-lg hover:-translate-y-0.5"
+              >
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  viewBox="0 0 24 24"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M22 2 11 13" />
+                  <path d="M22 2 15 22 11 13 2 9 22 2z" />
+                </svg>
                 Read More
-              </Button>
+              </Link>
             </div>
-          </div>
+          </motion.div>
         </div>
       </SectionWrapper>
 
