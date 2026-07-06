@@ -452,15 +452,28 @@ export default function Home() {
 
       {/* About Preview */}
       <SectionWrapper className="py-16 lg:py-20 bg-bg-light">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="relative"
-          >
-            {/* Offset shadow blob */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="flex justify-center">
+              <div className="relative">
+                <div className="absolute top-4 right-[-16px] w-full h-full bg-primary/40 rounded-2xl" />
+                <div className="relative w-72 h-96 lg:w-80 lg:h-[440px] rounded-2xl overflow-hidden">
+                  <img
+                    src="/vasili.jpg"
+                    alt="Vasili Kanakaris"
+                    className="w-full h-full object-cover object-top"
+                  />
+                </div>
+              </div>
+            </div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="relative"
+            >
+              {/* Offset shadow blob */}
             <div className="absolute -bottom-6 -right-4 w-full h-full bg-gray-300/50 rounded-[3rem_3rem_5rem_3rem]" />
             {/* Bubble card */}
             <div className="relative bg-white rounded-[3rem_3rem_5rem_3rem] shadow-2xl px-8 py-12 sm:px-14 sm:py-16 text-center">
@@ -493,7 +506,8 @@ export default function Home() {
                 Read More
               </Link>
             </div>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
       </SectionWrapper>
 
