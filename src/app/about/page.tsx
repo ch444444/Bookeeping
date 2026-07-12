@@ -79,7 +79,7 @@ export default function AboutPage() {
           <p className="text-text-muted leading-relaxed mb-6">
             North Shore Bookkeeping is a fully remote bookkeeping firm based in
             Arlington Heights, Illinois — one of Chicago’s largest suburbs. What
-            started as a side business in 2020 has grown into one of
+            started as a side business in 2019 has grown into one of
             Chicagoland’s fastest-growing bookkeeping firms, trusted by small
             business owners in the Chicagoland area and nationwide.
           </p>
