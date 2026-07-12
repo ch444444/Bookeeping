@@ -15,11 +15,36 @@ function ContactCardForm() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Placeholder — connect to your preferred form backend (Formspree, etc.)
-    setSubmitted(true);
+    setSubmitting(true);
+    setError("");
+    try {
+      const res = await fetch("https://formspree.io/f/xdaqnlbn", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        setError(
+          "Something went wrong sending your message. Please try again, or email us directly at vasili@northshorebookkeeping.com."
+        );
+      }
+    } catch {
+      setError(
+        "Something went wrong sending your message. Please try again, or email us directly at vasili@northshorebookkeeping.com."
+      );
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const field =
@@ -88,11 +113,17 @@ function ContactCardForm() {
         className={`${field} resize-none`}
         placeholder="Message"
       />
+      {error && (
+        <p className="text-sm text-red-200" role="alert">
+          {error}
+        </p>
+      )}
       <button
         type="submit"
-        className="bg-white text-text-dark px-8 py-3 rounded-lg font-bold text-sm uppercase tracking-wider hover:bg-white/90 transition-all"
+        disabled={submitting}
+        className="bg-white text-text-dark px-8 py-3 rounded-lg font-bold text-sm uppercase tracking-wider hover:bg-white/90 transition-all disabled:opacity-60 disabled:cursor-not-allowed"
       >
-        Send
+        {submitting ? "Sending..." : "Send"}
       </button>
     </form>
   );
