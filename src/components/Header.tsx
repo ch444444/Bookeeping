@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
@@ -16,13 +16,12 @@ const navLinks = [
 
 export default function Header() {
   const pathname = usePathname();
-  const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  // Every header link lands at the top of the page. The section links drop
-  // their #hash so they no longer jump partway down, and the link for the
-  // page you're already on reloads from the top.
+  // Section links (Pricing, Testimonials) scroll to their section, and
+  // refresh if you click them again while already there. Page links land at
+  // the top of the page, refreshing if you're already on it.
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string
@@ -31,15 +30,35 @@ export default function Header() {
     if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) {
       return;
     }
-    e.preventDefault();
-    const target = href.split("#")[0] || "/";
-    if (pathname === target) {
+
+    const [path, hash] = href.split("#");
+    const target = path || "/";
+    const samePage = pathname === target;
+
+    if (hash) {
+      if (samePage && window.location.hash === `#${hash}`) {
+        // Already parked on this section - just refresh.
+        e.preventDefault();
+        window.location.reload();
+      }
+      // Otherwise let the link scroll to the section as normal.
+      return;
+    }
+
+    if (samePage) {
+      e.preventDefault();
       // Scroll up first so the reload restores the top, not the old position.
       window.scrollTo(0, 0);
-      window.location.reload();
-    } else {
-      router.push(target);
+      if (window.location.hash) {
+        // Drop a leftover #section so the reload doesn't jump back down.
+        window.location.replace(
+          window.location.pathname + window.location.search
+        );
+      } else {
+        window.location.reload();
+      }
     }
+    // Different page: the link already lands at the top.
   };
 
   useEffect(() => {
