@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
@@ -16,17 +16,29 @@ const navLinks = [
 
 export default function Header() {
   const pathname = usePathname();
+  const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  // Clicking the link for the page you're already on reloads it.
+  // Every header link lands at the top of the page. The section links drop
+  // their #hash so they no longer jump partway down, and the link for the
+  // page you're already on reloads from the top.
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string
   ) => {
-    if (pathname === href) {
-      e.preventDefault();
+    // Leave open-in-new-tab clicks to the browser.
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) {
+      return;
+    }
+    e.preventDefault();
+    const target = href.split("#")[0] || "/";
+    if (pathname === target) {
+      // Scroll up first so the reload restores the top, not the old position.
+      window.scrollTo(0, 0);
       window.location.reload();
+    } else {
+      router.push(target);
     }
   };
 
@@ -148,7 +160,10 @@ export default function Header() {
               ))}
               <Link
                 href="/contact"
-                onClick={() => setMobileOpen(false)}
+                onClick={(e) => {
+                  setMobileOpen(false);
+                  handleNavClick(e, "/contact");
+                }}
                 className="flex items-center gap-2 text-text-dark font-bold"
               >
                 <svg
