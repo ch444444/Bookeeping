@@ -33,7 +33,7 @@ function ContactCardForm() {
         body: JSON.stringify(formData),
       });
       if (res.ok) {
-        fireContactConversion("contact page form");
+        fireContactConversion();
         setSubmitted(true);
       } else {
         setError(

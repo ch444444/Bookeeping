@@ -28,7 +28,7 @@ export default function ContactForm() {
         body: JSON.stringify(formData),
       });
       if (res.ok) {
-        fireContactConversion("homepage form");
+        fireContactConversion();
         setSubmitted(true);
       } else {
         setError(

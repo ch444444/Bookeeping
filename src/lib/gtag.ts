@@ -14,15 +14,12 @@ declare global {
  * global dataLayer that the base tag in the root layout already created,
  * rather than skipping the conversion. It never loads a second base tag.
  */
-export function fireContactConversion(source: string) {
+export function fireContactConversion() {
   if (typeof window === "undefined") return;
 
   let gtag = window.gtag;
 
   if (typeof gtag !== "function") {
-    console.warn(
-      `[ads-conversion] gtag() unavailable on ${source}; queueing via dataLayer`
-    );
     const dataLayer = (window.dataLayer = window.dataLayer || []);
     gtag = function () {
       dataLayer.push(arguments);
@@ -30,9 +27,5 @@ export function fireContactConversion(source: string) {
     window.gtag = gtag;
   }
 
-  console.log(
-    `[ads-conversion] firing conversion from ${source}`,
-    ADS_CONVERSION_SEND_TO
-  );
   gtag("event", "conversion", { send_to: ADS_CONVERSION_SEND_TO });
 }
