@@ -3,6 +3,7 @@ import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CalendlyConversion from "@/components/CalendlyConversion";
 
 export const metadata: Metadata = {
   title: "North Shore Bookkeeping | Professional Bookkeeping Services",
@@ -20,6 +21,11 @@ export default function RootLayout({
       <head>
         <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet"
+        />
+        {/* Calendly popup widget styles */}
+        <link
+          href="https://assets.calendly.com/assets/external/widget.css"
           rel="stylesheet"
         />
       </head>
@@ -40,6 +46,8 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        {/* Reports the Google Ads conversion when a Calendly booking completes */}
+        <CalendlyConversion />
       </body>
     </html>
   );
