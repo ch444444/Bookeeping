@@ -219,12 +219,9 @@ export default function Header() {
                   {link.label}
                 </Link>
               ))}
-              <Link
-                href="/contact"
-                onClick={(e) => {
-                  setMobileOpen(false);
-                  handleNavClick(e, "/contact");
-                }}
+              <a
+                href="tel:+18473051323"
+                onClick={() => setMobileOpen(false)}
                 className="flex items-center gap-2 text-text-dark font-bold"
               >
                 <svg
@@ -241,7 +238,7 @@ export default function Header() {
                   />
                 </svg>
                 (847) 305-1323
-              </Link>
+              </a>
             </nav>
           </motion.div>
         )}

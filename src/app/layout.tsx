@@ -41,6 +41,9 @@ export default function RootLayout({
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'AW-17804973985');
+            gtag('config', 'AW-17804973985/CZDzCL6PtOccEKGviapC', {
+              'phone_conversion_number': '(847) 305-1323'
+            });
           `}
         </Script>
         <Header />
