@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import SectionWrapper from "@/components/SectionWrapper";
+import { fireContactConversion } from "@/lib/gtag";
 
 const CARD = "bg-[#2b5a58]";
 
@@ -32,6 +33,7 @@ function ContactCardForm() {
         body: JSON.stringify(formData),
       });
       if (res.ok) {
+        fireContactConversion("contact page form");
         setSubmitted(true);
       } else {
         setError(

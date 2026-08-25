@@ -1,12 +1,7 @@
 "use client";
 
 import { useState } from "react";
-
-declare global {
-  interface Window {
-    gtag?: (...args: unknown[]) => void;
-  }
-}
+import { fireContactConversion } from "@/lib/gtag";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -33,10 +28,7 @@ export default function ContactForm() {
         body: JSON.stringify(formData),
       });
       if (res.ok) {
-        // Google Ads conversion - fires only on a successful submission
-        window.gtag?.("event", "conversion", {
-          send_to: "AW-17804973985/sgg2CJja_c4cEKGviapC",
-        });
+        fireContactConversion("homepage form");
         setSubmitted(true);
       } else {
         setError(
