@@ -19,9 +19,9 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  // Section links (Pricing, Testimonials) scroll to their section, and
-  // refresh if you click them again while already there. Page links land at
-  // the top of the page, refreshing if you're already on it.
+  // Every header link does a full page load. Page links (Home, About,
+  // Services, Contact) land at the top; section links (Pricing,
+  // Testimonials) land on their section - even if you're already there.
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string
@@ -31,34 +31,31 @@ export default function Header() {
       return;
     }
 
+    e.preventDefault();
+
     const [path, hash] = href.split("#");
     const target = path || "/";
     const samePage = pathname === target;
 
-    if (hash) {
-      if (samePage && window.location.hash === `#${hash}`) {
-        // Already parked on this section - just refresh.
-        e.preventDefault();
-        window.location.reload();
-      }
-      // Otherwise let the link scroll to the section as normal.
+    if (!samePage) {
+      // Different page: a plain assignment is already a full page load.
+      window.location.href = href;
       return;
     }
 
-    if (samePage) {
-      e.preventDefault();
-      // Scroll up first so the reload restores the top, not the old position.
-      window.scrollTo(0, 0);
-      if (window.location.hash) {
-        // Drop a leftover #section so the reload doesn't jump back down.
-        window.location.replace(
-          window.location.pathname + window.location.search
-        );
-      } else {
-        window.location.reload();
-      }
+    // Same page: point the URL at where we want to end up, then hard reload.
+    // Don't let the browser drop us back at the old scroll position.
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
     }
-    // Different page: the link already lands at the top.
+    const url = hash
+      ? `${target}#${hash}`
+      : `${target}${window.location.search}`;
+    window.history.replaceState(null, "", url);
+    if (!hash) {
+      window.scrollTo(0, 0);
+    }
+    window.location.reload();
   };
 
   useEffect(() => {
