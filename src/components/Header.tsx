@@ -5,6 +5,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
+// Roughly the height of the fixed header, so an anchored section is not
+// hidden underneath it.
+const HEADER_OFFSET = 80;
+
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
@@ -62,6 +66,47 @@ export default function Header() {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Landing on /#pricing or /#testimonials: the browser makes its own jump
+  // while images are still loading, so the section has moved by the time the
+  // page settles. Re-anchor ourselves until things stop shifting (or until
+  // the visitor takes over the scrolling).
+  useEffect(() => {
+    const id = window.location.hash.slice(1);
+    if (!id) return;
+
+    let cancelled = false;
+    const jump = () => {
+      if (cancelled) return;
+      const el = document.getElementById(id);
+      if (!el) return;
+      const top =
+        el.getBoundingClientRect().top + window.scrollY - HEADER_OFFSET;
+      // behavior "auto" overrides the CSS smooth scroll, so this is instant.
+      window.scrollTo({ top, behavior: "auto" });
+    };
+    const stop = () => {
+      cancelled = true;
+    };
+
+    const takeovers = ["wheel", "touchstart", "keydown", "mousedown"];
+    takeovers.forEach((ev) =>
+      window.addEventListener(ev, stop, { passive: true })
+    );
+
+    jump();
+    const timers = [50, 150, 350, 700, 1200, 1800].map((delay) =>
+      window.setTimeout(jump, delay)
+    );
+    window.addEventListener("load", jump);
+
+    return () => {
+      cancelled = true;
+      timers.forEach((t) => window.clearTimeout(t));
+      window.removeEventListener("load", jump);
+      takeovers.forEach((ev) => window.removeEventListener(ev, stop));
+    };
   }, []);
 
   return (

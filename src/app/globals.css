@@ -24,3 +24,8 @@ h1, h2, h3, h4, h5, h6 {
 html {
   scroll-behavior: smooth;
 }
+
+/* Keep anchored sections (#pricing, #testimonials) clear of the fixed header. */
+section[id] {
+  scroll-margin-top: 80px;
+}
