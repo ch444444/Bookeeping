@@ -3,7 +3,7 @@
 import Script from "next/script";
 import { ReactNode } from "react";
 
-export const CALENDLY_URL = "https://calendly.com/vasnsb8/30min";
+export const CALENDLY_URL = "https://calendly.com/vasili-northshorebookkeeping/30min";
 
 declare global {
   interface Window {
