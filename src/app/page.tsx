@@ -18,10 +18,10 @@ function ServiceIcon({
 }) {
   return (
     <span
-      className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl ${
+      className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border ${
         tone === "dark"
-          ? "bg-white/10 text-white ring-1 ring-white/15"
-          : "bg-primary/10 text-primary"
+          ? "border-white/25 bg-white/5 text-white"
+          : "border-primary/20 bg-primary/10 text-primary"
       }`}
     >
       {children}
@@ -31,7 +31,7 @@ function ServiceIcon({
 
 function LedgerIcon() {
   return (
-    <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={1.75} viewBox="0 0 24 24" aria-hidden="true">
+    <svg className="h-[29px] w-[29px]" fill="none" stroke="currentColor" strokeWidth={1.75} viewBox="0 0 24 24" aria-hidden="true">
       <rect x="5" y="3" width="14" height="18" rx="2.5" strokeLinejoin="round" />
       <path strokeLinecap="round" d="M9 8h6M9 12h6M9 16h3" />
     </svg>
@@ -40,7 +40,7 @@ function LedgerIcon() {
 
 function CalendarCheckIcon() {
   return (
-    <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={1.75} viewBox="0 0 24 24" aria-hidden="true">
+    <svg className="h-[29px] w-[29px]" fill="none" stroke="currentColor" strokeWidth={1.75} viewBox="0 0 24 24" aria-hidden="true">
       <rect x="3.5" y="5" width="17" height="16" rx="2.5" strokeLinejoin="round" />
       <path strokeLinecap="round" d="M8 3v4M16 3v4M3.5 10h17M9.5 15.5l2 2 3.5-3.5" strokeLinejoin="round" />
     </svg>
@@ -49,7 +49,7 @@ function CalendarCheckIcon() {
 
 function ChatIcon() {
   return (
-    <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={1.75} viewBox="0 0 24 24" aria-hidden="true">
+    <svg className="h-[29px] w-[29px]" fill="none" stroke="currentColor" strokeWidth={1.75} viewBox="0 0 24 24" aria-hidden="true">
       <path strokeLinecap="round" strokeLinejoin="round" d="M20.5 12.5c0 3.9-3.8 7-8.5 7-1 0-2-.15-2.9-.42L4 20.5l1.5-3.7A6.6 6.6 0 0 1 3.5 12.5c0-3.9 3.8-7 8.5-7s8.5 3.1 8.5 7Z" />
       <path strokeLinecap="round" d="M9 11.5h6M9 14.5h3.5" />
     </svg>
@@ -293,90 +293,93 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <SectionWrapper className="py-16 lg:py-24 bg-bg-light" id="services">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl">
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">
+      <SectionWrapper
+        className="bg-bg-light py-[clamp(44px,5vw,72px)]"
+        id="services"
+      >
+        <div className="mx-auto w-full max-w-[1240px] px-5 sm:px-6">
+          <div className="mb-[26px] max-w-[760px] sm:mb-8">
+            <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.14em] text-primary">
               QuickBooks Online Services
             </p>
-            <h2 className="mt-4 text-4xl sm:text-5xl font-bold tracking-tight text-text-dark font-[family-name:var(--font-heading)]">
+            <h2 className="text-[clamp(32px,3.2vw,42px)] font-bold leading-[1.2] tracking-[-0.035em] text-text-dark font-[family-name:var(--font-heading)]">
               How I can help.
             </h2>
-            <p className="mt-5 text-text-muted leading-relaxed">
+            <p className="mt-4 leading-relaxed text-text-muted">
               Ongoing support, a fresh start, or help getting more comfortable
               with QuickBooks.
             </p>
           </div>
 
-          <div className="mt-12 grid items-stretch gap-6 lg:grid-cols-2">
+          <div className="grid items-stretch gap-6 lg:grid-cols-[1.05fr_1fr]">
             {/* Featured card - monthly bookkeeping */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="relative flex flex-col overflow-hidden rounded-3xl bg-gradient-to-br from-primary-dark to-text-dark p-8 sm:p-10"
+              className="relative flex flex-col overflow-hidden rounded-[18px] bg-gradient-to-br from-primary-dark to-text-dark px-6 py-7 shadow-[0_14px_36px_rgba(36,75,80,0.08)] sm:p-8 lg:p-9"
             >
-              {/* Decorative concentric rings */}
+              {/* Decorative ring */}
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute -right-28 top-6 hidden sm:block"
-              >
-                <div className="h-[420px] w-[420px] rounded-full border border-white/[0.07]" />
-                <div className="absolute inset-12 rounded-full border border-white/[0.07]" />
-                <div className="absolute inset-24 rounded-full border border-white/[0.05]" />
-              </div>
+                className="pointer-events-none absolute right-[-145px] top-[70px] h-[260px] w-[260px] rounded-full border border-white/10"
+                style={{
+                  boxShadow:
+                    "0 0 0 38px rgba(255,255,255,.02), 0 0 0 76px rgba(255,255,255,.016)",
+                }}
+              />
 
-              <div className="relative flex items-center gap-4">
+              <div className="relative mb-[25px] flex items-center gap-4">
                 <ServiceIcon tone="dark">
                   <LedgerIcon />
                 </ServiceIcon>
-                <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/70">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-white/80">
                   Ongoing support
                 </p>
               </div>
 
-              <h3 className="relative mt-8 text-3xl font-bold text-white font-[family-name:var(--font-heading)]">
+              <h3 className="relative text-[27px] font-bold leading-[1.25] tracking-[-0.025em] text-white sm:text-[29px] font-[family-name:var(--font-heading)]">
                 Monthly bookkeeping
               </h3>
-              <p className="relative mt-4 text-xl leading-snug text-white/90 font-[family-name:var(--font-heading)]">
+              <p className="relative mt-4 text-[19px] leading-[1.5] text-white/95 font-[family-name:var(--font-heading)]">
                 A clear picture of your business,
                 <br className="hidden sm:block" /> month after month.
               </p>
-              <p className="relative mt-5 leading-relaxed text-white/70">
+              <p className="relative mt-[18px] max-w-[450px] text-[15px] leading-relaxed text-white/75">
                 I keep your QuickBooks organized and your accounts reconciled,
                 so you have reliable numbers to work with.
               </p>
 
-              <ul className="relative mt-6 space-y-3">
+              <ul className="relative mt-[23px]">
                 {monthlyFeatures.map((feature) => (
                   <li
                     key={feature}
-                    className="flex items-start gap-3 text-sm text-white/90"
+                    className="mb-3 flex items-start gap-[11px] text-sm leading-[1.6] text-white/90"
                   >
-                    <CheckMark className="text-white/60" />
+                    <CheckMark className="text-white/70" />
                     {feature}
                   </li>
                 ))}
               </ul>
 
-              <div className="relative mt-auto pt-12">
+              <div className="relative mt-auto pt-[25px]">
                 <button
                   type="button"
                   onClick={() => setQuoteOpen(true)}
-                  className="inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3.5 text-sm font-semibold text-text-dark transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+                  className="inline-flex w-full items-center justify-between gap-7 rounded-md border border-white bg-white px-[22px] py-3.5 text-sm font-semibold text-text-dark transition-all duration-200 hover:-translate-y-0.5 hover:bg-bg-muted sm:w-auto sm:justify-center"
                 >
                   Request a quote
                   <ArrowUpRight className="text-text-muted" />
                 </button>
-                <p className="mt-4 text-sm text-white/55">
+                <p className="mt-3.5 text-xs text-white/70">
                   Monthly service, with pricing based on your books.
                 </p>
               </div>
             </motion.div>
 
             {/* Supporting cards */}
-            <div className="flex flex-col gap-6">
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-1">
               {secondaryServices.map((service, i) => (
                 <motion.div
                   key={service.title}
@@ -384,52 +387,50 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: (i + 1) * 0.12 }}
-                  className="flex flex-1 flex-col rounded-3xl border border-gray-200/80 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:p-8"
+                  className="flex flex-col rounded-2xl border border-gray-200 bg-white p-[25px] shadow-[0_5px_20px_rgba(32,75,58,0.02)] transition-all duration-200 hover:border-primary/40 hover:shadow-[0_9px_25px_rgba(32,75,58,0.05)] lg:p-7"
                 >
-                  <div className="flex items-start gap-4">
+                  <div className="flex flex-col gap-[18px] lg:flex-row lg:gap-5">
                     <ServiceIcon>
                       <service.Icon />
                     </ServiceIcon>
-                    <div>
-                      <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">
+                    <div className="min-w-0">
+                      <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.14em] text-primary">
                         {service.eyebrow}
                       </p>
-                      <h3 className="mt-1.5 text-2xl font-bold text-text-dark font-[family-name:var(--font-heading)]">
+                      <h3 className="text-[23px] font-bold leading-[1.3] tracking-[-0.025em] text-text-dark font-[family-name:var(--font-heading)]">
                         {service.title}
                       </h3>
+
+                      <p className="mt-3 text-sm leading-relaxed text-text-muted">
+                        {service.description}
+                      </p>
+
+                      <ul className="mt-4">
+                        {service.features.map((feature) => (
+                          <li
+                            key={feature}
+                            className="mb-2 flex items-start gap-[11px] text-[13px] leading-[1.6] text-text-dark"
+                          >
+                            <CheckMark className="text-primary" />
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+
+                      {service.note && (
+                        <p className="mt-4 text-xs leading-relaxed text-text-muted">
+                          {service.note}
+                        </p>
+                      )}
+
+                      {service.bookACall && (
+                        <BookACallButton className="mt-4 inline-flex items-center gap-1.5 border-b border-primary/40 pb-[3px] text-[13px] font-semibold text-text-dark transition-colors hover:border-primary hover:text-primary">
+                          {service.bookACall}
+                          <ArrowUpRight />
+                        </BookACallButton>
+                      )}
                     </div>
                   </div>
-
-                  <p className="mt-4 leading-relaxed text-text-muted">
-                    {service.description}
-                  </p>
-
-                  <ul className="mt-5 space-y-2.5">
-                    {service.features.map((feature) => (
-                      <li
-                        key={feature}
-                        className="flex items-start gap-3 text-sm text-text-dark"
-                      >
-                        <CheckMark className="text-primary" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-
-                  {service.note && (
-                    <p className="mt-auto pt-5 text-sm text-text-muted/80">
-                      {service.note}
-                    </p>
-                  )}
-
-                  {service.bookACall && (
-                    <div className="mt-auto pt-5">
-                      <BookACallButton className="inline-flex items-center gap-1.5 border-b border-primary/40 pb-1 text-sm font-semibold text-text-dark transition-colors hover:border-primary hover:text-primary">
-                        {service.bookACall}
-                        <ArrowUpRight />
-                      </BookACallButton>
-                    </div>
-                  )}
                 </motion.div>
               ))}
             </div>
