@@ -116,43 +116,43 @@ const secondaryServices: SecondaryService[] = [
     Icon: ChatIcon,
   },
 ];
+
 const pricingTiers = [
   {
-    name: "Essential",
-    tagline: "Simple, accurate bookkeeping every month",
-    price: "$300 to $350",
+    number: "01",
+    name: "Simple",
+    tagline: "Straightforward books with fewer moving parts.",
+    price: "Around $350",
+    fit: "Often a fit for businesses under $500k in annual revenue.",
     features: [
-      "Monthly bank and card reconciliation",
-      "Income and expense categorization",
-      "Monthly financial statements",
+      "Lower transaction volume and fewer bank or credit card accounts",
+      "Business and personal spending clearly separated",
+      "Little need for integrations or additional tracking",
     ],
-    footer: "Best for freelancers and solo owners under $100k revenue",
   },
   {
-    name: "Professional",
-    tagline: "Clear numbers that support growth",
-    price: "$350 to $450",
-    popular: true,
+    number: "02",
+    name: "Moderate",
+    tagline: "More activity and a few additional details to keep organized.",
+    price: "$400–$500",
+    fit: "Often a fit for businesses with $500k to $1 million in annual revenue.",
     features: [
-      "Everything in Essential",
-      "Light AR and AP tracking",
-      "Sales tax filing",
-      "Monthly financial statement review meeting",
+      "Moderate transaction volume across several accounts",
+      "Payroll entries, loans, or payment integrations to reconcile",
+      "Some additional tracking or account balances to review",
     ],
-    footer: "Best for growing businesses with multiple accounts",
   },
   {
-    name: "Premium",
-    tagline: "Hands-on support and advanced reporting",
-    price: "$450 to $750",
+    number: "03",
+    name: "Complex",
+    tagline: "More accounts, more activity, and more to reconcile.",
+    price: "$500–$800",
+    fit: "Often a fit for businesses with $1 million to $2 million in annual revenue.",
     features: [
-      "Everything in Professional",
-      "Custom reports and KPI dashboards",
-      "Accrual, payroll, and loan tracking",
-      "Full-service A/P & A/R management",
-      "Annual 1099 preparation and filing",
+      "Higher transaction volume or multiple payment and sales channels",
+      "Class or project tracking, cash activity, or more involved integrations",
+      "More accounts receivable or accounts payable activity to review",
     ],
-    footer: "Best for established or multi-entity businesses",
   },
 ];
 
@@ -438,110 +438,141 @@ export default function Home() {
       </SectionWrapper>
 
       {/* Pricing Section */}
-      <SectionWrapper className="py-16 lg:py-20 bg-bg-light" id="pricing">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-text-dark font-[family-name:var(--font-heading)]">
-              Pricing
-            </h2>
-            <p className="mt-3 text-text-muted">
-              Transparent pricing. No contracts. First month satisfaction
-              guarantee or you do not pay.
+      <SectionWrapper
+        className="relative overflow-hidden py-16 lg:py-24 bg-primary-dark"
+        id="pricing"
+      >
+        {/* Faint diagonal line texture */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 opacity-[0.07]"
+          style={{
+            backgroundImage:
+              "repeating-linear-gradient(45deg, transparent, transparent 44px, #ffffff 44px, #ffffff 45px)",
+          }}
+        />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-6 lg:grid-cols-2 lg:items-center">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/70">
+                Monthly bookkeeping
+              </p>
+              <h2 className="mt-4 text-4xl sm:text-5xl font-bold tracking-tight text-white font-[family-name:var(--font-heading)]">
+                Pricing based on your books.
+              </h2>
+            </div>
+            <p className="leading-relaxed text-white/75 lg:pl-8">
+              These ranges give you an idea of what to expect. I&apos;ll review
+              your QuickBooks account and provide a quote based on your
+              transaction volume and complexity.
             </p>
-
-            {/* Callout box */}
-            <div className="mt-8 border-2 border-primary/40 bg-primary/5 rounded-xl p-5">
-              <p className="text-text-dark text-sm leading-relaxed">
-                Most small businesses lose thousands each year due to messy
-                books and avoidable tax issues. Clean, reliable bookkeeping
-                costs less than one bad decision.
-              </p>
-            </div>
-
-            {/* Satisfaction badge */}
-            <div className="mt-6 inline-block border-2 border-dashed border-primary/40 rounded-full px-6 py-2.5">
-              <p className="text-primary font-bold text-sm">
-                100% satisfaction in month one or pay nothing
-              </p>
-            </div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 items-stretch">
+          <div className="mt-12 grid items-stretch gap-6 md:grid-cols-3">
             {pricingTiers.map((tier, i) => (
               <motion.div
                 key={tier.name}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.15 }}
-                whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0,0,0,0.1)" }}
-                className="rounded-2xl p-8 transition-all duration-300 flex flex-col bg-white border border-gray-200 shadow-sm"
+                transition={{ duration: 0.5, delay: i * 0.12 }}
+                className="flex flex-col rounded-2xl bg-white p-7 shadow-xl sm:p-8"
               >
-                {tier.popular && (
-                  <span className="inline-block bg-primary text-white text-xs font-bold px-3 py-1.5 rounded-md mb-4 self-start">
-                    Most popular
-                  </span>
-                )}
-                <h3 className="text-2xl font-bold mb-1 text-text-dark font-[family-name:var(--font-heading)]">
+                <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 text-xs font-bold text-primary">
+                  {tier.number}
+                </span>
+
+                <h3 className="mt-6 text-2xl font-bold text-text-dark font-[family-name:var(--font-heading)]">
                   {tier.name}
                 </h3>
-                <p className="text-sm text-text-muted mb-5">{tier.tagline}</p>
-                <p className="mb-6 text-2xl font-bold text-primary font-[family-name:var(--font-heading)]">
-                  {tier.price}{" "}
-                  <span className="font-semibold">/ month</span>
+                <p className="mt-2 text-sm leading-relaxed text-text-muted">
+                  {tier.tagline}
                 </p>
-                <ul className="space-y-3 mb-8 flex-grow">
+
+                <p className="mt-8 text-3xl font-bold text-primary font-[family-name:var(--font-heading)]">
+                  {tier.price}
+                </p>
+                <p className="mt-1 text-sm text-text-muted">per month</p>
+
+                <div className="mt-5 border-t border-gray-200" />
+
+                <p className="mt-5 text-sm leading-relaxed text-text-muted">
+                  {tier.fit}
+                </p>
+
+                <ul className="mt-5 space-y-3">
                   {tier.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-3 text-sm text-text-dark">
-                      <span className="mt-0.5 flex-shrink-0 flex items-center justify-center w-5 h-5 rounded-md bg-primary text-white">
-                        <svg
-                          className="w-3.5 h-3.5"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={3}
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                      </span>
+                    <li
+                      key={feature}
+                      className="flex items-start gap-3 text-sm leading-relaxed text-text-dark"
+                    >
+                      <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                       <span>{feature}</span>
                     </li>
                   ))}
                 </ul>
+
+                <div className="mt-auto pt-8">
+                  <button
+                    type="button"
+                    onClick={() => setQuoteOpen(true)}
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary-dark px-6 py-3.5 text-sm font-bold text-white transition-all duration-300 hover:bg-text-dark hover:shadow-lg"
+                  >
+                    Request a quote
+                    <ArrowUpRight />
+                  </button>
+                </div>
               </motion.div>
             ))}
           </div>
 
-          {/* Quarterly / not-ready callout */}
+          <p className="mt-8 max-w-4xl text-sm leading-relaxed text-white/70">
+            These are guidelines, not packages to choose from. Revenue is one
+            reference point, not a pricing rule. I determine your monthly fee
+            after reviewing the books, and your quote may fall outside these
+            ranges.
+          </p>
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="mt-10"
+            className="mt-10 grid gap-8 rounded-2xl bg-white p-8 shadow-xl lg:grid-cols-2 lg:gap-12 lg:p-10"
           >
-            <div className="rounded-2xl border border-gray-200 bg-white shadow-sm p-8">
-              <h3 className="text-xl font-bold text-text-dark mb-2 font-[family-name:var(--font-heading)]">
+            <div>
+              <h3 className="text-xl font-bold text-text-dark font-[family-name:var(--font-heading)]">
+                Need cleanup bookkeeping first?
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-text-muted">
+                I&apos;ll review your books and quote the cleanup separately.
+              </p>
+              <button
+                type="button"
+                onClick={() => setQuoteOpen(true)}
+                className="mt-4 inline-flex items-center gap-1.5 border-b border-primary/40 pb-1 text-sm font-semibold text-text-dark transition-colors hover:border-primary hover:text-primary"
+              >
+                Request a quote
+                <ArrowUpRight />
+              </button>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-bold text-text-dark font-[family-name:var(--font-heading)]">
                 Not ready for monthly bookkeeping?
               </h3>
-              <p className="text-sm text-text-muted leading-relaxed">
-                Quarterly bookkeeping is available at{" "}
-                <span className="font-semibold text-text-dark">
-                  75% of the monthly rate
-                </span>
-                . Ideal if you don&apos;t need monthly reports but still want
-                clean, tax-ready books.
+              <p className="mt-2 text-sm leading-relaxed text-text-muted">
+                Quarterly bookkeeping is available at 75% of your quoted monthly
+                rate, billed monthly.
               </p>
             </div>
-            <p className="text-xs text-text-muted mt-3">
-              Pricing reflects current availability and complexity. Cancel
-              anytime.
-            </p>
           </motion.div>
+
+          <p className="mt-8 text-center text-sm text-white/70">
+            No contracts. Cancel anytime. 100% satisfaction in your first month
+            or pay nothing.
+          </p>
         </div>
       </SectionWrapper>
 
