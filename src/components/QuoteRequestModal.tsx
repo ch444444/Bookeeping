@@ -12,26 +12,18 @@ export const ACCOUNTANT_EMAIL = "vasili@northshorebookkeeping.com";
 const QUICKBOOKS_SIGN_IN_URL = "https://qbo.intuit.com/";
 
 const REVENUE_RANGES = [
-  "Under $100k",
-  "$100k to $250k",
-  "$250k to $500k",
-  "$500k to $1M",
-  "Over $1M",
-  "Not sure",
+  "Under $750k",
+  "$750k to $1 million",
+  "$1 million to $2 million",
+  "Over $2 million",
 ];
 
-const QBO_ANSWERS = [
-  "Yes",
-  "No, I use something else",
-  "No, not yet",
-  "Not sure",
-];
+const QBO_ANSWERS = ["Yes", "No", "Not sure"];
 
 const SERVICE_OPTIONS = [
   "Monthly bookkeeping",
-  "Cleanup and catch-up",
-  "QuickBooks consulting",
-  "Not sure yet",
+  "Cleanup bookkeeping",
+  "Monthly bookkeeping and cleanup",
 ];
 
 const EMPTY_FORM = {
@@ -185,7 +177,7 @@ export default function QuoteRequestModal({
 
   return createPortal(
     <div
-      className="fixed inset-0 z-[100] flex items-start justify-center overflow-y-auto bg-text-dark/60 p-4 backdrop-blur-sm sm:items-center sm:p-6"
+      className="fixed inset-0 z-[100] flex items-start justify-center overflow-y-auto bg-text-dark/60 p-4 sm:items-center sm:p-6"
       onMouseDown={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
@@ -194,7 +186,7 @@ export default function QuoteRequestModal({
         role="dialog"
         aria-modal="true"
         aria-labelledby="quote-modal-title"
-        className="relative my-auto w-full max-w-4xl rounded-2xl bg-white shadow-2xl"
+        className="relative my-auto w-full max-w-5xl rounded-2xl bg-white shadow-2xl"
       >
         <button
           type="button"
@@ -266,7 +258,7 @@ export default function QuoteRequestModal({
                 review your books.
               </p>
 
-              <div className="mt-8 grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
+              <div className="mt-8 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
                 {/* Form */}
                 <form onSubmit={handleSubmit}>
                   <div className="grid gap-5 sm:grid-cols-2">
@@ -474,7 +466,7 @@ export default function QuoteRequestModal({
                       <span className="text-text-muted">4.</span>
                       <span>
                         Enter{" "}
-                        <strong className="break-all font-semibold">
+                        <strong className="whitespace-nowrap font-semibold">
                           {ACCOUNTANT_EMAIL}
                         </strong>{" "}
                         and send the invitation.

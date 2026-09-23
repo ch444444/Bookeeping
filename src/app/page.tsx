@@ -85,7 +85,8 @@ type SecondaryService = {
   description: string;
   features: string[];
   note?: string;
-  link?: { href: string; label: string };
+  /** Label for a link that opens the Calendly scheduler. */
+  bookACall?: string;
   Icon: () => ReactNode;
 };
 
@@ -111,7 +112,7 @@ const secondaryServices: SecondaryService[] = [
       "Personalized setup and training",
       "Workflow guidance and a review of your books",
     ],
-    link: { href: "/contact", label: "Let's talk about what you need" },
+    bookACall: "Let's talk about what you need",
     Icon: ChatIcon,
   },
 ];
@@ -421,15 +422,12 @@ export default function Home() {
                     </p>
                   )}
 
-                  {service.link && (
+                  {service.bookACall && (
                     <div className="mt-auto pt-5">
-                      <Link
-                        href={service.link.href}
-                        className="inline-flex items-center gap-1.5 border-b border-primary/40 pb-1 text-sm font-semibold text-text-dark transition-colors hover:border-primary hover:text-primary"
-                      >
-                        {service.link.label}
+                      <BookACallButton className="inline-flex items-center gap-1.5 border-b border-primary/40 pb-1 text-sm font-semibold text-text-dark transition-colors hover:border-primary hover:text-primary">
+                        {service.bookACall}
                         <ArrowUpRight />
-                      </Link>
+                      </BookACallButton>
                     </div>
                   )}
                 </motion.div>
