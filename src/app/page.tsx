@@ -439,37 +439,37 @@ export default function Home() {
 
       {/* Pricing Section */}
       <SectionWrapper
-        className="relative overflow-hidden py-16 lg:py-24 bg-primary-dark"
+        className="relative overflow-hidden bg-primary-dark pt-[38px] pb-[28px] sm:pt-[52px] sm:pb-8"
         id="pricing"
       >
         {/* Faint diagonal line texture */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 opacity-[0.07]"
+          className="pointer-events-none absolute inset-0"
           style={{
             backgroundImage:
-              "repeating-linear-gradient(45deg, transparent, transparent 44px, #ffffff 44px, #ffffff 45px)",
+              "repeating-linear-gradient(125deg, transparent 0, transparent 138px, rgba(255,255,255,.1) 138px, rgba(255,255,255,.1) 140px), repeating-linear-gradient(55deg, transparent 0, transparent 298px, rgba(255,255,255,.05) 298px, rgba(255,255,255,.05) 300px)",
           }}
         />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-6 lg:grid-cols-2 lg:items-center">
+        <div className="relative mx-auto w-full max-w-[1240px] px-5 sm:px-6">
+          <div className="mb-8 grid gap-[18px] sm:gap-[25px] lg:grid-cols-2 lg:items-end lg:gap-[45px]">
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/70">
+              <p className="mb-5 text-xs font-bold uppercase tracking-[0.15em] text-white/80">
                 Monthly bookkeeping
               </p>
-              <h2 className="mt-4 text-4xl sm:text-5xl font-bold tracking-tight text-white font-[family-name:var(--font-heading)]">
+              <h2 className="text-[clamp(29px,3vw,38px)] font-bold leading-[1.23] tracking-[-0.035em] text-white font-[family-name:var(--font-heading)]">
                 Pricing based on your books.
               </h2>
             </div>
-            <p className="leading-relaxed text-white/75 lg:pl-8">
+            <p className="text-[15px] leading-relaxed text-white/75">
               These ranges give you an idea of what to expect. I&apos;ll review
               your QuickBooks account and provide a quote based on your
               transaction volume and complexity.
             </p>
           </div>
 
-          <div className="mt-12 grid items-stretch gap-6 md:grid-cols-3">
+          <div className="grid items-stretch gap-[23px] md:grid-cols-3 md:gap-[13px] lg:gap-[22px]">
             {pricingTiers.map((tier, i) => (
               <motion.div
                 key={tier.name}
@@ -477,57 +477,51 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.12 }}
-                className="flex flex-col rounded-2xl bg-white p-7 shadow-xl sm:p-8"
+                className="flex flex-col rounded-[13px] border border-gray-200 bg-white p-[26px] shadow-[0_5px_0_rgba(0,0,0,0.12)] transition-all duration-200 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_10px_25px_rgba(0,0,0,0.18)] md:px-[17px] md:py-[22px] lg:px-6 lg:py-7"
               >
-                <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 text-xs font-bold text-primary">
+                <span className="mb-[18px] self-start rounded-lg bg-primary/10 px-2.5 py-1.5 text-[13px] font-bold text-primary">
                   {tier.number}
                 </span>
 
-                <h3 className="mt-6 text-2xl font-bold text-text-dark font-[family-name:var(--font-heading)]">
+                <h3 className="text-2xl font-bold leading-[1.23] tracking-[-0.035em] text-text-dark font-[family-name:var(--font-heading)]">
                   {tier.name}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-text-muted">
+                <p className="mt-2.5 text-sm leading-[1.65] text-text-muted md:min-h-[70px]">
                   {tier.tagline}
                 </p>
 
-                <p className="mt-8 text-3xl font-bold text-primary font-[family-name:var(--font-heading)]">
+                <p className="mt-[22px] mb-[19px] text-[34px] font-bold leading-[1.3] tracking-[-0.04em] text-primary font-[family-name:var(--font-heading)] md:text-[clamp(25px,2.7vw,35px)]">
                   {tier.price}
+                  <span className="mt-[3px] block text-[13px] font-normal tracking-normal text-text-muted font-[family-name:var(--font-body)]">
+                    per month
+                  </span>
                 </p>
-                <p className="mt-1 text-sm text-text-muted">per month</p>
 
-                <div className="mt-5 border-t border-gray-200" />
-
-                <p className="mt-5 text-sm leading-relaxed text-text-muted">
+                <p className="border-t border-gray-200 pt-[17px] text-[13px] leading-[1.6] text-text-muted">
                   {tier.fit}
                 </p>
 
-                <ul className="mt-5 space-y-3">
+                <ul className="mt-[18px] mb-[25px] list-disc pl-[18px] text-[13px] leading-[1.7] text-text-dark marker:text-primary">
                   {tier.features.map((feature) => (
-                    <li
-                      key={feature}
-                      className="flex items-start gap-3 text-sm leading-relaxed text-text-dark"
-                    >
-                      <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                      <span>{feature}</span>
+                    <li key={feature} className="mb-2.5 pl-0.5">
+                      {feature}
                     </li>
                   ))}
                 </ul>
 
-                <div className="mt-auto pt-8">
-                  <button
-                    type="button"
-                    onClick={() => setQuoteOpen(true)}
-                    className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary-dark px-6 py-3.5 text-sm font-bold text-white transition-all duration-300 hover:bg-text-dark hover:shadow-lg"
-                  >
-                    Request a quote
-                    <ArrowUpRight />
-                  </button>
-                </div>
+                <button
+                  type="button"
+                  onClick={() => setQuoteOpen(true)}
+                  className="mt-auto inline-flex w-full items-center justify-center gap-3 rounded-[3px] bg-primary-dark px-3.5 py-[13px] text-[13px] font-semibold text-white transition-colors duration-150 hover:bg-text-dark"
+                >
+                  Request a quote
+                  <ArrowUpRight />
+                </button>
               </motion.div>
             ))}
           </div>
 
-          <p className="mt-8 max-w-4xl text-sm leading-relaxed text-white/70">
+          <p className="mt-[26px] max-w-[1000px] text-[13px] leading-relaxed text-white/75">
             These are guidelines, not packages to choose from. Revenue is one
             reference point, not a pricing rule. I determine your monthly fee
             after reviewing the books, and your quote may fall outside these
@@ -539,19 +533,19 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="mt-10 grid gap-8 rounded-2xl bg-white p-8 shadow-xl lg:grid-cols-2 lg:gap-12 lg:p-10"
+            className="mt-[30px] grid gap-[25px] rounded-xl border border-gray-200 bg-white p-[25px] lg:grid-cols-2 lg:gap-[30px]"
           >
             <div>
-              <h3 className="text-xl font-bold text-text-dark font-[family-name:var(--font-heading)]">
+              <h3 className="text-[21px] font-bold leading-[1.23] tracking-[-0.035em] text-text-dark font-[family-name:var(--font-heading)]">
                 Need cleanup bookkeeping first?
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-text-muted">
+              <p className="mt-2.5 text-[13px] leading-relaxed text-text-muted">
                 I&apos;ll review your books and quote the cleanup separately.
               </p>
               <button
                 type="button"
                 onClick={() => setQuoteOpen(true)}
-                className="mt-4 inline-flex items-center gap-1.5 border-b border-primary/40 pb-1 text-sm font-semibold text-text-dark transition-colors hover:border-primary hover:text-primary"
+                className="mt-4 inline-flex items-center gap-[18px] border-b border-primary/40 pb-[3px] text-sm font-semibold text-text-dark transition-colors hover:border-primary hover:text-primary"
               >
                 Request a quote
                 <ArrowUpRight />
@@ -559,17 +553,17 @@ export default function Home() {
             </div>
 
             <div>
-              <h3 className="text-xl font-bold text-text-dark font-[family-name:var(--font-heading)]">
+              <h3 className="text-[21px] font-bold leading-[1.23] tracking-[-0.035em] text-text-dark font-[family-name:var(--font-heading)]">
                 Not ready for monthly bookkeeping?
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-text-muted">
+              <p className="mt-2.5 text-[13px] leading-relaxed text-text-muted">
                 Quarterly bookkeeping is available at 75% of your quoted monthly
                 rate, billed monthly.
               </p>
             </div>
           </motion.div>
 
-          <p className="mt-8 text-center text-sm text-white/70">
+          <p className="mt-[22px] text-center text-xs text-white/75">
             No contracts. Cancel anytime. 100% satisfaction in your first month
             or pay nothing.
           </p>
