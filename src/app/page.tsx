@@ -772,7 +772,7 @@ export default function Home() {
                 Prefer to talk first?
               </p>
               <BookACallButton className="mt-1.5 inline-flex items-center gap-[18px] border-b border-primary/40 pb-[3px] text-sm font-semibold text-text-dark transition-colors hover:border-primary hover:text-primary">
-                Book a 30-minute call
+                Book a 15-minute call
                 <ArrowUpRight />
               </BookACallButton>
             </div>
