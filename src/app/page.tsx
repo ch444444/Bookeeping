@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { ReactNode, useState } from "react";
 import Link from "next/link";
 import SectionWrapper from "@/components/SectionWrapper";
-import ContactForm from "@/components/ContactForm";
 import BookACallButton from "@/components/BookACallButton";
 import QuoteRequestModal from "@/components/QuoteRequestModal";
 
@@ -700,59 +699,98 @@ export default function Home() {
       </SectionWrapper>
 
       {/* Contact Section */}
-      <SectionWrapper className="py-16 lg:py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2
-            className="whitespace-nowrap font-bold text-text-dark mb-4 font-[family-name:var(--font-heading)]"
-            style={{ fontSize: "clamp(0.9rem, 4.6vw, 2.25rem)" }}
-          >
-            Every month you wait costs you clarity.
-          </h2>
-          <p className="text-lg text-text-muted leading-relaxed mb-10 max-w-2xl mx-auto">
-            One free call today could save you hours of stress this year.
-          </p>
-          <div className="bg-bg-light rounded-2xl p-8 border border-gray-100 text-left max-w-2xl mx-auto">
-            <ContactForm />
-          </div>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mt-8">
-            <a
-              href="tel:+18473051323"
-              className="flex items-center gap-2 text-text-dark font-semibold hover:text-primary transition-colors"
-            >
-              <svg
-                className="w-5 h-5 text-primary"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+      <SectionWrapper className="bg-bg-muted py-[44px] sm:py-[62px]">
+        <div className="mx-auto w-full max-w-[1120px] px-5 sm:px-6">
+          <div className="grid gap-10 lg:grid-cols-2 lg:gap-[8%]">
+            {/* Intro and contact details */}
+            <div>
+              <p className="mb-5 text-xs font-bold uppercase tracking-[0.15em] text-primary-dark">
+                Work with me
+              </p>
+              <h2 className="text-[clamp(29px,3vw,38px)] font-bold leading-[1.23] tracking-[-0.035em] text-text-dark font-[family-name:var(--font-heading)]">
+                Tell me about
+                <br />
+                your business.
+              </h2>
+              <p className="mt-[25px] max-w-[410px] leading-[1.65] text-text-muted">
+                Whether you&apos;re looking for ongoing support or need to get
+                your books caught up, I&apos;d like to learn more about your
+                business and what you need help with. We can start with a quote
+                or a short conversation.
+              </p>
+
+              <div className="mt-[27px] grid gap-[9px] text-[15px]">
+                <a
+                  href="mailto:vasili@northshorebookkeeping.com"
+                  className="flex items-center gap-3 text-text-dark transition-colors hover:text-primary"
+                >
+                  <svg
+                    className="h-5 w-5 shrink-0 text-primary"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={1.75}
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
+                  </svg>
+                  <span className="break-all">
+                    vasili@northshorebookkeeping.com
+                  </span>
+                </a>
+                <a
+                  href="tel:+18473051323"
+                  className="flex items-center gap-3 text-text-dark transition-colors hover:text-primary"
+                >
+                  <svg
+                    className="h-5 w-5 shrink-0 text-primary"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={1.75}
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                    />
+                  </svg>
+                  (847) 305-1323
+                </a>
+              </div>
+
+              <p className="mt-[25px] text-sm text-text-muted">
+                Prefer to talk first?
+              </p>
+              <BookACallButton className="mt-1.5 inline-flex items-center gap-[18px] border-b border-primary/40 pb-[3px] text-sm font-semibold text-text-dark transition-colors hover:border-primary hover:text-primary">
+                Book a 30-minute call
+                <ArrowUpRight />
+              </BookACallButton>
+            </div>
+
+            {/* Quote CTA panel */}
+            <div className="self-center border-t border-gray-300 pt-8 lg:border-l lg:border-t-0 lg:py-3.5 lg:pl-10 lg:pt-0">
+              <h3 className="text-[25px] font-bold leading-[1.23] tracking-[-0.035em] text-text-dark font-[family-name:var(--font-heading)]">
+                Let&apos;s see if we&apos;re a good fit.
+              </h3>
+              <p className="mt-[19px] mb-[26px] leading-[1.65] text-text-muted">
+                Tell me about your business, then use the QuickBooks
+                instructions to invite me to review your books.
+              </p>
+              <button
+                type="button"
+                onClick={() => setQuoteOpen(true)}
+                className="inline-flex items-center justify-center gap-6 rounded-[3px] bg-primary-dark px-6 py-4 text-sm font-semibold text-white transition-colors hover:bg-text-dark"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                />
-              </svg>
-              (847) 305-1323
-            </a>
-            <a
-              href="mailto:vasili@northshorebookkeeping.com"
-              className="flex items-center gap-2 text-text-dark font-semibold hover:text-primary transition-colors"
-            >
-              <svg
-                className="w-5 h-5 text-primary"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                />
-              </svg>
-              vasili@northshorebookkeeping.com
-            </a>
+                Request a quote
+                <ArrowUpRight />
+              </button>
+            </div>
           </div>
         </div>
       </SectionWrapper>
