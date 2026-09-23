@@ -573,14 +573,18 @@ export default function Home() {
       {/* Testimonials Section */}
       <SectionWrapper className="py-16 lg:py-20 bg-white" id="testimonials">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-text-dark font-[family-name:var(--font-heading)]">
-              What Our Clients Say
+          <div className="mb-8">
+            <p className="mb-[14px] text-[11px] font-bold uppercase tracking-[0.16em] text-primary">
+              Client reviews
+            </p>
+            <h2 className="max-w-[690px] text-[clamp(30px,3vw,42px)] font-bold leading-[1.2] tracking-[-0.035em] text-text-dark font-[family-name:var(--font-heading)]">
+              Good books.
+              <br />
+              Even better working relationships.
             </h2>
-            <p className="mt-4 text-text-muted max-w-2xl mx-auto">
-              See what our clients say about their experiences with us and how
-              our services have added value to their businesses, helping them
-              achieve their financial goals.
+            <p className="mt-[18px] max-w-[620px] text-[15px] leading-relaxed text-text-muted">
+              Here&apos;s what business owners have to say about working with
+              North Shore Bookkeeping.
             </p>
           </div>
 
