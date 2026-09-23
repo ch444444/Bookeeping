@@ -22,7 +22,7 @@ export default function Footer() {
 
           {/* QuickBooks Certified ProAdvisor Badge */}
           <div className="inline-block w-32">
-            <div className="bg-white rounded-t-lg px-3 pt-3 pb-2 text-center border border-gray-200">
+            <div className="bg-white rounded-t-lg px-3 pt-3 pb-2 text-center border border-border-soft">
               <div className="flex justify-center mb-1.5">
                 <svg className="w-8 h-8" viewBox="0 0 40 40" fill="none">
                   <circle cx="20" cy="20" r="18" fill="#2CA01C"/>
@@ -32,7 +32,7 @@ export default function Footer() {
               </div>
               <p className="text-[7px] text-gray-500 leading-tight">intuit</p>
               <p className="text-xs font-bold text-gray-800 leading-tight">quickbooks<span className="text-[7px] align-top">.</span></p>
-              <div className="border-t border-gray-200 mt-1.5 pt-1.5">
+              <div className="border-t border-border-soft mt-1.5 pt-1.5">
                 <p className="text-[10px] font-semibold text-gray-800 leading-tight">Certified</p>
                 <p className="text-[10px] font-semibold text-gray-800 leading-tight">ProAdvisor</p>
               </div>
@@ -51,7 +51,7 @@ export default function Footer() {
               <li key={link.label}>
                 <Link
                   href={link.href}
-                  className="text-sm text-gray-400 hover:text-primary transition-colors"
+                  className="text-sm text-white/70 hover:text-white transition-colors"
                 >
                   {link.label}
                 </Link>
@@ -64,7 +64,7 @@ export default function Footer() {
             <h3 className="font-semibold text-sm uppercase tracking-wider mb-4 font-[family-name:var(--font-heading)]">
               Contact
             </h3>
-            <ul className="space-y-3 text-sm text-gray-400">
+            <ul className="space-y-3 text-sm text-white/70">
               <li>
                 <a
                   href="tel:+18473051323"
@@ -87,7 +87,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/10 mt-12 pt-8 text-center text-sm text-gray-500">
+        <div className="border-t border-white/10 mt-12 pt-8 text-center text-sm text-white/60">
           <p>&copy; {new Date().getFullYear()} North Shore Bookkeeping. All rights reserved.</p>
         </div>
       </div>

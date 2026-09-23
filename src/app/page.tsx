@@ -159,7 +159,6 @@ const testimonials = [
   {
     name: "Pawstock",
     initial: "P",
-    color: "bg-teal-500",
     timeAgo: "2 years ago",
     quote:
       "We currently use North Shore Bookkeeping, and they have been an excellent partner for our business. As a retail operation, we deal with the intricacies of inventory management, retail sales tracking, and staffing solutions, and their team handles all of it with professionalism and clarity. They understand inventory-heavy retail, which makes a big difference in day-to-day operations and long-term planning. Communication is straightforward, questions are answered quickly, and the solutions they provide are practical and effective. Their services are also very affordable for the level of expertise and support we receive. I would highly recommend North Shore Bookkeeping to any small business looking for reliable, knowledgeable bookkeeping support.",
@@ -167,7 +166,6 @@ const testimonials = [
   {
     name: "TJ Kesteleyn",
     initial: "T",
-    color: "bg-purple-600",
     timeAgo: "2 years ago",
     quote:
       "I've worked with them for over a year on various projects. Vas has been great! Very knowledgeable, great communication, and incredible attention to detail. I would highly recommend to my friends, family, and fellow business owners.",
@@ -175,7 +173,6 @@ const testimonials = [
   {
     name: "The Perfect Fit",
     initial: "T",
-    color: "bg-yellow-500",
     timeAgo: "2 years ago",
     quote:
       "As a small business owner, finding someone who truly understands my financial needs has been a game changer. Vas keeps everything running smoothly and helps me stay organized throughout the year. Their expertise and responsiveness are top-notch!",
@@ -183,7 +180,6 @@ const testimonials = [
   {
     name: "4c Builds",
     initial: "4",
-    color: "bg-blue-500",
     timeAgo: "2 years ago",
     quote:
       "Have used them for over 2 years and could not speak higher for the customer service or quality of work.",
@@ -197,14 +193,12 @@ function ReviewText({ quote }: { quote: string }) {
   const displayText = needsTruncation && !expanded ? quote.slice(0, maxChars) + "..." : quote;
 
   return (
-    <div className="text-center">
-      <p className="text-text-dark text-sm leading-relaxed">
-        {displayText}
-      </p>
+    <div>
+      <p className="text-[15px] leading-[1.85] text-text-dark">{displayText}</p>
       {needsTruncation && (
         <button
           onClick={() => setExpanded(!expanded)}
-          className="text-xs text-text-muted hover:text-primary mt-2 transition-colors"
+          className="mt-2 text-[13px] font-semibold text-text-muted transition-colors hover:text-primary"
         >
           {expanded ? "Show less" : "Read more"}
         </button>
@@ -219,7 +213,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-[#3d8583] pt-28 pb-3 lg:pt-32 lg:pb-4 overflow-hidden">
+      <section className="relative bg-primary-light pt-28 pb-3 lg:pt-32 lg:pb-4 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-5 gap-8 items-center">
             <motion.div
@@ -386,7 +380,7 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: (i + 1) * 0.12 }}
-                  className="flex flex-col rounded-2xl border border-gray-200 bg-white p-[25px] shadow-[0_5px_20px_rgba(32,75,58,0.02)] transition-all duration-200 hover:border-primary/40 hover:shadow-[0_9px_25px_rgba(32,75,58,0.05)] lg:p-7"
+                  className="flex flex-col rounded-2xl border border-border-soft bg-white p-[25px] shadow-[0_5px_20px_rgba(32,75,58,0.02)] transition-all duration-200 hover:border-primary/40 hover:shadow-[0_9px_25px_rgba(32,75,58,0.05)] lg:p-7"
                 >
                   <div className="flex flex-col gap-[18px] lg:flex-row lg:gap-5">
                     <ServiceIcon>
@@ -477,7 +471,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.12 }}
-                className="flex flex-col rounded-[13px] border border-gray-200 bg-white p-[26px] shadow-[0_5px_0_rgba(0,0,0,0.12)] transition-all duration-200 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_10px_25px_rgba(0,0,0,0.18)] md:px-[17px] md:py-[22px] lg:px-6 lg:py-7"
+                className="flex flex-col rounded-[13px] border border-border-soft bg-white p-[26px] shadow-[0_5px_0_rgba(0,0,0,0.12)] transition-all duration-200 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_10px_25px_rgba(0,0,0,0.18)] md:px-[17px] md:py-[22px] lg:px-6 lg:py-7"
               >
                 <span className="mb-[18px] self-start rounded-lg bg-primary/10 px-2.5 py-1.5 text-[13px] font-bold text-primary">
                   {tier.number}
@@ -497,7 +491,7 @@ export default function Home() {
                   </span>
                 </p>
 
-                <p className="border-t border-gray-200 pt-[17px] text-[13px] leading-[1.6] text-text-muted">
+                <p className="border-t border-border-soft pt-[17px] text-[13px] leading-[1.6] text-text-muted">
                   {tier.fit}
                 </p>
 
@@ -533,7 +527,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="mt-[30px] grid gap-[25px] rounded-xl border border-gray-200 bg-white p-[25px] lg:grid-cols-2 lg:gap-[30px]"
+            className="mt-[30px] grid gap-[25px] rounded-xl border border-border-soft bg-white p-[25px] lg:grid-cols-2 lg:gap-[30px]"
           >
             <div>
               <h3 className="text-[21px] font-bold leading-[1.23] tracking-[-0.035em] text-text-dark font-[family-name:var(--font-heading)]">
@@ -571,8 +565,11 @@ export default function Home() {
       </SectionWrapper>
 
       {/* Testimonials Section */}
-      <SectionWrapper className="py-16 lg:py-20 bg-white" id="testimonials">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionWrapper
+        className="bg-surface-tint py-[44px] sm:py-[68px]"
+        id="testimonials"
+      >
+        <div className="mx-auto w-full max-w-[1240px] px-5 sm:px-6">
           <div className="mb-8">
             <p className="mb-[14px] text-[11px] font-bold uppercase tracking-[0.16em] text-primary">
               Client reviews
@@ -588,26 +585,26 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid gap-[22px] md:grid-cols-2 lg:grid-cols-4">
             {testimonials.map((testimonial, i) => (
               <motion.div
                 key={testimonial.name}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.15 }}
-                className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm"
+                transition={{ duration: 0.5, delay: i * 0.12 }}
+                className="flex flex-col rounded-2xl border border-border-soft bg-white p-[25px] shadow-[0_8px_25px_rgba(34,77,53,0.06)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_14px_30px_rgba(34,77,53,0.09)]"
               >
                 {/* Header: Avatar, Name, Time, Google logo */}
-                <div className="flex items-center justify-between mb-3">
+                <div className="mb-3 flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <div className={`w-10 h-10 ${testimonial.color} rounded-full flex items-center justify-center`}>
-                      <span className="text-white font-bold text-sm">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-surface-soft">
+                      <span className="text-xs font-semibold text-primary-dark">
                         {testimonial.initial}
                       </span>
                     </div>
                     <div>
-                      <p className="font-semibold text-sm text-text-dark">
+                      <p className="text-[13px] font-semibold text-text-dark">
                         {testimonial.name}
                       </p>
                     </div>
@@ -627,7 +624,7 @@ export default function Home() {
                     {[...Array(5)].map((_, j) => (
                       <svg
                         key={j}
-                        className="w-4 h-4 text-yellow-400"
+                        className="w-4 h-4 text-star"
                         fill="currentColor"
                         viewBox="0 0 20 20"
                       >
@@ -635,7 +632,7 @@ export default function Home() {
                       </svg>
                     ))}
                   </div>
-                  <svg className="w-4 h-4 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                 </div>
@@ -778,7 +775,7 @@ export default function Home() {
             </div>
 
             {/* Quote CTA panel */}
-            <div className="self-center border-t border-gray-300 pt-8 lg:border-l lg:border-t-0 lg:py-3.5 lg:pl-10 lg:pt-0">
+            <div className="self-center border-t border-border-soft pt-8 lg:border-l lg:border-t-0 lg:py-3.5 lg:pl-10 lg:pt-0">
               <h3 className="text-[25px] font-bold leading-[1.23] tracking-[-0.035em] text-text-dark font-[family-name:var(--font-heading)]">
                 Let&apos;s see if we&apos;re a good fit.
               </h3>

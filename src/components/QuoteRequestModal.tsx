@@ -39,7 +39,7 @@ const EMPTY_FORM = {
 
 const labelClass = "block text-sm font-medium text-text-dark mb-1.5";
 const fieldClass =
-  "w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm text-text-dark outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20";
+  "w-full rounded-lg border border-border-soft px-4 py-2.5 text-sm text-text-dark outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20";
 
 function ArrowUpRight() {
   return (
@@ -192,7 +192,7 @@ export default function QuoteRequestModal({
           type="button"
           onClick={onClose}
           aria-label="Close"
-          className="absolute right-4 top-4 z-10 flex h-9 w-9 items-center justify-center rounded-lg bg-gray-100 text-text-muted transition-colors hover:bg-gray-200 hover:text-text-dark"
+          className="absolute right-4 top-4 z-10 flex h-9 w-9 items-center justify-center rounded-lg bg-surface-soft text-text-muted transition-colors hover:bg-surface-tint hover:text-text-dark"
         >
           <svg
             className="h-4 w-4"
@@ -483,7 +483,7 @@ export default function QuoteRequestModal({
                   <button
                     type="button"
                     onClick={handleCopyEmail}
-                    className="mt-5 rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm font-semibold text-text-dark transition-colors hover:border-primary hover:text-primary"
+                    className="mt-5 rounded-lg border border-border-soft bg-white px-4 py-2.5 text-sm font-semibold text-text-dark transition-colors hover:border-primary hover:text-primary"
                   >
                     {copied ? "Copied" : "Copy email address"}
                   </button>

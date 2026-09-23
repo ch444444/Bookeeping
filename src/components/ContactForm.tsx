@@ -73,7 +73,7 @@ export default function ContactForm() {
           required
           value={formData.name}
           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-          className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm"
+          className="w-full px-4 py-3 rounded-lg border border-border-soft focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm"
           placeholder="Your name"
         />
       </div>
@@ -90,7 +90,7 @@ export default function ContactForm() {
           required
           value={formData.email}
           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-          className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm"
+          className="w-full px-4 py-3 rounded-lg border border-border-soft focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm"
           placeholder="you@example.com"
         />
       </div>
@@ -106,7 +106,7 @@ export default function ContactForm() {
           id="phone"
           value={formData.phone}
           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-          className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm"
+          className="w-full px-4 py-3 rounded-lg border border-border-soft focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm"
           placeholder="(555) 000-0000"
         />
       </div>
@@ -125,7 +125,7 @@ export default function ContactForm() {
           onChange={(e) =>
             setFormData({ ...formData, message: e.target.value })
           }
-          className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm resize-none"
+          className="w-full px-4 py-3 rounded-lg border border-border-soft focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm resize-none"
           placeholder="Tell us about your bookkeeping needs..."
         />
       </div>
