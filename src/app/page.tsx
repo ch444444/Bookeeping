@@ -6,6 +6,7 @@ import Link from "next/link";
 import SectionWrapper from "@/components/SectionWrapper";
 import ContactForm from "@/components/ContactForm";
 import BookACallButton from "@/components/BookACallButton";
+import QuoteRequestModal from "@/components/QuoteRequestModal";
 
 /** Small rounded-square icon used as each service card's badge. */
 function ServiceIcon({
@@ -213,6 +214,8 @@ function ReviewText({ quote }: { quote: string }) {
 }
 
 export default function Home() {
+  const [quoteOpen, setQuoteOpen] = useState(false);
+
   return (
     <>
       {/* Hero Section */}
@@ -357,13 +360,14 @@ export default function Home() {
               </ul>
 
               <div className="relative mt-auto pt-12">
-                <Link
-                  href="/contact"
+                <button
+                  type="button"
+                  onClick={() => setQuoteOpen(true)}
                   className="inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3.5 text-sm font-semibold text-text-dark transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
                 >
                   Request a quote
                   <ArrowUpRight className="text-text-muted" />
-                </Link>
+                </button>
                 <p className="mt-4 text-sm text-white/55">
                   Monthly service, with pricing based on your books.
                 </p>
@@ -735,6 +739,11 @@ export default function Home() {
           </div>
         </div>
       </SectionWrapper>
+
+      <QuoteRequestModal
+        open={quoteOpen}
+        onClose={() => setQuoteOpen(false)}
+      />
     </>
   );
 }
