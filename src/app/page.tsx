@@ -646,9 +646,9 @@ export default function Home() {
       </SectionWrapper>
 
       {/* About Preview */}
-      <SectionWrapper className="py-16 lg:py-20 bg-bg-light">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <SectionWrapper className="bg-bg-light py-[44px] sm:py-[72px]">
+        <div className="mx-auto w-full max-w-[1240px] px-5 sm:px-6">
+          <div className="grid items-center gap-8 md:grid-cols-2 md:gap-[34px] lg:grid-cols-[1fr_1.08fr] lg:gap-16">
             <div className="flex justify-center">
               <div className="relative">
                 <div className="absolute top-4 right-[-16px] w-full h-full bg-primary/40 rounded-2xl" />
@@ -666,49 +666,34 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="relative"
             >
-              {/* Offset shadow blob */}
-            <div className="absolute -bottom-6 -right-4 w-full h-full bg-gray-300/50 rounded-[3rem_3rem_5rem_3rem]" />
-            {/* Bubble card */}
-            <div className="relative bg-white rounded-[3rem_3rem_5rem_3rem] shadow-2xl px-8 py-12 sm:px-14 sm:py-16 text-center">
-              <p className="mb-5 text-xs font-bold uppercase tracking-[0.15em] text-primary">
+              <p className="mb-[15px] text-[11px] font-bold uppercase tracking-[0.17em] text-primary">
                 The person behind the books
               </p>
-              <h2 className="text-4xl sm:text-5xl font-bold leading-[1.23] tracking-[-0.035em] text-text-dark font-[family-name:var(--font-heading)]">
+              <h2 className="mb-[18px] text-[clamp(34px,3.3vw,44px)] font-bold leading-[1.15] tracking-[-0.04em] text-text-dark font-[family-name:var(--font-heading)]">
                 Hi, I&apos;m Vasili.
               </h2>
-              <p className="mt-5 mb-6 text-lg sm:text-xl leading-snug text-text-muted">
+              <p className="mb-[22px] text-[20px] leading-[1.5] tracking-[-0.02em] text-primary-dark md:text-[19px] lg:text-[21px]">
                 Accurate books matter.
                 <br />
                 So does the person you work with.
               </p>
-              <p className="text-text-muted leading-relaxed mb-8 max-w-xl mx-auto">
+              <p className="mb-[18px] text-[15px] leading-[1.75] text-text-muted">
                 I started North Shore Bookkeeping after years in public
                 accounting because I saw small business owners drowning in messy
-                books, bad communication, and unclear financials. My goal is
-                simple — give you clean numbers, clear answers, and more time to
-                run your business.
+                books, bad communication, and unclear financials.
+              </p>
+              <p className="mb-[18px] text-[15px] leading-[1.75] text-text-muted">
+                My goal is simple — give you clean numbers, clear answers, and
+                more time to run your business.
               </p>
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 bg-primary-dark text-white px-7 py-3.5 rounded-lg font-bold text-sm uppercase tracking-wider hover:bg-primary transition-all hover:shadow-lg hover:-translate-y-0.5"
+                className="mt-[7px] inline-flex items-center gap-6 rounded-md bg-primary-dark px-[21px] py-[13px] text-[13px] font-semibold text-white transition-colors hover:bg-text-dark"
               >
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  viewBox="0 0 24 24"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M22 2 11 13" />
-                  <path d="M22 2 15 22 11 13 2 9 22 2z" />
-                </svg>
-                Read More
+                Read more
+                <ArrowUpRight />
               </Link>
-            </div>
             </motion.div>
           </div>
         </div>
