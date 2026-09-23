@@ -671,9 +671,17 @@ export default function Home() {
             <div className="absolute -bottom-6 -right-4 w-full h-full bg-gray-300/50 rounded-[3rem_3rem_5rem_3rem]" />
             {/* Bubble card */}
             <div className="relative bg-white rounded-[3rem_3rem_5rem_3rem] shadow-2xl px-8 py-12 sm:px-14 sm:py-16 text-center">
-              <h2 className="text-3xl sm:text-4xl font-bold text-text-dark mb-6 font-[family-name:var(--font-heading)]">
-                Welcome to North Shore Bookkeeping!
+              <p className="mb-5 text-xs font-bold uppercase tracking-[0.15em] text-primary">
+                The person behind the books
+              </p>
+              <h2 className="text-4xl sm:text-5xl font-bold leading-[1.23] tracking-[-0.035em] text-text-dark font-[family-name:var(--font-heading)]">
+                Hi, I&apos;m Vasili.
               </h2>
+              <p className="mt-5 mb-6 text-lg sm:text-xl leading-snug text-text-muted">
+                Accurate books matter.
+                <br />
+                So does the person you work with.
+              </p>
               <p className="text-text-muted leading-relaxed mb-8 max-w-xl mx-auto">
                 I started North Shore Bookkeeping after years in public
                 accounting because I saw small business owners drowning in messy
