@@ -1,51 +1,119 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import Link from "next/link";
 import SectionWrapper from "@/components/SectionWrapper";
 import ContactForm from "@/components/ContactForm";
 import BookACallButton from "@/components/BookACallButton";
 
-const services = [
-  {
-    title: "Monthly Bookkeeping",
-    description:
-      "Stay on top of your finances with a reliable monthly process that keeps your books accurate and tax-ready.",
-    features: [
-      "Bank & credit cards reconciled monthly",
-      "Transactions categorized so you always know where your money's going",
-      "Financial statements delivered within 15 business days",
-      "Monthly financial statement review meeting",
-      "Sales tax filing",
-      "Annual 1099 preparation and filing",
-      "Full-service A/P & A/R management",
-    ],
-  },
-  {
-    title: "Cleanup or Catch-up",
-    description:
-      "Behind on your books? We fix and organize everything fast so you can file taxes and make decisions with confidence.",
-    features: [
-      "Rebuild months or years of records",
-      "Use advanced tools to import statements",
-      "Every transaction reviewed and corrected",
-      "Tax-ready handoff for your CPA",
-    ],
-  },
-  {
-    title: "Consulting & Training",
-    description:
-      "Keep bookkeeping in-house with expert setup, training, and periodic reviews to keep your team confident and accurate.",
-    features: [
-      "Personalized QuickBooks setup and training",
-      "Chart of accounts and workflow optimization",
-      "Monthly or quarterly accuracy reviews",
-      "Option to upgrade to monthly service anytime",
-    ],
-  },
+/** Small rounded-square icon used as each service card's badge. */
+function ServiceIcon({
+  children,
+  tone = "light",
+}: {
+  children: ReactNode;
+  tone?: "light" | "dark";
+}) {
+  return (
+    <span
+      className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl ${
+        tone === "dark"
+          ? "bg-white/10 text-white ring-1 ring-white/15"
+          : "bg-primary/10 text-primary"
+      }`}
+    >
+      {children}
+    </span>
+  );
+}
+
+function LedgerIcon() {
+  return (
+    <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={1.75} viewBox="0 0 24 24" aria-hidden="true">
+      <rect x="5" y="3" width="14" height="18" rx="2.5" strokeLinejoin="round" />
+      <path strokeLinecap="round" d="M9 8h6M9 12h6M9 16h3" />
+    </svg>
+  );
+}
+
+function CalendarCheckIcon() {
+  return (
+    <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={1.75} viewBox="0 0 24 24" aria-hidden="true">
+      <rect x="3.5" y="5" width="17" height="16" rx="2.5" strokeLinejoin="round" />
+      <path strokeLinecap="round" d="M8 3v4M16 3v4M3.5 10h17M9.5 15.5l2 2 3.5-3.5" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function ChatIcon() {
+  return (
+    <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={1.75} viewBox="0 0 24 24" aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M20.5 12.5c0 3.9-3.8 7-8.5 7-1 0-2-.15-2.9-.42L4 20.5l1.5-3.7A6.6 6.6 0 0 1 3.5 12.5c0-3.9 3.8-7 8.5-7s8.5 3.1 8.5 7Z" />
+      <path strokeLinecap="round" d="M9 11.5h6M9 14.5h3.5" />
+    </svg>
+  );
+}
+
+/** Thin check used in the service card lists. */
+function CheckMark({ className = "" }: { className?: string }) {
+  return (
+    <svg className={`mt-[3px] h-3.5 w-3.5 shrink-0 ${className}`} fill="none" stroke="currentColor" strokeWidth={2.25} viewBox="0 0 24 24" aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.5l5 5 10-11" />
+    </svg>
+  );
+}
+
+function ArrowUpRight({ className = "" }: { className?: string }) {
+  return (
+    <svg className={`h-3 w-3 shrink-0 ${className}`} fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M8.5 7H17v8.5" />
+    </svg>
+  );
+}
+
+const monthlyFeatures = [
+  "Monthly bank and credit card reconciliation",
+  "Transaction categorization and balance sheet review",
+  "Monthly financial statements and answers to your questions",
 ];
 
+type SecondaryService = {
+  eyebrow: string;
+  title: string;
+  description: string;
+  features: string[];
+  note?: string;
+  link?: { href: string; label: string };
+  Icon: () => ReactNode;
+};
+
+const secondaryServices: SecondaryService[] = [
+  {
+    eyebrow: "A fresh start",
+    title: "Cleanup & catch-up",
+    description:
+      "Behind on your books or unsure the numbers are right? I'll review what needs attention and get your records back on track.",
+    features: [
+      "Catch up missing months and reconcile accounts",
+      "Resolve errors and prepare books for your CPA",
+    ],
+    note: "Quoted separately after a review of your books.",
+    Icon: CalendarCheckIcon,
+  },
+  {
+    eyebrow: "Practical guidance",
+    title: "QuickBooks consulting",
+    description:
+      "Want to handle the books in-house? Get help setting up QuickBooks, improving your process, and understanding what to do next.",
+    features: [
+      "Personalized setup and training",
+      "Workflow guidance and a review of your books",
+    ],
+    link: { href: "/contact", label: "Let's talk about what you need" },
+    Icon: ChatIcon,
+  },
+];
 const pricingTiers = [
   {
     name: "Essential",
@@ -221,49 +289,148 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <SectionWrapper className="py-16 lg:py-20 bg-white" id="services">
+      <SectionWrapper className="py-16 lg:py-24 bg-bg-light" id="services">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-text-dark font-[family-name:var(--font-heading)]">
-              Our Bookkeeping Services
+          <div className="max-w-2xl">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">
+              QuickBooks Online Services
+            </p>
+            <h2 className="mt-4 text-4xl sm:text-5xl font-bold tracking-tight text-text-dark font-[family-name:var(--font-heading)]">
+              How I can help.
             </h2>
-            <p className="mt-4 text-text-muted">
-              Choose the level of help you need. Whether you want to stay
-              hands-on or hand it off completely, we&apos;ve got you covered.
+            <p className="mt-5 text-text-muted leading-relaxed">
+              Ongoing support, a fresh start, or help getting more comfortable
+              with QuickBooks.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {services.map((service, i) => (
-              <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.15 }}
-                whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0,0,0,0.1)" }}
-                className="bg-bg-light rounded-2xl p-8 transition-all duration-300 border border-gray-100"
+          <div className="mt-12 grid items-stretch gap-6 lg:grid-cols-2">
+            {/* Featured card - monthly bookkeeping */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="relative flex flex-col overflow-hidden rounded-3xl bg-gradient-to-br from-primary-dark to-text-dark p-8 sm:p-10"
+            >
+              {/* Decorative concentric rings */}
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute -right-28 top-6 hidden sm:block"
               >
-                <h3 className="text-xl font-bold text-text-dark mb-3 font-[family-name:var(--font-heading)]">
-                  {service.title}
-                </h3>
-                <p className="text-text-muted text-sm leading-relaxed">
-                  {service.description}
+                <div className="h-[420px] w-[420px] rounded-full border border-white/[0.07]" />
+                <div className="absolute inset-12 rounded-full border border-white/[0.07]" />
+                <div className="absolute inset-24 rounded-full border border-white/[0.05]" />
+              </div>
+
+              <div className="relative flex items-center gap-4">
+                <ServiceIcon tone="dark">
+                  <LedgerIcon />
+                </ServiceIcon>
+                <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/70">
+                  Ongoing support
                 </p>
-                {service.features && (
-                  <ul className="mt-4 space-y-2.5 text-text-muted text-sm leading-relaxed">
-                    {service.features.map((feature: string) => (
-                      <li key={feature} className="flex items-start gap-2.5">
-                        <svg className="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
+              </div>
+
+              <h3 className="relative mt-8 text-3xl font-bold text-white font-[family-name:var(--font-heading)]">
+                Monthly bookkeeping
+              </h3>
+              <p className="relative mt-4 text-xl leading-snug text-white/90 font-[family-name:var(--font-heading)]">
+                A clear picture of your business,
+                <br className="hidden sm:block" /> month after month.
+              </p>
+              <p className="relative mt-5 leading-relaxed text-white/70">
+                I keep your QuickBooks organized and your accounts reconciled,
+                so you have reliable numbers to work with.
+              </p>
+
+              <ul className="relative mt-6 space-y-3">
+                {monthlyFeatures.map((feature) => (
+                  <li
+                    key={feature}
+                    className="flex items-start gap-3 text-sm text-white/90"
+                  >
+                    <CheckMark className="text-white/60" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="relative mt-auto pt-12">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3.5 text-sm font-semibold text-text-dark transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+                >
+                  Request a quote
+                  <ArrowUpRight className="text-text-muted" />
+                </Link>
+                <p className="mt-4 text-sm text-white/55">
+                  Monthly service, with pricing based on your books.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Supporting cards */}
+            <div className="flex flex-col gap-6">
+              {secondaryServices.map((service, i) => (
+                <motion.div
+                  key={service.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: (i + 1) * 0.12 }}
+                  className="flex flex-1 flex-col rounded-3xl border border-gray-200/80 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:p-8"
+                >
+                  <div className="flex items-start gap-4">
+                    <ServiceIcon>
+                      <service.Icon />
+                    </ServiceIcon>
+                    <div>
+                      <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">
+                        {service.eyebrow}
+                      </p>
+                      <h3 className="mt-1.5 text-2xl font-bold text-text-dark font-[family-name:var(--font-heading)]">
+                        {service.title}
+                      </h3>
+                    </div>
+                  </div>
+
+                  <p className="mt-4 leading-relaxed text-text-muted">
+                    {service.description}
+                  </p>
+
+                  <ul className="mt-5 space-y-2.5">
+                    {service.features.map((feature) => (
+                      <li
+                        key={feature}
+                        className="flex items-start gap-3 text-sm text-text-dark"
+                      >
+                        <CheckMark className="text-primary" />
                         {feature}
                       </li>
                     ))}
                   </ul>
-                )}
-              </motion.div>
-            ))}
+
+                  {service.note && (
+                    <p className="mt-auto pt-5 text-sm text-text-muted/80">
+                      {service.note}
+                    </p>
+                  )}
+
+                  {service.link && (
+                    <div className="mt-auto pt-5">
+                      <Link
+                        href={service.link.href}
+                        className="inline-flex items-center gap-1.5 border-b border-primary/40 pb-1 text-sm font-semibold text-text-dark transition-colors hover:border-primary hover:text-primary"
+                      >
+                        {service.link.label}
+                        <ArrowUpRight />
+                      </Link>
+                    </div>
+                  )}
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </SectionWrapper>
