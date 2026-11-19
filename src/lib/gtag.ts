@@ -87,3 +87,36 @@ export function fireBookingConversion() {
     currency: "USD",
   });
 }
+
+/**
+ * Google Ads conversion labels for clicks on the home page phone number and
+ * email link. Create one conversion action per click type in Google Ads
+ * (Goals > Conversions > Website, set up manually), mark them Secondary so
+ * they are reported but not used for bidding, and paste each label here.
+ * While a label is empty, that click is not sent.
+ */
+export const ADS_PHONE_CLICK_SEND_TO = "";
+export const ADS_EMAIL_CLICK_SEND_TO = "";
+
+/** Reports a click on a tel: or mailto: link as a Google Ads conversion. */
+export function fireContactClickConversion(kind: "phone" | "email") {
+  if (typeof window === "undefined") return;
+
+  const sendTo =
+    kind === "phone" ? ADS_PHONE_CLICK_SEND_TO : ADS_EMAIL_CLICK_SEND_TO;
+  if (!sendTo) return;
+
+  let gtag = window.gtag;
+
+  if (typeof gtag !== "function") {
+    // Reuse the dataLayer the base tag already created; never load a second one.
+    const dataLayer = (window.dataLayer = window.dataLayer || []);
+    gtag = function () {
+      dataLayer.push(arguments);
+    };
+    window.gtag = gtag;
+  }
+
+  // Beacon transport so the hit is not lost when the phone or mail app opens.
+  gtag("event", "conversion", { send_to: sendTo, transport_type: "beacon" });
+}

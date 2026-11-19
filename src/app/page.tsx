@@ -6,6 +6,7 @@ import Link from "next/link";
 import SectionWrapper from "@/components/SectionWrapper";
 import BookACallButton from "@/components/BookACallButton";
 import QuoteRequestModal from "@/components/QuoteRequestModal";
+import { fireContactClickConversion } from "@/lib/gtag";
 
 /** Small rounded-square icon used as each service card's badge. */
 function ServiceIcon({
@@ -723,6 +724,7 @@ export default function Home() {
               <div className="mt-[27px] grid gap-[9px] text-[15px]">
                 <a
                   href="mailto:vasili@northshorebookkeeping.com"
+                  onClick={() => fireContactClickConversion("email")}
                   className="flex items-center gap-3 text-text-dark transition-colors hover:text-primary"
                 >
                   <svg
@@ -739,12 +741,13 @@ export default function Home() {
                       d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                     />
                   </svg>
-                  <span className="break-all">
+                  <span className="break-all underline decoration-primary/50 underline-offset-4 transition-colors hover:decoration-primary">
                     vasili@northshorebookkeeping.com
                   </span>
                 </a>
                 <a
                   href="tel:+18473051323"
+                  onClick={() => fireContactClickConversion("phone")}
                   className="flex items-center gap-3 text-text-dark transition-colors hover:text-primary"
                 >
                   <svg
@@ -761,7 +764,9 @@ export default function Home() {
                       d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                     />
                   </svg>
-                  (847) 305-1323
+                  <span className="underline decoration-primary/50 underline-offset-4 transition-colors hover:decoration-primary">
+                    (847) 305-1323
+                  </span>
                 </a>
               </div>
 
