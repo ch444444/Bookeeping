@@ -1,4 +1,5 @@
 import Link from "next/link";
+import TrackedContactLink from "@/components/TrackedContactLink";
 
 const navLinks = [
   { href: "/about", label: "About Us" },
@@ -66,12 +67,13 @@ export default function Footer() {
             </h3>
             <ul className="space-y-3 text-sm text-white/70">
               <li>
-                <a
+                <TrackedContactLink
+                  kind="phone"
                   href="tel:+18473051323"
                   className="hover:text-primary transition-colors"
                 >
                   (847) 305-1323
-                </a>
+                </TrackedContactLink>
               </li>
               <li>
                 <a

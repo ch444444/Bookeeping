@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
+import { fireContactClickConversion } from "@/lib/gtag";
 
 // Roughly the height of the fixed header, so an anchored section is not
 // hidden underneath it.
@@ -148,6 +149,7 @@ export default function Header() {
         {/* Call Us */}
         <a
           href="tel:+18473051323"
+          onClick={() => fireContactClickConversion("phone")}
           className="hidden md:flex items-center gap-2 text-text-dark hover:text-primary transition-colors"
         >
           <svg
@@ -221,7 +223,10 @@ export default function Header() {
               ))}
               <a
                 href="tel:+18473051323"
-                onClick={() => setMobileOpen(false)}
+                onClick={() => {
+                  fireContactClickConversion("phone");
+                  setMobileOpen(false);
+                }}
                 className="flex items-center gap-2 text-text-dark font-bold"
               >
                 <svg
