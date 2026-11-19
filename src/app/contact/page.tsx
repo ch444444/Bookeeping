@@ -3,7 +3,10 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import SectionWrapper from "@/components/SectionWrapper";
-import { fireContactConversion } from "@/lib/gtag";
+import {
+  fireContactClickConversion,
+  fireContactConversion,
+} from "@/lib/gtag";
 
 const CARD = "bg-[#2b5a58]";
 
@@ -180,6 +183,7 @@ export default function ContactPage() {
               </h3>
               <a
                 href="tel:+18473051323"
+                onClick={() => fireContactClickConversion("phone")}
                 className="flex items-center gap-3 text-white/90 hover:text-white transition-colors"
               >
                 <svg
@@ -203,6 +207,7 @@ export default function ContactPage() {
               </h3>
               <a
                 href="mailto:vasili@northshorebookkeeping.com"
+                onClick={() => fireContactClickConversion("email")}
                 className="flex items-center gap-3 text-white/90 hover:text-white transition-colors break-all"
               >
                 <svg
