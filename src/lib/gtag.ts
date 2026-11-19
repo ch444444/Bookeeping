@@ -96,7 +96,7 @@ export function fireBookingConversion() {
  * While a label is empty, that click is not sent.
  */
 export const ADS_PHONE_CLICK_SEND_TO = "AW-17804973985/vcLGCMLhtLsdEKGviapC";
-export const ADS_EMAIL_CLICK_SEND_TO = "";
+export const ADS_EMAIL_CLICK_SEND_TO = "AW-17804973985/IN6JCLqotrsdEKGviapC";
 
 /** Reports a click on a tel: or mailto: link as a Google Ads conversion. */
 export function fireContactClickConversion(kind: "phone" | "email") {

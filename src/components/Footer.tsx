@@ -76,12 +76,13 @@ export default function Footer() {
                 </TrackedContactLink>
               </li>
               <li>
-                <a
+                <TrackedContactLink
+                  kind="email"
                   href="mailto:vasili@northshorebookkeeping.com"
                   className="hover:text-primary transition-colors"
                 >
                   vasili@northshorebookkeeping.com
-                </a>
+                </TrackedContactLink>
               </li>
               <li>Chicago, Illinois</li>
             </ul>
