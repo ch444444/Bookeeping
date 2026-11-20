@@ -1,3 +1,5 @@
+import { trackMetaEvent } from "@/lib/metaPixel";
+
 export const ADS_CONVERSION_SEND_TO = "AW-17804973985/sgg2CJja_c4cEKGviapC";
 
 declare global {
@@ -119,4 +121,23 @@ export function fireContactClickConversion(kind: "phone" | "email") {
 
   // Beacon transport so the hit is not lost when the phone or mail app opens.
   gtag("event", "conversion", { send_to: sendTo, transport_type: "beacon" });
+
+  sendMetaClickLead(kind);
+}
+
+/**
+ * Also reports the click to Meta as a Lead - at most once per click type per
+ * browser session, so someone tapping the number three times is one lead.
+ */
+function sendMetaClickLead(kind: "phone" | "email") {
+  const key = `nsb_meta_${kind}_lead_sent`;
+  try {
+    if (window.sessionStorage.getItem(key)) return;
+    window.sessionStorage.setItem(key, "1");
+  } catch {
+    // Blocked storage: send anyway rather than lose the lead.
+  }
+  trackMetaEvent("Lead", {
+    content_name: kind === "phone" ? "Phone click" : "Email click",
+  });
 }
