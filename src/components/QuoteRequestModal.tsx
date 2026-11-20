@@ -81,6 +81,11 @@ export default function QuoteRequestModal({
   // createPortal needs a real document, so only render after mount.
   useEffect(() => setMounted(true), []);
 
+  // Opening the quote form is a high-intent view for Meta.
+  useEffect(() => {
+    if (open) trackMetaEvent("ViewContent", { content_name: "Quote form" });
+  }, [open]);
+
   // Close on Escape, and keep the page behind the modal from scrolling.
   useEffect(() => {
     if (!open) return;

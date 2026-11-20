@@ -77,7 +77,7 @@ export default function RootLayout({
         <Footer />
         {/* Reports the Google Ads conversion when a Calendly booking completes */}
         <CalendlyConversion />
-        {/* Meta ViewContent on every page (plus PageView on in-app navigation) */}
+        {/* Meta ViewContent on high-intent pages and the pricing section */}
         <MetaPageTracking />
       </body>
     </html>
