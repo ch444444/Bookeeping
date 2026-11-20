@@ -7,6 +7,7 @@ import {
   fireContactClickConversion,
   fireContactConversion,
 } from "@/lib/gtag";
+import { trackMetaEvent } from "@/lib/metaPixel";
 
 const CARD = "bg-[#2b5a58]";
 
@@ -37,6 +38,16 @@ function ContactCardForm() {
       });
       if (res.ok) {
         fireContactConversion();
+        trackMetaEvent(
+          "Lead",
+          { content_name: "Contact form" },
+          {
+            email: formData.email,
+            phone: formData.phone,
+            firstName: formData.firstName,
+            lastName: formData.lastName,
+          }
+        );
         setSubmitted(true);
       } else {
         setError(

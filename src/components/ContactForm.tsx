@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { fireContactConversion } from "@/lib/gtag";
+import { splitName, trackMetaEvent } from "@/lib/metaPixel";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -29,6 +30,11 @@ export default function ContactForm() {
       });
       if (res.ok) {
         fireContactConversion();
+        trackMetaEvent(
+          "Lead",
+          { content_name: "Contact form" },
+          { email: formData.email, phone: formData.phone, ...splitName(formData.name) }
+        );
         setSubmitted(true);
       } else {
         setError(

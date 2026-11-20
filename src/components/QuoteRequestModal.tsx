@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { fireContactConversion } from "@/lib/gtag";
+import { splitName, trackMetaEvent } from "@/lib/metaPixel";
 
 /** Where quote requests are emailed. Same Formspree form as the contact page. */
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/xdaqnlbn";
@@ -154,6 +155,11 @@ export default function QuoteRequestModal({
 
       if (res.ok) {
         fireContactConversion();
+        trackMetaEvent(
+          "Lead",
+          { content_name: "Quote request" },
+          { email: form.email, phone: form.phone, ...splitName(form.name) }
+        );
         setSubmitted(true);
       } else {
         setError(

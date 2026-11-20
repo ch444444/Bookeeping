@@ -2,6 +2,26 @@
 
 import { useEffect } from "react";
 import { fireBookingConversion } from "@/lib/gtag";
+import { trackMetaEvent } from "@/lib/metaPixel";
+
+const META_BOOKING_KEY = "nsb_meta_booking_lead_sent";
+let metaBookingSent = false;
+
+/** Sends one Meta Lead per browser session for a Calendly booking. */
+function sendMetaBookingLead() {
+  if (metaBookingSent) return;
+  try {
+    if (window.sessionStorage.getItem(META_BOOKING_KEY)) {
+      metaBookingSent = true;
+      return;
+    }
+    window.sessionStorage.setItem(META_BOOKING_KEY, "1");
+  } catch {
+    // Blocked storage: the in-memory guard still applies.
+  }
+  metaBookingSent = true;
+  trackMetaEvent("Lead", { content_name: "Calendly booking" });
+}
 
 function isCalendlyOrigin(origin: string) {
   try {
@@ -28,6 +48,7 @@ export default function CalendlyConversion() {
       if (data.event !== "calendly.event_scheduled") return;
 
       fireBookingConversion();
+      sendMetaBookingLead();
     };
 
     window.addEventListener("message", handleMessage);
