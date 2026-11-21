@@ -13,7 +13,22 @@ declare global {
   }
 }
 
-export type MetaEventName = "PageView" | "ViewContent" | "Lead";
+export type MetaEventName =
+  | "PageView"
+  | "ViewContent"
+  | "Lead"
+  | "Contact"
+  // Custom events, named to match the events set up in Events Manager.
+  | "Phone Number Bottom"
+  | "Quote Request";
+
+/** Meta standard events go through fbq('track'); anything else is custom. */
+const STANDARD_EVENTS = new Set<MetaEventName>([
+  "PageView",
+  "ViewContent",
+  "Lead",
+  "Contact",
+]);
 
 /** Contact details from a form. Hashed on the server before going to Meta. */
 export interface MetaUserData {
@@ -49,7 +64,8 @@ export function trackMetaEvent(
   // page's event can arrive before fbq exists - wait a little for it.
   const sendBrowser = (triesLeft: number) => {
     if (typeof window.fbq === "function") {
-      window.fbq("track", eventName, customData, { eventID: eventId });
+      const method = STANDARD_EVENTS.has(eventName) ? "track" : "trackCustom";
+      window.fbq(method, eventName, customData, { eventID: eventId });
     } else if (triesLeft > 0) {
       window.setTimeout(() => sendBrowser(triesLeft - 1), 250);
     }

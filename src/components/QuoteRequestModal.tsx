@@ -160,10 +160,16 @@ export default function QuoteRequestModal({
 
       if (res.ok) {
         fireContactConversion();
+        const quoteUser = {
+          email: form.email,
+          phone: form.phone,
+          ...splitName(form.name),
+        };
+        trackMetaEvent("Lead", { content_name: "Quote request" }, quoteUser);
         trackMetaEvent(
-          "Lead",
+          "Quote Request",
           { content_name: "Quote request" },
-          { email: form.email, phone: form.phone, ...splitName(form.name) }
+          quoteUser
         );
         setSubmitted(true);
       } else {

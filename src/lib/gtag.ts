@@ -126,8 +126,9 @@ export function fireContactClickConversion(kind: "phone" | "email") {
 }
 
 /**
- * Also reports the click to Meta as a Lead - at most once per click type per
- * browser session, so someone tapping the number three times is one lead.
+ * Also reports the click to Meta as a Lead (and phone clicks as the custom
+ * "Phone Number Bottom" event) - at most once per click type per browser
+ * session, so someone tapping the number three times is one lead.
  */
 function sendMetaClickLead(kind: "phone" | "email") {
   const key = `nsb_meta_${kind}_lead_sent`;
@@ -137,7 +138,9 @@ function sendMetaClickLead(kind: "phone" | "email") {
   } catch {
     // Blocked storage: send anyway rather than lose the lead.
   }
-  trackMetaEvent("Lead", {
-    content_name: kind === "phone" ? "Phone click" : "Email click",
-  });
+  const content_name = kind === "phone" ? "Phone click" : "Email click";
+  trackMetaEvent("Lead", { content_name });
+  if (kind === "phone") {
+    trackMetaEvent("Phone Number Bottom", { content_name });
+  }
 }

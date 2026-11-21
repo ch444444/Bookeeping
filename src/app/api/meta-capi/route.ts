@@ -3,7 +3,14 @@ import { NextRequest, NextResponse } from "next/server";
 import { META_PIXEL_ID } from "@/lib/metaPixel";
 
 const GRAPH_URL = `https://graph.facebook.com/v21.0/${META_PIXEL_ID}/events`;
-const ALLOWED_EVENTS = new Set(["PageView", "ViewContent", "Lead"]);
+const ALLOWED_EVENTS = new Set([
+  "PageView",
+  "ViewContent",
+  "Lead",
+  "Contact",
+  "Phone Number Bottom",
+  "Quote Request",
+]);
 
 function sha256(value: string) {
   return createHash("sha256").update(value).digest("hex");

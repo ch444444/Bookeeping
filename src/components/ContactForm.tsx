@@ -30,11 +30,13 @@ export default function ContactForm() {
       });
       if (res.ok) {
         fireContactConversion();
-        trackMetaEvent(
-          "Lead",
-          { content_name: "Contact form" },
-          { email: formData.email, phone: formData.phone, ...splitName(formData.name) }
-        );
+        const contactUser = {
+          email: formData.email,
+          phone: formData.phone,
+          ...splitName(formData.name),
+        };
+        trackMetaEvent("Lead", { content_name: "Contact form" }, contactUser);
+        trackMetaEvent("Contact", { content_name: "Contact form" }, contactUser);
         setSubmitted(true);
       } else {
         setError(

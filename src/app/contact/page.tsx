@@ -38,16 +38,14 @@ function ContactCardForm() {
       });
       if (res.ok) {
         fireContactConversion();
-        trackMetaEvent(
-          "Lead",
-          { content_name: "Contact form" },
-          {
-            email: formData.email,
-            phone: formData.phone,
-            firstName: formData.firstName,
-            lastName: formData.lastName,
-          }
-        );
+        const contactUser = {
+          email: formData.email,
+          phone: formData.phone,
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+        };
+        trackMetaEvent("Lead", { content_name: "Contact form" }, contactUser);
+        trackMetaEvent("Contact", { content_name: "Contact form" }, contactUser);
         setSubmitted(true);
       } else {
         setError(
