@@ -5,6 +5,8 @@
  * (fbq) and once from our server (/api/meta-capi). Meta keeps one copy, and
  * the server copy still gets through when an ad blocker stops the pixel.
  */
+import { trackClarityEvent } from "@/lib/clarity";
+
 export const META_PIXEL_ID = "1673844264469790";
 
 declare global {
@@ -58,6 +60,11 @@ export function trackMetaEvent(
   if (typeof window === "undefined") return;
 
   const eventId = newEventId();
+
+  // Tag the Clarity recording too, so lead sessions can be filtered there.
+  if (eventName === "Lead") {
+    trackClarityEvent(`Lead: ${customData.content_name ?? "unknown"}`);
+  }
 
   // Browser pixel. The base code in the root layout defines fbq (and queues
   // calls until fbevents.js loads), but it runs after hydration, so the first
