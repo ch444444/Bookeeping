@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CalendlyConversion from "@/components/CalendlyConversion";
 import MetaPageTracking from "@/components/MetaPageTracking";
+import CopyContactTracking from "@/components/CopyContactTracking";
 import { META_PIXEL_ID } from "@/lib/metaPixel";
 import { CLARITY_PROJECT_ID } from "@/lib/clarity";
 
@@ -92,6 +93,8 @@ export default function RootLayout({
         <CalendlyConversion />
         {/* Meta ViewContent on high-intent pages and the pricing section */}
         <MetaPageTracking />
+        {/* Copying the email or phone number counts as a lead */}
+        <CopyContactTracking />
       </body>
     </html>
   );

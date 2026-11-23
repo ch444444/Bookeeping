@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { fireContactConversion } from "@/lib/gtag";
+import { trackContactCopy } from "@/components/CopyContactTracking";
 import { splitName, trackMetaEvent } from "@/lib/metaPixel";
 
 /** Where quote requests are emailed. Same Formspree form as the contact page. */
@@ -125,6 +126,8 @@ export default function QuoteRequestModal({
   const handleCopyEmail = async () => {
     try {
       await navigator.clipboard.writeText(ACCOUNTANT_EMAIL);
+      // writeText() does not fire a copy event, so report the lead here.
+      trackContactCopy(ACCOUNTANT_EMAIL);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch {
