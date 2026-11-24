@@ -10,9 +10,13 @@ import { META_PIXEL_ID } from "@/lib/metaPixel";
 import { CLARITY_PROJECT_ID } from "@/lib/clarity";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.northshorebookkeeping.com"),
   title: "North Shore Bookkeeping | Professional Bookkeeping Services",
   description:
     "Expert bookkeeping services for small businesses. Monthly bookkeeping, cleanup, catch-up, and consulting. Book a free call today.",
+  verification: {
+    google: "x6vN_HOj6NbyGf_aiTy2iD_Gm51HSGWBd51CPXi6zOo",
+  },
 };
 
 export default function RootLayout({
